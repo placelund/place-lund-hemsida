@@ -1,0 +1,100 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import { getRoomImages } from '@/utils/getImages'
+
+export const metadata = {
+  title: 'Economy Double Room with Balcony Lund - Place Lund Hotel | Room with Private Patio',
+  description: 'Economy double room with private patio at Place Lund Hotel in Lund, Sweden. First floor, garden access, two 90-100cm beds, breakfast and dinner included.',
+}
+
+export default function EconomyDoubleBalconyPage() {
+  const { heroImage, galleryImages } = getRoomImages('rooms/economy-double-balcony')
+
+  return (
+    <main className="min-h-screen">
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+        <div className="absolute inset-0 bg-[#FFFAF2]/30 z-10" />
+        <Image src={heroImage} alt="Economy double room with balcony" fill className="object-cover" priority />
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">Economy Double Room with Patio</h1>
+          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
+            Special value room with private patio and direct garden access on the first floor.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872" target="_blank" rel="noopener noreferrer" className="bg-[#004225] text-[#E3DAC9] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors">Book Now</Link>
+            <Link href="/hotel" className="bg-transparent text-[#004225] border-2 border-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/20 transition-colors">View All Rooms</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-[#FFFAF2]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-bold text-[#004225] mb-6">Room Overview</h2>
+              <p className="text-gray-700 mb-6 leading-relaxed">
+                Our economy double room with patio offers exceptional value with a unique feature - a private patio with direct access to our garden. Located on the first floor, this room features a premium Hilding Anders 140cm bed and includes both breakfast and dinner.
+              </p>
+
+              <div className="bg-[#f5f5f5] p-6 rounded-lg border-2 border-[#004225] mb-6">
+                <h3 className="text-xl font-bold text-[#004225] mb-4">Room Specifications</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3"><span className="text-[#004225] font-bold text-xl">•</span><span className="text-gray-700"><strong>Location:</strong> First floor with patio</span></li>
+                  <li className="flex items-start gap-3"><span className="text-[#004225] font-bold text-xl">•</span><span className="text-gray-700"><strong>Bed:</strong> Hilding Anders 140cm</span></li>
+                  <li className="flex items-start gap-3"><span className="text-[#004225] font-bold text-xl">•</span><span className="text-gray-700"><strong>Flooring:</strong> Parquet</span></li>
+                  <li className="flex items-start gap-3"><span className="text-[#004225] font-bold text-xl">•</span><span className="text-gray-700"><strong>Special:</strong> Private patio with garden access</span></li>
+                  <li className="flex items-start gap-3"><span className="text-[#004225] font-bold text-xl">•</span><span className="text-gray-700"><strong>Pets:</strong> Allowed (select rooms)</span></li>
+                  <li className="flex items-start gap-3"><span className="text-[#004225] font-bold text-xl">•</span><span className="text-gray-700"><strong>Bedding:</strong> Allergy-friendly (down-free)</span></li>
+                </ul>
+              </div>
+
+              <div className="bg-[#f5f5f5] p-6 rounded-lg border-2 border-[#004225] mb-6">
+                <h3 className="text-xl font-bold text-[#004225] mb-4">Room Amenities</h3>
+                <ul className="grid grid-cols-2 gap-3">
+                  {['Private Patio', 'Garden Access', 'Desk & Work Area', 'Free WiFi', 'Private Shower', 'TV', 'Water Kettle', 'Refrigerator', 'Safety Box', 'Free Toiletries', 'Breakfast Included', 'Dinner Included'].map((amenity) => (
+                    <li key={amenity} className="flex items-start gap-3"><span className="text-[#004225] font-bold text-xl">•</span><span className="text-gray-700">{amenity}</span></li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#42001D] mb-6">
+                <h3 className="text-xl font-bold text-[#42001D] mb-3">Perfect For:</h3>
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Guests who love outdoor space</li>
+                  <li>• Couples or friends</li>
+                  <li>• Extended stays</li>
+                  <li>• Nature enthusiasts</li>
+                  <li>• Morning coffee on the patio</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="relative h-[400px] overflow-hidden rounded-lg">
+                <Image src={galleryImages[0] || heroImage} alt="Economy room with balcony" fill loading="lazy" className="object-cover" />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {galleryImages.slice(1, 3).map((image, index) => (
+                  <div key={index} className="relative h-64 overflow-hidden rounded-lg">
+                    <Image src={image} alt={`Room with patio ${index + 2}`} fill loading="lazy" className="object-cover" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#004225] text-white py-16 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Book Your Room?</h2>
+          <p className="text-lg mb-8 text-white/90">Enjoy your private patio with garden access at Place Lund Hotel.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872" target="_blank" rel="noopener noreferrer" className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors">Book Now</Link>
+            <Link href="/hotel" className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors">View All Rooms</Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}

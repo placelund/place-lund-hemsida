@@ -1,0 +1,72 @@
+{
+  "seo_requirements": {
+    "meta": {
+      "title": {
+        "min": 50,
+        "max": 60,
+        "template": "{keyword} | {hotel_name} - Southern Sweden"
+      },
+      "description": {
+        "min": 150,
+        "max": 160,
+        "must_include": ["3-star", "breakfast dinner included", "book direct"]
+      }
+    },
+    "html": {
+      "h1_count": 1,
+      "canonical": true,
+      "viewport": "width=device-width, initial-scale=1",
+      "hreflang": ["sv-SE", "en-SE"],
+      "internal_links_min": 3
+    },
+    "url": {
+      "format": "/{lang}/{category}/{slug}",
+      "rules": ["lowercase", "use-hyphens", "no-underscore"]
+    },
+    "images": {
+      "max_size_kb": 200,
+      "hero_max_kb": 500,
+      "format": "webp",
+      "alt_text": true,
+      "filename_pattern": "keyword-description-hotel"
+    },
+    "keywords": {
+      "sv": {
+        "primary": ["hotell {city}", "3 stjärnor", "frukost middag ingår"],
+        "density_max": 0.02
+      },
+      "en": {
+        "primary": ["hotel {city} Sweden", "3-star", "breakfast dinner included"],
+        "density_max": 0.02
+      },
+      "placement": ["h1", "first_paragraph", "meta_title", "alt_text"]
+    },
+    "schema": {
+      "required_types": ["Hotel", "LocalBusiness"],
+      "rating": 3,
+      "amenities": ["Free Breakfast", "Dinner Included"]
+    },
+    "page_speed": {
+      "lcp_max": 2.5,
+      "fid_max": 100,
+      "cls_max": 0.1
+    },
+    "content_minimums": {
+      "page": 300,
+      "blog": 800,
+      "description": 150
+    },
+    "direct_booking": {
+      "cta_text": "Save 10% - Book Direct",
+      "placement": ["above_fold", "end_content", "sidebar"]
+    },
+    "critical_checks": [
+      "meta_title",
+      "meta_description",
+      "h1_exists",
+      "mobile_viewport",
+      "schema_markup",
+      "ssl_enabled"
+    ]
+  }
+}

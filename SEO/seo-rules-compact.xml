@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<seo_rules>
+  
+  <!-- EVERY PAGE MUST HAVE -->
+  <page_requirements>
+    <meta_title max_chars="60" min_chars="50">{keyword} | {hotel_name} - Southern Sweden</meta_title>
+    <meta_description max_chars="160" min_chars="150">Include: 3-star, breakfast/dinner included, direct booking benefit</meta_description>
+    <h1_tag count="1">Include primary keyword + location</h1_tag>
+    <canonical_url required="true"/>
+    <hreflang required="true">
+      <lang code="sv-SE" path="/sv/"/>
+      <lang code="en-SE" path="/en/"/>
+    </hreflang>
+    <schema_markup types="Hotel,LocalBusiness,Offer"/>
+    <internal_links minimum="3"/>
+    <mobile_viewport content="width=device-width, initial-scale=1"/>
+  </page_requirements>
+
+  <!-- URL STRUCTURE -->
+  <url_format>
+    <pattern>/{language}/{category}/{keyword-slug}</pattern>
+    <language_codes>sv,en</language_codes>
+    <no_uppercase>true</no_uppercase>
+    <use_hyphens>true</use_hyphens>
+  </url_format>
+
+  <!-- KEYWORDS TO INCLUDE -->
+  <keywords>
+    <primary lang="sv">hotell {city}, 3 stjärnor, frukost middag ingår</primary>
+    <primary lang="en">hotel {city} Sweden, 3-star, breakfast dinner included</primary>
+    <density max="2%" target="1.5%"/>
+    <placement>H1, first_paragraph, meta_title, alt_text</placement>
+  </keywords>
+
+  <!-- IMAGE RULES -->
+  <images>
+    <compression max_kb="200" hero_max_kb="500"/>
+    <format preferred="webp" fallback="jpeg"/>
+    <filename>{keyword}-{description}-{hotel}.{ext}</filename>
+    <alt_text required="true" include_keywords="true"/>
+    <lazy_loading enabled="true" except="above_fold"/>
+  </images>
+
+  <!-- SCHEMA TEMPLATE -->
+  <schema>
+    <hotel_schema>
+      {
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        "name": "{hotel_name}",
+        "starRating": {"@type": "Rating", "ratingValue": "3"},
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "SE",
+          "addressRegion": "Skåne",
+          "addressLocality": "{city}"
+        },
+        "priceRange": "SEK {min}-{max}",
+        "amenityFeature": [
+          {"name": "Free Breakfast", "value": true},
+          {"name": "Dinner Included", "value": true}
+        ]
+      }
+    </hotel_schema>
+  </schema>
+
+  <!-- TECHNICAL REQUIREMENTS -->
+  <technical>
+    <page_speed>
+      <LCP max_seconds="2.5"/>
+      <FID max_milliseconds="100"/>
+      <CLS max_score="0.1"/>
+    </page_speed>
+    <robots_txt>User-agent: * Allow: /</robots_txt>
+    <sitemap update_on="content_change" format="xml"/>
+    <ssl required="true"/>
+    <compression enabled="true" type="gzip"/>
+  </technical>
+
+  <!-- CONTENT MINIMUMS -->
+  <content>
+    <page min_words="300"/>
+    <blog min_words="800"/>
+    <product_description min_words="150"/>
+  </content>
+
+  <!-- DIRECT BOOKING ELEMENTS -->
+  <direct_booking>
+    <cta_required>true</cta_required>
+    <benefit_text>Save 10% - Book Direct</benefit_text>
+    <placement>above_fold, end_of_content, sidebar</placement>
+  </direct_booking>
+
+  <!-- LOCAL SEO -->
+  <local>
+    <google_business_profile>
+      <nap_consistency required="true"/>
+      <reviews respond_within_hours="48"/>
+      <posts per_week="2"/>
+      <photos minimum="20"/>
+    </google_business_profile>
+    <citations minimum="30" priority="Swedish directories"/>
+  </local>
+
+  <!-- VALIDATION CHECKLIST -->
+  <validate>
+    <critical>meta_title, meta_description, H1, mobile_viewport, schema, SSL</critical>
+    <high>alt_text, canonical, hreflang, page_speed</high>
+    <medium>internal_links, content_length</medium>
+  </validate>
+
+</seo_rules>

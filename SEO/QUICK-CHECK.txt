@@ -1,0 +1,20 @@
+SEO QUICK CHECK - COPY/PASTE FOR CLAUDE CLI
+============================================
+
+When adding ANY page/content/image, ensure:
+
+☐ Title: 50-60 chars with keyword
+☐ Description: 150-160 chars with "3-star, breakfast/dinner included"
+☐ ONE H1 tag with keyword + location
+☐ URL: /{sv|en}/{category}/{keyword-slug}
+☐ 3+ internal links
+☐ Schema markup (Hotel, 3-star rating)
+☐ Images <200KB with alt text
+☐ Keywords: "hotell [city]" (SV) or "hotel [city] Sweden" (EN)
+☐ CTA: "Save 10% - Book Direct"
+☐ Mobile viewport meta tag
+☐ Both Swedish and English versions
+
+CLAUDE CLI COMMAND:
+==================
+claude --check "meta_title:50-60|h1:1|schema:Hotel|links:3+|cta:direct"
