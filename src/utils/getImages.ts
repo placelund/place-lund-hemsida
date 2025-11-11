@@ -1,5 +1,4 @@
-import fs from 'fs'
-import path from 'path'
+import imageManifest from '@/data/image-manifest.json'
 
 /**
  * Shuffle array using Fisher-Yates algorithm
@@ -28,24 +27,17 @@ export function getRoomImages(folder: string, shuffle: boolean = true): {
   heroImage: string
   galleryImages: string[]
 } {
-  const imagesDir = path.join(process.cwd(), 'public', 'images', folder)
-
   try {
-    // Read all files in the directory
-    const files = fs.readdirSync(imagesDir)
+    // Get images from manifest
+    const images = (imageManifest as Record<string, string[]>)[folder] || []
 
-    // Filter for image files only
-    const imageFiles = files.filter(file =>
-      /\.(jpg|jpeg|png|webp)$/i.test(file)
-    )
-
-    if (imageFiles.length === 0) {
+    if (images.length === 0) {
       console.warn(`No images found in ${folder}`)
       return { heroImage: '', galleryImages: [] }
     }
 
     // Sort alphabetically for consistent fallback
-    const sortedImages = imageFiles.sort()
+    const sortedImages = [...images].sort()
 
     // Find hero image (contains -hero or -main in filename)
     const heroIndex = sortedImages.findIndex(file =>
@@ -70,10 +62,9 @@ export function getRoomImages(folder: string, shuffle: boolean = true): {
       galleryImages = shuffleArray(galleryImages)
     }
 
-    // Return full paths relative to /public/images/
     return {
-      heroImage: `/images/${folder}/${heroImage}`,
-      galleryImages: galleryImages.map(img => `/images/${folder}/${img}`)
+      heroImage,
+      galleryImages
     }
   } catch (error) {
     console.error(`Error reading images from ${folder}:`, error)
@@ -86,18 +77,11 @@ export function getRoomImages(folder: string, shuffle: boolean = true): {
  * Useful for gallery pages
  */
 export function getGalleryImages(folder: string, shuffle: boolean = true): string[] {
-  const imagesDir = path.join(process.cwd(), 'public', 'images', folder)
-
   try {
-    const files = fs.readdirSync(imagesDir)
-    const imageFiles = files.filter(file =>
-      /\.(jpg|jpeg|png|webp)$/i.test(file)
-    )
+    const images = (imageManifest as Record<string, string[]>)[folder] || []
+    const sortedImages = [...images].sort()
 
-    const sortedImages = imageFiles.sort()
-    const images = sortedImages.map(img => `/images/${folder}/${img}`)
-
-    return shuffle ? shuffleArray(images) : images
+    return shuffle ? shuffleArray(sortedImages) : sortedImages
   } catch (error) {
     console.error(`Error reading images from ${folder}:`, error)
     return []
