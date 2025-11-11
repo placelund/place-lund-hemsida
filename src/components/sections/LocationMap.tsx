@@ -4,8 +4,42 @@ import { APIProvider, Map, AdvancedMarker, Pin } from '@vis.gl/react-google-maps
 
 // Place Lund Hotel actual location: Margaretavägen 7, 222 40 Lund
 const HOTEL_LOCATION = {
-  lat: 55.7138,
-  lng: 13.2025,
+  lat: 55.719594474422344,
+  lng: 13.194961555876336,
+}
+
+// Nearby points of interest with exact coordinates
+const LOCATIONS = {
+  hotel: {
+    position: { lat: 55.719594474422344, lng: 13.194961555876336 },
+    title: 'Place Lund Hotel',
+    color: '#DC2626', // Red
+  },
+  park: {
+    position: { lat: 55.721788002632806, lng: 13.19425345266742 },
+    title: 'Sankt Hans Backar',
+    color: '#9333EA', // Purple
+  },
+  groceryStore: {
+    position: { lat: 55.720561334013425, lng: 13.205443628759316 },
+    title: 'Grocery Store (Lidl)',
+    color: '#2563EB', // Blue
+  },
+  busStop: {
+    position: { lat: 55.71696570396899, lng: 13.194918640372698 },
+    title: 'Bus Stop',
+    color: '#16A34A', // Green
+  },
+  university: {
+    position: { lat: 55.711990581956705, lng: 13.203535913548748 },
+    title: 'Lund University',
+    color: '#EAB308', // Yellow
+  },
+  parkingLot: {
+    position: { lat: 55.72057922124424, lng: 13.194596259696972 },
+    title: 'Parking + EV Charge',
+    color: '#F97316', // Orange
+  },
 }
 
 export default function LocationMap() {
@@ -68,15 +102,38 @@ export default function LocationMap() {
               mapId="place-lund-hotel-map"
               style={{ width: '100%', height: '100%' }}
             >
-              <AdvancedMarker position={HOTEL_LOCATION}>
-                <Pin
-                  background={'#004225'}
-                  borderColor={'#42001D'}
-                  glyphColor={'#E3DAC9'}
-                />
-              </AdvancedMarker>
+              {/* Render all location markers */}
+              {Object.entries(LOCATIONS).map(([key, location]) => (
+                <AdvancedMarker
+                  key={key}
+                  position={location.position}
+                  title={location.title}
+                >
+                  <Pin
+                    background={location.color}
+                    borderColor={'#000000'}
+                    glyphColor={'#FFFFFF'}
+                  />
+                </AdvancedMarker>
+              ))}
             </Map>
           </APIProvider>
+        </div>
+
+        {/* Map Legend */}
+        <div className="mt-6 bg-white/80 backdrop-blur-sm rounded-xl p-4 border-2 border-[#004225]/20">
+          <h3 className="text-lg font-semibold text-[#004225] mb-3">Map Legend</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+            {Object.entries(LOCATIONS).map(([key, location]) => (
+              <div key={key} className="flex items-center gap-2">
+                <div
+                  className="w-4 h-4 rounded-full border-2 border-black"
+                  style={{ backgroundColor: location.color }}
+                />
+                <span className="text-sm text-gray-700">{location.title}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Location Info */}
