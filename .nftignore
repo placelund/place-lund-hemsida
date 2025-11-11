@@ -1,0 +1,5 @@
+# Next.js File Trace Ignore
+# Prevents Next.js from bundling these files into serverless functions
+# Images are served as static files from /public, not needed in Lambda bundles
+
+public/images/**
