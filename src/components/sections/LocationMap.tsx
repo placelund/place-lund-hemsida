@@ -1,12 +1,31 @@
 'use client'
 
-import { APIProvider, Map, AdvancedMarker, Pin } from '@vis.gl/react-google-maps'
+import { APIProvider, Map, AdvancedMarker, Pin, useMap } from '@vis.gl/react-google-maps'
+import { useEffect } from 'react'
 
 // Place Lund Hotel actual location: Margaretavägen 7, 222 40 Lund
 const HOTEL_LOCATION = {
   lat: 55.719594474422344,
   lng: 13.194961555876336,
 }
+
+// Map styles to hide default POI markers and labels
+const MAP_STYLES = [
+  {
+    featureType: 'poi',
+    elementType: 'labels',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'poi.business',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'transit',
+    elementType: 'labels.icon',
+    stylers: [{ visibility: 'off' }],
+  },
+]
 
 // Nearby points of interest with exact coordinates
 const LOCATIONS = {
@@ -40,6 +59,18 @@ const LOCATIONS = {
     title: 'Parking + EV Charge',
     color: '#F97316', // Orange
   },
+}
+
+// Component to apply map styles using useMap hook
+function MapStyler() {
+  const map = useMap()
+
+  useEffect(() => {
+    if (!map) return
+    map.setOptions({ styles: MAP_STYLES })
+  }, [map])
+
+  return null
 }
 
 export default function LocationMap() {
@@ -101,7 +132,12 @@ export default function LocationMap() {
               defaultZoom={15}
               mapId="place-lund-hotel-map"
               style={{ width: '100%', height: '100%' }}
+              gestureHandling="greedy"
+              disableDefaultUI={false}
             >
+              {/* Apply custom map styles to hide default POIs */}
+              <MapStyler />
+
               {/* Render all location markers */}
               {Object.entries(LOCATIONS).map(([key, location]) => (
                 <AdvancedMarker
