@@ -9,21 +9,25 @@ const HOTEL_LOCATION = {
   lng: 13.194961555876336,
 }
 
-// Map styles to hide default POI markers and labels
+// Map styles to hide ALL default POI markers and labels
 const MAP_STYLES = [
   {
     featureType: 'poi',
-    elementType: 'labels',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'poi.business',
     stylers: [{ visibility: 'off' }],
   },
   {
     featureType: 'transit',
-    elementType: 'labels.icon',
     stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'administrative',
+    elementType: 'labels',
+    stylers: [{ visibility: 'on' }], // Keep city/street names
+  },
+  {
+    featureType: 'road',
+    elementType: 'labels',
+    stylers: [{ visibility: 'on' }], // Keep road names
   },
 ]
 
