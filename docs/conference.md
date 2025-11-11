@@ -34,15 +34,19 @@ In addition, there is our conference lounge with more comfortable furniture and 
 ## Meeting Rooms
 
 ### 1. Margaretha's Place
-- **Capacity:** Up to 90 people
+- **Location:** 2nd floor
+- **Capacity:** 30-90 participants
 - **Type:** Large room for classic meetings, lectures & associations
+- **Technology:** Projector available
 - **Half-day:** 14,400 SEK
 - **Full-day:** 21,600 SEK
 
 ### 2. Sofia's Place
+- **Location:** 2nd floor
 - **Capacity:** Up to 26 people (can be divided)
 - **Divisible:** Can split into 10 + 16 person rooms
 - **Type:** Perfect for interviews, workshops, brainstorming
+- **Technology:** Screen available
 - **Pricing (Half-day):**
   - 26 people: 7,520 SEK
   - 16 people: 4,960 SEK
@@ -53,8 +57,10 @@ In addition, there is our conference lounge with more comfortable furniture and 
   - 10 people: 4,320 SEK
 
 ### 3. Sankt Hans Place
+- **Location:** 2nd floor
 - **Capacity:** Up to 18 people
 - **Type:** Board meeting room, bright and comfortable
+- **Technology:** Projector or Screen available
 - **Half-day:** 3,800 SEK
 - **Full-day:** 5,120 SEK
 
@@ -73,9 +79,11 @@ In addition, there is our conference lounge with more comfortable furniture and 
 - Technical support
 - Conference lounge access
 - Kitchen with serving area
+- Free parking
 
-**Additional Services:**
-- Catering (see pricing below)
+**Additional Features:**
+- Breakout area with pool table
+- Catering available (see pricing below)
 
 ---
 
@@ -96,7 +104,7 @@ In addition, there is our conference lounge with more comfortable furniture and 
 - All prices exclude VAT
 - Catering must be ordered in advance
 - Custom catering arrangements available upon request
-- Contact hotel for special dietary requirements
+- Contact hotel for special dietary requirements and vegetarian/vegan options
 
 ---
 
@@ -114,7 +122,7 @@ In addition, there is our conference lounge with more comfortable furniture and 
 
 ## Key Features
 
-- **3 flexible meeting rooms** (10-90 people capacity)
+- **3 flexible meeting rooms** on 2nd floor (18-90 people capacity)
 - **Total capacity:** Up to 150 people across all rooms
 - **Hybrid meeting ready** with modern technology
 - **Divisible spaces** (Sofia's Place can split into 2 rooms)
@@ -122,6 +130,8 @@ In addition, there is our conference lounge with more comfortable furniture and 
 - **Professional support** staff
 - **Central Lund location** near businesses, restaurants, hotels
 - **Modern amenities** in all rooms
+- **Free parking** for conference guests
+- **Breakout area** with pool table for informal discussions
 
 ---
 
@@ -134,6 +144,15 @@ In addition, there is our conference lounge with more comfortable furniture and 
 ---
 
 **Document Created:** 2025-10-26
+**Last Updated:** 2025-01-10
 **Source:** https://placelund.se/konferens/
 **Source Language:** Swedish
 **Documentation Language:** English
+
+## Recent Changes (2025-01-10)
+- Updated Margaretha's Place capacity from "Up to 90 people" to "30-90 participants"
+- Added floor locations (2nd floor for all rooms)
+- Specified technology: Margaretha has Projector, Sofia has Screen, Sankt Hans has Projector or Screen
+- Added "Free parking" to services included
+- Added "Breakout area with pool table" to features
+- Updated catering notes to include dietary options contact information

@@ -1,20 +1,13 @@
-import Image from 'next/image'
+import HeroFade from './HeroFade'
 
 export default function HeroSection() {
   return (
     <section className="relative h-screen w-full">
-      {/* Hero Background */}
+      {/* Hero Background with Fading Images */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero-placeholder.png"
-          alt="Place Lund Hotel"
-          fill
-          className="object-cover"
-          priority
-          quality={90}
-        />
+        <HeroFade />
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/40 z-10" />
       </div>
 
       {/* Hero Content */}

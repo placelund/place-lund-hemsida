@@ -286,6 +286,19 @@ const CardNav: React.FC<CardNavProps> = ({
               </div>
             </div>
           ))}
+
+          {/* Book Now Button for Mobile */}
+          {buttonHref && (
+            <a
+              href={buttonHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden w-full text-center border-0 rounded-[calc(0.75rem-0.2rem)] px-4 py-3 font-medium cursor-pointer transition-colors duration-300"
+              style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+            >
+              {buttonText}
+            </a>
+          )}
         </div>
       </nav>
     </div>
