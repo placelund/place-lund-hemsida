@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { getWeeklyMenuFromSheet } from '@/lib/googleSheets'
+import { getCustomWeeklyMenuFromSheet } from '@/lib/googleSheets'
 
 export const dynamic = 'force-dynamic'
 
@@ -50,7 +50,7 @@ function getCurrentWeek(): number {
 
 export async function GET() {
   try {
-    const spreadsheetId = process.env.GOOGLE_SPREADSHEET_ID
+    const spreadsheetId = process.env.GOOGLE_SPREADSHEET_WEEKLY_MENU_ID || process.env.GOOGLE_SPREADSHEET_ID
 
     if (!spreadsheetId) {
       // Return fallback menu if Google Sheets is not configured
@@ -62,7 +62,7 @@ export async function GET() {
       })
     }
 
-    const menu = await getWeeklyMenuFromSheet(spreadsheetId)
+    const menu = await getCustomWeeklyMenuFromSheet(spreadsheetId)
 
     if (!menu || menu.length === 0) {
       // Return fallback if no data

@@ -8,7 +8,7 @@ export const metadata = {
 export default function FAQPage() {
   return (
     <main className="min-h-screen pt-24">
-      <FAQSection />
+      <FAQSection showCategories={true} />
     </main>
   )
 }

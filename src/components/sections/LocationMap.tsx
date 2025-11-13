@@ -1,6 +1,6 @@
 'use client'
 
-import { APIProvider, Map, AdvancedMarker, Pin, useMap } from '@vis.gl/react-google-maps'
+import { APIProvider, Map, useMap } from '@vis.gl/react-google-maps'
 import { useEffect } from 'react'
 
 // Place Lund Hotel actual location: Margaretavägen 7, 222 40 Lund
@@ -65,13 +65,116 @@ const LOCATIONS = {
   },
 }
 
-// Component to apply map styles using useMap hook
-function MapStyler() {
+// Component to apply map styles and add markers using useMap hook
+function MapWithMarkers() {
   const map = useMap()
 
   useEffect(() => {
     if (!map) return
+
+    // Apply custom styles to hide POI markers
     map.setOptions({ styles: MAP_STYLES })
+
+    // Add custom markers and text overlays using Google Maps API
+    const markers: google.maps.Marker[] = []
+    const overlays: google.maps.OverlayView[] = []
+
+    Object.entries(LOCATIONS).forEach(([key, location]) => {
+      // Create marker without label
+      const marker = new google.maps.Marker({
+        position: location.position,
+        map: map,
+        title: location.title,
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          fillColor: location.color,
+          fillOpacity: 1,
+          strokeColor: '#000000',
+          strokeWeight: 2,
+          scale: 10,
+        },
+      })
+
+      // Create custom text overlay positioned to the left of marker
+      class TextOverlay extends google.maps.OverlayView {
+        position: google.maps.LatLng
+        text: string
+        div: HTMLDivElement | null = null
+
+        constructor(position: google.maps.LatLng, text: string) {
+          super()
+          this.position = position
+          this.text = text
+        }
+
+        onAdd() {
+          this.div = document.createElement('div')
+          this.div.style.position = 'absolute'
+          this.div.style.backgroundColor = 'white'
+          this.div.style.padding = '2px 6px'
+          this.div.style.borderRadius = '3px'
+          this.div.style.border = '1px solid #000'
+          this.div.style.fontSize = '10px'
+          this.div.style.fontWeight = '600'
+          this.div.style.color = '#000000'
+          this.div.style.whiteSpace = 'nowrap'
+          this.div.style.cursor = 'pointer'
+          this.div.textContent = this.text
+
+          const panes = this.getPanes()
+          panes?.overlayLayer.appendChild(this.div)
+        }
+
+        draw() {
+          if (!this.div) return
+
+          const overlayProjection = this.getProjection()
+          const position = overlayProjection.fromLatLngToDivPixel(this.position)
+
+          if (position) {
+            // Position text to the right of the marker
+            this.div.style.left = position.x + 15 + 'px'
+            this.div.style.top = position.y - this.div.offsetHeight / 2 + 'px'
+          }
+        }
+
+        onRemove() {
+          if (this.div) {
+            this.div.parentNode?.removeChild(this.div)
+            this.div = null
+          }
+        }
+      }
+
+      const textOverlay = new TextOverlay(
+        new google.maps.LatLng(location.position.lat, location.position.lng),
+        location.title
+      )
+      textOverlay.setMap(map)
+
+      // Create Google Maps URL
+      const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${location.position.lat},${location.position.lng}`
+
+      // Add click listener to both marker and text overlay
+      marker.addListener('click', () => {
+        window.open(googleMapsUrl, '_blank', 'noopener,noreferrer')
+      })
+
+      if (textOverlay.div) {
+        textOverlay.div.addEventListener('click', () => {
+          window.open(googleMapsUrl, '_blank', 'noopener,noreferrer')
+        })
+      }
+
+      markers.push(marker)
+      overlays.push(textOverlay)
+    })
+
+    // Cleanup markers and overlays on unmount
+    return () => {
+      markers.forEach((marker) => marker.setMap(null))
+      overlays.forEach((overlay) => overlay.setMap(null))
+    }
   }, [map])
 
   return null
@@ -134,46 +237,14 @@ export default function LocationMap() {
             <Map
               defaultCenter={HOTEL_LOCATION}
               defaultZoom={15}
-              mapId="place-lund-hotel-map"
               style={{ width: '100%', height: '100%' }}
               gestureHandling="greedy"
               disableDefaultUI={false}
             >
-              {/* Apply custom map styles to hide default POIs */}
-              <MapStyler />
-
-              {/* Render all location markers */}
-              {Object.entries(LOCATIONS).map(([key, location]) => (
-                <AdvancedMarker
-                  key={key}
-                  position={location.position}
-                  title={location.title}
-                >
-                  <Pin
-                    background={location.color}
-                    borderColor={'#000000'}
-                    glyphColor={'#FFFFFF'}
-                  />
-                </AdvancedMarker>
-              ))}
+              {/* Apply custom map styles and add markers */}
+              <MapWithMarkers />
             </Map>
           </APIProvider>
-        </div>
-
-        {/* Map Legend */}
-        <div className="mt-6 bg-white/80 backdrop-blur-sm rounded-xl p-4 border-2 border-[#004225]/20">
-          <h3 className="text-lg font-semibold text-[#004225] mb-3">Map Legend</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-            {Object.entries(LOCATIONS).map(([key, location]) => (
-              <div key={key} className="flex items-center gap-2">
-                <div
-                  className="w-4 h-4 rounded-full border-2 border-black"
-                  style={{ backgroundColor: location.color }}
-                />
-                <span className="text-sm text-gray-700">{location.title}</span>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Location Info */}

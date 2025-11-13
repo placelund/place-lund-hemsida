@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import LocationMap from '@/components/sections/LocationMap'
 
@@ -13,11 +13,36 @@ export default function ContactPage() {
   })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
+
+  // Load reCAPTCHA script
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://www.google.com/recaptcha/api.js'
+    script.async = true
+    script.defer = true
+    document.body.appendChild(script)
+
+    // Define callback for reCAPTCHA
+    ;(window as any).onRecaptchaSuccess = (token: string) => {
+      setRecaptchaToken(token)
+    }
+
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus('loading')
     setErrorMessage('')
+
+    if (!recaptchaToken) {
+      setStatus('error')
+      setErrorMessage('Please complete the reCAPTCHA verification')
+      return
+    }
 
     try {
       const response = await fetch('/api/contact', {
@@ -25,7 +50,10 @@ export default function ContactPage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken,
+        }),
       })
 
       if (!response.ok) {
@@ -35,9 +63,19 @@ export default function ContactPage() {
 
       setStatus('success')
       setFormData({ email: '', subject: '', message: '', gdprConsent: false })
+      setRecaptchaToken(null)
+      // Reset reCAPTCHA
+      if ((window as any).grecaptcha) {
+        (window as any).grecaptcha.reset()
+      }
     } catch (error) {
       setStatus('error')
       setErrorMessage(error instanceof Error ? error.message : 'Failed to send message. Please try again.')
+      // Reset reCAPTCHA on error
+      if ((window as any).grecaptcha) {
+        (window as any).grecaptcha.reset()
+      }
+      setRecaptchaToken(null)
     }
   }
 
@@ -139,10 +177,19 @@ export default function ContactPage() {
                   </label>
                 </div>
 
+                {/* reCAPTCHA */}
+                <div className="flex justify-center">
+                  <div
+                    className="g-recaptcha"
+                    data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                    data-callback="onRecaptchaSuccess"
+                  ></div>
+                </div>
+
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  disabled={status === 'loading'}
+                  disabled={status === 'loading' || !recaptchaToken}
                   className="w-full bg-[#004225] text-white font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                 >
                   {status === 'loading' ? 'Sending...' : 'Send Message'}

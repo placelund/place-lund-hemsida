@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server'
-import { getFAQsFromSheet } from '@/lib/googleSheets'
+import { getCustomFAQsFromSheet, getFAQAnalyticsFromSheet } from '@/lib/googleSheets'
 
 export const dynamic = 'force-dynamic'
 
 export async function GET() {
   try {
-    const spreadsheetId = process.env.GOOGLE_SPREADSHEET_ID
+    const spreadsheetId = process.env.GOOGLE_SPREADSHEET_FAQ_ID || process.env.GOOGLE_SPREADSHEET_ID
 
     if (!spreadsheetId) {
       // Return fallback FAQs if Google Sheets is not configured
@@ -91,11 +91,42 @@ export async function GET() {
       })
     }
 
-    const faqs = await getFAQsFromSheet(spreadsheetId)
+    // Fetch FAQs from all 4 tabs (Column B = Questions, Column C = Answers, starting from row 3 to skip header)
+    const [generalFAQs, restaurantFAQs, conferenceFAQs, apartmentFAQs] = await Promise.all([
+      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - General'!B3:C"),
+      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - Restaurant'!B3:C"),
+      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - Conference'!B3:C"),
+      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - Apartment'!B3:C"),
+    ])
+
+    // Tag FAQs with their category
+    const taggedGeneralFAQs = generalFAQs.map(faq => ({ ...faq, category: 'general' }))
+    const taggedRestaurantFAQs = restaurantFAQs.map(faq => ({ ...faq, category: 'restaurant' }))
+    const taggedConferenceFAQs = conferenceFAQs.map(faq => ({ ...faq, category: 'conference' }))
+    const taggedApartmentFAQs = apartmentFAQs.map(faq => ({ ...faq, category: 'apartment' }))
+
+    // Combine all FAQs
+    const allFAQs = [...taggedGeneralFAQs, ...taggedRestaurantFAQs, ...taggedConferenceFAQs, ...taggedApartmentFAQs]
+
+    // Get analytics data from Google Sheets and merge with FAQs
+    const analytics = await getFAQAnalyticsFromSheet(spreadsheetId)
+    const faqsWithClicks = allFAQs.map(faq => ({
+      ...faq,
+      clickCount: analytics[faq.question] || 0,
+    }))
+
+    // Sort by click count (descending)
+    const sortedFAQs = faqsWithClicks.sort((a, b) => b.clickCount - a.clickCount)
 
     return NextResponse.json({
-      faqs,
+      faqs: sortedFAQs,
       source: 'google-sheets',
+      categories: {
+        general: sortedFAQs.filter(faq => faq.category === 'general'),
+        restaurant: sortedFAQs.filter(faq => faq.category === 'restaurant'),
+        conference: sortedFAQs.filter(faq => faq.category === 'conference'),
+        apartment: sortedFAQs.filter(faq => faq.category === 'apartment'),
+      },
     })
   } catch (error) {
     console.error('Error fetching FAQs:', error)

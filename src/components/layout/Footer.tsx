@@ -7,7 +7,10 @@ export default function Footer() {
     main: [
       { name: 'Home', href: '/' },
       { name: 'Hotel', href: '/hotel' },
-      { name: 'Studios', href: '/studios' },
+      { name: 'Restaurant', href: '/restaurant' },
+      { name: 'Apartments', href: '/apartments' },
+      { name: 'Conference', href: '/conference' },
+      { name: 'FAQ', href: '/faq' },
       { name: 'Contact', href: '/contact' },
     ],
   }

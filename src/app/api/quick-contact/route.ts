@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json()
-    const { email, subject, message, gdprConsent, recaptchaToken } = body
+    const { name, email, message, recaptchaToken } = body
 
     // Verify reCAPTCHA
     if (!recaptchaToken) {
@@ -115,16 +115,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Validation
-    if (!email || !subject || !message) {
+    if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Missing required fields' },
-        { status: 400 }
-      )
-    }
-
-    if (!gdprConsent) {
-      return NextResponse.json(
-        { error: 'GDPR consent is required' },
         { status: 400 }
       )
     }
@@ -146,10 +139,10 @@ export async function POST(request: NextRequest) {
       if (spreadsheetId) {
         await sheets.spreadsheets.values.append({
           spreadsheetId,
-          range: "'Contact Form Data'!A:E",
+          range: "'Contact Form Data'!A:D",
           valueInputOption: 'RAW',
           requestBody: {
-            values: [[new Date().toISOString(), email, subject, message, gdprConsent ? 'Yes' : 'No']],
+            values: [[new Date().toISOString(), name, email, message]],
           },
         })
       }
@@ -160,21 +153,20 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error: sendError } = await resend.emails.send({
-      from: 'Place Lund Contact Form <onboarding@resend.dev>', // Change this to your verified domain
+      from: 'Place Lund Quick Contact <onboarding@resend.dev>', // Change this to your verified domain
       to: ['info@placelund.se'],
       replyTo: email,
-      subject: `Contact Form: ${subject}`,
+      subject: `Quick Contact: Message from ${name}`,
       html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>From:</strong> ${email}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
+        <h2>New Quick Contact Form Submission</h2>
+        <p><strong>From:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
         <hr />
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
         <hr />
         <p style="color: #666; font-size: 12px;">
-          This message was sent via the Place Lund Hotel contact form.<br>
-          GDPR consent was provided by the sender.
+          This message was sent via the Place Lund Hotel Quick Contact form (footer).
         </p>
       `,
     })
@@ -188,7 +180,7 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     )
   } catch (error) {
-    console.error('Contact form error:', error)
+    console.error('Quick contact form error:', error)
     return NextResponse.json(
       { error: 'Failed to send message. Please try again later.' },
       { status: 500 }

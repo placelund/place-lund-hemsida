@@ -9,6 +9,7 @@ export default function Navigation() {
 
   const navLinks = [
     { name: 'Hotel', href: '/hotel' },
+    { name: 'Restaurant', href: '/restaurant' },
     { name: 'Apartments', href: '/apartments' },
     { name: 'Conference', href: '/conference' },
   ]

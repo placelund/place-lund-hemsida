@@ -9,7 +9,7 @@ export default function Home() {
       <HeroSection />
       <PropertySelection />
       <LocationMap />
-      <FAQSection />
+      <FAQSection showFAQPageButton={true} />
     </main>
   )
 }
