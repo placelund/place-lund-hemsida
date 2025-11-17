@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import LocationMap from '@/components/sections/LocationMap'
+import BookingLink from '@/components/BookingLink'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
+  const [showRecaptcha, setShowRecaptcha] = useState(false)
 
   // Load reCAPTCHA script
   useEffect(() => {
@@ -33,16 +35,30 @@ export default function ContactPage() {
     }
   }, [])
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus('loading')
-    setErrorMessage('')
+  // Auto-submit when reCAPTCHA is completed
+  useEffect(() => {
+    if (recaptchaToken && showRecaptcha) {
+      handleActualSubmit()
+    }
+  }, [recaptchaToken])
 
-    if (!recaptchaToken) {
+  const handleSendClick = (e: React.FormEvent) => {
+    e.preventDefault()
+
+    // Validate form first
+    if (!formData.email || !formData.subject || !formData.message || !formData.gdprConsent) {
       setStatus('error')
-      setErrorMessage('Please complete the reCAPTCHA verification')
+      setErrorMessage('Please fill in all required fields')
       return
     }
+
+    // Show reCAPTCHA
+    setShowRecaptcha(true)
+  }
+
+  const handleActualSubmit = async () => {
+    setStatus('loading')
+    setErrorMessage('')
 
     try {
       const response = await fetch('/api/contact', {
@@ -64,6 +80,7 @@ export default function ContactPage() {
       setStatus('success')
       setFormData({ email: '', subject: '', message: '', gdprConsent: false })
       setRecaptchaToken(null)
+      setShowRecaptcha(false)
       // Reset reCAPTCHA
       if ((window as any).grecaptcha) {
         (window as any).grecaptcha.reset()
@@ -76,6 +93,7 @@ export default function ContactPage() {
         (window as any).grecaptcha.reset()
       }
       setRecaptchaToken(null)
+      setShowRecaptcha(false)
     }
   }
 
@@ -108,7 +126,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div>
               <h2 className="text-3xl font-bold text-[#004225] mb-6">Send Us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSendClick} className="space-y-6">
                 {/* Email Field */}
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -177,22 +195,31 @@ export default function ContactPage() {
                   </label>
                 </div>
 
-                {/* reCAPTCHA */}
-                <div className="flex justify-center">
-                  <div
-                    className="g-recaptcha"
-                    data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-                    data-callback="onRecaptchaSuccess"
-                  ></div>
+                {/* reCAPTCHA - slides in when user clicks send */}
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    showRecaptcha ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="flex flex-col items-center gap-3 py-4">
+                    <p className="text-sm text-gray-600 text-center">
+                      Please verify you're human to send your message
+                    </p>
+                    <div
+                      className="g-recaptcha"
+                      data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                      data-callback="onRecaptchaSuccess"
+                    ></div>
+                  </div>
                 </div>
 
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  disabled={status === 'loading' || !recaptchaToken}
+                  disabled={status === 'loading'}
                   className="w-full bg-[#004225] text-white font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                 >
-                  {status === 'loading' ? 'Sending...' : 'Send Message'}
+                  {status === 'loading' ? 'Sending...' : showRecaptcha ? 'Complete verification above' : 'Send Message'}
                 </button>
 
                 {/* Status Messages */}
@@ -275,9 +302,9 @@ export default function ContactPage() {
                     <Link href="/conference" className="block text-gray-700 hover:text-[#004225] transition-colors">
                       → Conference Rooms
                     </Link>
-                    <Link href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872" target="_blank" rel="noopener noreferrer" className="block text-[#004225] font-semibold hover:text-[#42001D] transition-colors">
+                    <BookingLink className="block text-[#004225] font-semibold hover:text-[#42001D] transition-colors">
                       → Book Now
-                    </Link>
+                    </BookingLink>
                   </div>
                 </div>
               </div>

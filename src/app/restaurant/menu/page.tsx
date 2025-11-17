@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import BookingLink from '@/components/BookingLink'
 
 export const metadata = {
   title: 'Weekly Menu - Place Lund Hotel Restaurant | 2-Week Rotating Menu',
@@ -241,14 +242,9 @@ export default async function WeeklyMenuPage() {
             Book a hotel room to enjoy complimentary breakfast and dinner with our rotating menu.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors"
-            >
+            <BookingLink className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors">
               Book a Room
-            </Link>
+            </BookingLink>
             <Link
               href="/restaurant"
               className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors"

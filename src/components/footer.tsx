@@ -103,6 +103,7 @@ export default function FooterSection() {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
     const [statusMessage, setStatusMessage] = useState('')
     const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
+    const [showRecaptcha, setShowRecaptcha] = useState(false)
 
     // Load reCAPTCHA script
     useEffect(() => {
@@ -122,16 +123,30 @@ export default function FooterSection() {
         }
     }, [])
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault()
-        setStatus('loading')
-        setStatusMessage('')
+    // Auto-submit when reCAPTCHA is completed
+    useEffect(() => {
+        if (recaptchaToken && showRecaptcha) {
+            handleActualSubmit()
+        }
+    }, [recaptchaToken])
 
-        if (!recaptchaToken) {
+    const handleSendClick = (e: React.FormEvent) => {
+        e.preventDefault()
+
+        // Validate form first
+        if (!formData.name || !formData.email || !formData.message) {
             setStatus('error')
-            setStatusMessage('Please complete the reCAPTCHA verification')
+            setStatusMessage('Please fill in all fields')
             return
         }
+
+        // Show reCAPTCHA
+        setShowRecaptcha(true)
+    }
+
+    const handleActualSubmit = async () => {
+        setStatus('loading')
+        setStatusMessage('')
 
         try {
             const response = await fetch('/api/quick-contact', {
@@ -154,6 +169,7 @@ export default function FooterSection() {
             setStatusMessage('Message sent successfully!')
             setFormData({ name: '', email: '', message: '' })
             setRecaptchaToken(null)
+            setShowRecaptcha(false)
             // Reset reCAPTCHA
             if ((window as any).grecaptcha) {
                 (window as any).grecaptcha.reset()
@@ -166,6 +182,7 @@ export default function FooterSection() {
                 (window as any).grecaptcha.reset()
             }
             setRecaptchaToken(null)
+            setShowRecaptcha(false)
         }
     }
 
@@ -192,6 +209,17 @@ export default function FooterSection() {
                                 <h3 className="text-2xl font-bold text-[#004225]">Place Lund Hotel</h3>
                                 <p className="text-sm text-gray-600 mt-1">A place to be</p>
                             </Link>
+                            <div className="mt-4">
+                                <p className="text-xs text-gray-600 mb-2">We would be grateful for your feedback</p>
+                                <a
+                                    href="https://docs.google.com/forms/d/e/1FAIpQLSeGBRI-B_BTjF2_AhjUzOtzeDPkQtDGsLPdlPAK0ABUlUhOgg/viewform?usp=dialog"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-block bg-[#42001D] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#004225] transition-colors"
+                                >
+                                    Survey
+                                </a>
+                            </div>
                         </div>
 
                         {/* Address */}
@@ -214,7 +242,7 @@ export default function FooterSection() {
                         {/* Contact Form */}
                         <div>
                             <p className="font-semibold text-[#004225] mb-3 text-sm">Quick Contact</p>
-                            <form onSubmit={handleSubmit} className="space-y-3">
+                            <form onSubmit={handleSendClick} className="space-y-3">
                                 <input
                                     type="text"
                                     name="name"
@@ -243,21 +271,30 @@ export default function FooterSection() {
                                     className="w-full px-3 py-2 text-sm bg-white border border-[#004225]/20 rounded focus:outline-none focus:border-[#004225] transition-colors resize-none"
                                 ></textarea>
 
-                                {/* reCAPTCHA */}
-                                <div className="flex justify-center">
-                                    <div
-                                        className="g-recaptcha"
-                                        data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-                                        data-callback="onRecaptchaSuccessFooter"
-                                    ></div>
+                                {/* reCAPTCHA - slides in when user clicks send */}
+                                <div
+                                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                                        showRecaptcha ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+                                    }`}
+                                >
+                                    <div className="flex flex-col items-center gap-2 py-3">
+                                        <p className="text-xs text-gray-600 text-center">
+                                            Please verify you're human
+                                        </p>
+                                        <div
+                                            className="g-recaptcha"
+                                            data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                                            data-callback="onRecaptchaSuccessFooter"
+                                        ></div>
+                                    </div>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    disabled={status === 'loading' || !recaptchaToken}
+                                    disabled={status === 'loading'}
                                     className="w-full bg-[#004225] text-white text-sm font-semibold py-2 px-4 rounded hover:bg-[#42001D] transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                                 >
-                                    {status === 'loading' ? 'Sending...' : 'Send Message'}
+                                    {status === 'loading' ? 'Sending...' : showRecaptcha ? 'Verify above' : 'Send Message'}
                                 </button>
 
                                 {/* Status Messages */}

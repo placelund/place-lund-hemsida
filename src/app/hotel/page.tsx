@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import BookingLink from '@/components/BookingLink'
 
 export const metadata = {
   title: 'Hotel Rooms in Lund - Place Lund Hotel | Book Your Stay',
@@ -11,322 +12,269 @@ export default function HotelRoomsPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#FFFAF2]/30 z-10" />
         <Image
-          src="/images/hero/hotel-rooms-hero.jpg"
+          src="/images/conference/Gallery/conference-gallery-place-lund-hotel-17.jpg"
           alt="Comfortable hotel rooms at Place Lund Hotel"
           fill
+          quality={100}
           className="object-cover"
           priority
         />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to Stay
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
+        </div>
+      </section>
+
+      {/* Small Banner Section */}
+      <section className="bg-[#004225] text-white py-8 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-lg text-white/90">
             Comfortable accommodation in a familiar atmosphere. Located in northern Lund near Sankt Hans Backar Park and the city center, with breakfast and dinner included.
           </p>
         </div>
       </section>
 
-      {/* Room Cards Grid */}
-      <section className="py-16 px-4 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Single Room */}
-          <div className="group transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-80 overflow-hidden">
-              <Image
-                src="/images/rooms/single-street/single-street-view-room-place-lund-hotel-1.jpeg"
-                alt="Single room at Place Lund Hotel with street view"
-                fill
-                loading="lazy"
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="bg-[#f5f5f5] p-6 border-2 border-[#004225] flex flex-col">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Single Room</h3>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-600">
-                  <span>140cm bed</span>
-                  <span>•</span>
-                  <span>Street view</span>
-                  <span>•</span>
-                  <span>3rd floor</span>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Link
-                  href="/hotel/single-room"
-                  className="flex-1 text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
-                >
-                  View Details
-                </Link>
-                <Link
-                  href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center border-2 border-[#004225] text-[#004225] py-2 px-4 rounded-md hover:bg-[#FFFAF2] transition-colors"
-                >
-                  Book Now
-                </Link>
-              </div>
-            </div>
+      {/* Single Rooms Section */}
+      <section>
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+          {/* Image */}
+          <div className="relative h-[500px] lg:h-auto">
+            <Image
+              src="/images/rooms/single-street/single-street-view-room-place-lund-hotel-hero.jpeg"
+              alt="Single rooms at Place Lund Hotel"
+              fill
+              quality={100}
+              className="object-cover"
+            />
           </div>
+          {/* Content */}
+          <div className="bg-[#FFFAF2] p-8 lg:p-16 flex flex-col justify-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+              Single Rooms
+            </h2>
+            <p className="text-gray-700 mb-8 leading-relaxed">
+              Perfect for solo travelers, our single rooms offer comfort and tranquility with 140cm beds. Choose from street or garden views, all located on the 3rd floor.
+            </p>
 
-          {/* Single Room Garden View */}
-          <div className="group transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-80 overflow-hidden">
-              <Image
-                src="/images/rooms/single-garden/single-garden-view-room-place-lund-hotel-1.jpeg"
-                alt="Single room with garden view at Place Lund Hotel"
-                fill
-                loading="lazy"
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="bg-[#f5f5f5] p-6 border-2 border-[#004225] flex flex-col">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Single Room Garden View</h3>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-600">
-                  <span>140cm bed</span>
-                  <span>•</span>
-                  <span>Garden view</span>
-                  <span>•</span>
-                  <span>3rd floor</span>
+            {/* Room Options */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-[#004225]/20">
+                <div className="flex-1">
+                  <h4 className="font-semibold text-[#004225]">Street View</h4>
+                  <p className="text-sm text-gray-600">140cm bed • 3rd floor</p>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Link
+                    href="/hotel/single-room"
+                    className="text-[#42001D] hover:text-[#004225] font-semibold text-sm"
+                  >
+                    Details
+                  </Link>
+                  <BookingLink
+                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=220b8c4e-6005-4930-b612-1eacb0298c4d"
+                    className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
+                  >
+                    Book Street View
+                  </BookingLink>
                 </div>
               </div>
-              <div className="flex gap-3">
-                <Link
-                  href="/hotel/single-room-garden"
-                  className="flex-1 text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
-                >
-                  View Details
-                </Link>
-                <Link
-                  href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center border-2 border-[#004225] text-[#004225] py-2 px-4 rounded-md hover:bg-[#FFFAF2] transition-colors"
-                >
-                  Book Now
-                </Link>
+              <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-[#004225]/20">
+                <div className="flex-1">
+                  <h4 className="font-semibold text-[#004225]">Garden View</h4>
+                  <p className="text-sm text-gray-600">140cm bed • 3rd floor</p>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Link
+                    href="/hotel/single-room-garden"
+                    className="text-[#42001D] hover:text-[#004225] font-semibold text-sm"
+                  >
+                    Details
+                  </Link>
+                  <BookingLink
+                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=4ddefa37-cfc3-4e9c-ac70-b47df180759d"
+                    className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
+                  >
+                    Book Garden View
+                  </BookingLink>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Twin Room */}
-          <div className="group transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-80 overflow-hidden">
-              <Image
-                src="/images/rooms/twin-street/twin-street-view-room-place-lund-hotel-1.jpg"
-                alt="Twin room at Place Lund Hotel with two beds"
-                fill
-                loading="lazy"
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="bg-[#f5f5f5] p-6 border-2 border-[#004225] flex flex-col">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Twin Room</h3>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-600">
-                  <span>2x 90-100cm</span>
-                  <span>•</span>
-                  <span>Street view</span>
-                  <span>•</span>
-                  <span>2nd floor</span>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Link
-                  href="/hotel/twin-room"
-                  className="flex-1 text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
-                >
-                  View Details
-                </Link>
-                <Link
-                  href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center border-2 border-[#004225] text-[#004225] py-2 px-4 rounded-md hover:bg-[#FFFAF2] transition-colors"
-                >
-                  Book Now
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Twin Rooms Section */}
+      <section>
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+          {/* Content */}
+          <div className="bg-[#FFFAF2] p-8 lg:p-16 flex flex-col justify-center order-2 lg:order-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+              Twin Rooms
+            </h2>
+            <p className="text-gray-700 mb-8 leading-relaxed">
+              Ideal for friends or colleagues, our twin rooms feature two separate beds (90-100cm each). Available with street or garden views on the 2nd floor.
+            </p>
 
-          {/* Twin Room Garden View */}
-          <div className="group transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-80 overflow-hidden">
-              <Image
-                src="/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-1.jpg"
-                alt="Twin room with garden view at Place Lund Hotel"
-                fill
-                loading="lazy"
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="bg-[#f5f5f5] p-6 border-2 border-[#004225] flex flex-col">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Twin Room Garden View</h3>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-600">
-                  <span>2x 90-100cm</span>
-                  <span>•</span>
-                  <span>Garden view</span>
-                  <span>•</span>
-                  <span>2nd floor</span>
+            {/* Room Options */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-[#004225]/20">
+                <div className="flex-1">
+                  <h4 className="font-semibold text-[#004225]">Street View</h4>
+                  <p className="text-sm text-gray-600">2x 90-100cm beds • 2nd floor</p>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Link
+                    href="/hotel/twin-room"
+                    className="text-[#42001D] hover:text-[#004225] font-semibold text-sm"
+                  >
+                    Details
+                  </Link>
+                  <BookingLink
+                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=01529162-9d2b-4446-ad81-d88724b9086d"
+                    className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
+                  >
+                    Book Street View
+                  </BookingLink>
                 </div>
               </div>
-              <div className="flex gap-3">
-                <Link
-                  href="/hotel/twin-room-garden"
-                  className="flex-1 text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
-                >
-                  View Details
-                </Link>
-                <Link
-                  href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center border-2 border-[#004225] text-[#004225] py-2 px-4 rounded-md hover:bg-[#FFFAF2] transition-colors"
-                >
-                  Book Now
-                </Link>
+              <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-[#004225]/20">
+                <div className="flex-1">
+                  <h4 className="font-semibold text-[#004225]">Garden View</h4>
+                  <p className="text-sm text-gray-600">2x 90-100cm beds • 2nd floor</p>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Link
+                    href="/hotel/twin-room-garden"
+                    className="text-[#42001D] hover:text-[#004225] font-semibold text-sm"
+                  >
+                    Details
+                  </Link>
+                  <BookingLink
+                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=f7174fc8-7dbe-49a1-9772-e743b3a3365f"
+                    className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
+                  >
+                    Book Garden View
+                  </BookingLink>
+                </div>
               </div>
             </div>
           </div>
+          {/* Image */}
+          <div className="relative h-[500px] lg:h-auto order-1 lg:order-2">
+            <Image
+              src="/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-1.jpg"
+              alt="Twin rooms at Place Lund Hotel"
+              fill
+              quality={100}
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
 
-          {/* Economy Double Room */}
-          <div className="group transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-80 overflow-hidden">
-              <Image
-                src="/images/rooms/economy-double/economy-double-room-place-lund-hotel-1.jpeg"
-                alt="Economy double room at Place Lund Hotel"
-                fill
-                loading="lazy"
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="bg-[#f5f5f5] p-6 border-2 border-[#004225] flex flex-col">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Economy Double Room</h3>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-600">
-                  <span>140cm bed</span>
-                  <span>•</span>
-                  <span>Street view</span>
-                  <span>•</span>
-                  <span>1st floor</span>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Link
-                  href="/hotel/economy-double"
-                  className="flex-1 text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
-                >
-                  View Details
-                </Link>
-                <Link
-                  href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center border-2 border-[#004225] text-[#004225] py-2 px-4 rounded-md hover:bg-[#FFFAF2] transition-colors"
-                >
-                  Book Now
-                </Link>
-              </div>
-            </div>
+      {/* Double Rooms Section */}
+      <section>
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
+          {/* Image */}
+          <div className="relative h-[500px] lg:h-auto">
+            <Image
+              src="/images/rooms/double-deluxe/hero.jpeg"
+              alt="Double rooms at Place Lund Hotel"
+              fill
+              quality={100}
+              className="object-cover"
+            />
           </div>
+          {/* Content */}
+          <div className="bg-[#FFFAF2] p-8 lg:p-16 flex flex-col justify-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+              Double Rooms
+            </h2>
+            <p className="text-gray-700 mb-8 leading-relaxed">
+              Perfect for couples, our double rooms range from cozy economy options to luxurious deluxe suites. Choose from various layouts and amenities to suit your needs.
+            </p>
 
-          {/* Economy Double Room with Balcony */}
-          <div className="group transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-80 overflow-hidden">
-              <Image
-                src="/images/rooms/economy-double-balcony/economy-double-balcony-room-place-lund-hotel-1.jpeg"
-                alt="Economy double room with balcony at Place Lund Hotel"
-                fill
-                loading="lazy"
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="bg-[#f5f5f5] p-6 border-2 border-[#004225] flex flex-col">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Economy Double with Balcony</h3>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-600">
-                  <span>2x 90-100cm</span>
-                  <span>•</span>
-                  <span>Private patio</span>
-                  <span>•</span>
-                  <span>1st floor</span>
+            {/* Room Options */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-[#004225]/20">
+                <div className="flex-1">
+                  <h4 className="font-semibold text-[#004225]">Economy Double</h4>
+                  <p className="text-sm text-gray-600">140cm bed • Street view • 1st floor</p>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Link
+                    href="/hotel/economy-double"
+                    className="text-[#42001D] hover:text-[#004225] font-semibold text-sm"
+                  >
+                    Details
+                  </Link>
+                  <BookingLink
+                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=4b7a450f-a544-4afb-adc1-d474537ffceb"
+                    className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
+                  >
+                    Book Economy
+                  </BookingLink>
                 </div>
               </div>
-              <div className="flex gap-3">
-                <Link
-                  href="/hotel/economy-double-balcony"
-                  className="flex-1 text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
-                >
-                  View Details
-                </Link>
-                <Link
-                  href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center border-2 border-[#004225] text-[#004225] py-2 px-4 rounded-md hover:bg-[#FFFAF2] transition-colors"
-                >
-                  Book Now
-                </Link>
+              <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-[#004225]/20">
+                <div className="flex-1">
+                  <h4 className="font-semibold text-[#004225]">Economy with Balcony</h4>
+                  <p className="text-sm text-gray-600">2x 90-100cm beds • Private patio • 1st floor</p>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Link
+                    href="/hotel/economy-double-balcony"
+                    className="text-[#42001D] hover:text-[#004225] font-semibold text-sm"
+                  >
+                    Details
+                  </Link>
+                  <BookingLink
+                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=d6bed312-22ac-4c0a-9510-dc86e13829f8"
+                    className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
+                  >
+                    Book with Balcony
+                  </BookingLink>
+                </div>
+              </div>
+              <div className="flex items-center justify-between p-4 bg-white rounded-lg border border-[#004225]/20">
+                <div className="flex-1">
+                  <h4 className="font-semibold text-[#004225]">Double Deluxe</h4>
+                  <p className="text-sm text-gray-600">140cm bed • Separate living room • 1st-3rd floor</p>
+                </div>
+                <div className="flex gap-3 items-center">
+                  <Link
+                    href="/hotel/double-deluxe"
+                    className="text-[#42001D] hover:text-[#004225] font-semibold text-sm"
+                  >
+                    Details
+                  </Link>
+                  <BookingLink
+                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=e7f264b4-5d7d-4174-9b8c-d997a999a315"
+                    className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
+                  >
+                    Book Deluxe
+                  </BookingLink>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Double Deluxe */}
-          <div className="group transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-80 overflow-hidden">
-              <Image
-                src="/images/rooms/double-deluxe/double-deluxe-room-place-lund-hotel-1.jpeg"
-                alt="Double deluxe room at Place Lund Hotel with separate living room"
-                fill
-                loading="lazy"
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="bg-[#f5f5f5] p-6 border-2 border-[#004225] flex flex-col">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Double Deluxe</h3>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-600">
-                  <span>140cm bed</span>
-                  <span>•</span>
-                  <span>Living room</span>
-                  <span>•</span>
-                  <span>1st-3rd floor</span>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Link
-                  href="/hotel/double-deluxe"
-                  className="flex-1 text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
-                >
-                  View Details
-                </Link>
-                <Link
-                  href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center border-2 border-[#004225] text-[#004225] py-2 px-4 rounded-md hover:bg-[#FFFAF2] transition-colors"
-                >
-                  Book Now
-                </Link>
-              </div>
-            </div>
-          </div>
+      {/* Green Banner for All Rooms Include */}
+      <section className="bg-[#004225] text-white py-8 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-0">
+            All Rooms Include
+          </h2>
         </div>
       </section>
 
       {/* Included Amenities Section */}
       <section className="bg-[#FFFAF2] py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] text-center mb-12">
-            All Rooms Include
-          </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <div className="text-center">
               <p className="text-gray-800 font-semibold">Desk & Work Area</p>
@@ -412,9 +360,10 @@ export default function HotelRoomsPage() {
             </div>
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/Gallery/place-lund-hotel-gallery-2.jpeg"
+                src="/images/resturaunt/resturaunt-hero.jpeg"
                 alt="Breakfast buffet at Place Lund Hotel"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -433,14 +382,9 @@ export default function HotelRoomsPage() {
             Experience comfort and hospitality at Place Lund Hotel. Breakfast and dinner included with every booking.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors"
-            >
+            <BookingLink className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors">
               Book Your Room Now
-            </Link>
+            </BookingLink>
             <Link
               href="/contact"
               className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors"

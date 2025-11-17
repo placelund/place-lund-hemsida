@@ -9,6 +9,7 @@ export default function Navigation() {
 
   const navLinks = [
     { name: 'Hotel', href: '/hotel' },
+    { name: 'Studios', href: '/hotel-studio' },
     { name: 'Restaurant', href: '/restaurant' },
     { name: 'Apartments', href: '/apartments' },
     { name: 'Conference', href: '/conference' },
@@ -20,6 +21,7 @@ export default function Navigation() {
     { name: 'Gallery', href: '/gallery' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Menu', href: '/restaurant/menu' },
   ]
 
   return (
@@ -108,7 +110,8 @@ export default function Navigation() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-brand-secondary/30">
-            <div className="flex flex-col space-y-4">
+            {/* Main Nav Links in Two Columns */}
+            <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -119,16 +122,18 @@ export default function Navigation() {
                   {link.name}
                 </Link>
               ))}
+            </div>
 
-              {/* More Links in Mobile */}
-              <div className="border-t border-brand-secondary/30 pt-4">
-                <p className="text-xs text-gray-500 uppercase tracking-wide px-2 mb-2">More</p>
+            {/* More Links in Two Columns */}
+            <div className="border-t border-brand-secondary/30 pt-4">
+              <p className="text-xs text-gray-500 uppercase tracking-wide px-2 mb-3">More</p>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                 {moreLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="text-brand-main hover:text-brand-secondary transition-colors font-medium px-2 py-1 block"
+                    className="text-brand-main hover:text-brand-secondary transition-colors font-medium px-2 py-1"
                   >
                     {link.name}
                   </Link>

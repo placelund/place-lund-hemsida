@@ -247,39 +247,39 @@ const CardNav: React.FC<CardNavProps> = ({
         </div>
 
         <div
-          className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${
+          className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 grid grid-cols-2 gap-2 z-[1] ${
             isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
-          } md:flex-row md:items-end md:gap-[12px]`}
+          } md:flex md:flex-row md:items-end md:gap-[12px]`}
           aria-hidden={!isExpanded}
         >
           {(items || []).slice(0, 4).map((item, idx) => (
             <div
               key={`${item.label}-${idx}`}
-              className="nav-card select-none relative flex flex-col gap-[10px] p-[12px_16px] rounded-[calc(0.75rem-0.2rem)] min-w-0 flex-[1_1_auto] h-auto min-h-[60px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
+              className="nav-card select-none relative flex flex-col gap-[6px] p-[10px_12px] rounded-[calc(0.75rem-0.2rem)] min-w-0 flex-[1_1_auto] h-auto min-h-[60px] md:h-full md:min-h-0 md:flex-[1_1_0%] md:p-[12px_16px] md:gap-[10px]"
               ref={setCardRef(idx)}
               style={{ backgroundColor: item.bgColor, color: item.textColor }}
             >
               {item.href ? (
                 <a
                   href={item.href}
-                  className="nav-card-label font-normal tracking-[-0.5px] text-[18px] md:text-[22px] hover:opacity-75 transition-opacity cursor-pointer"
+                  className="nav-card-label font-normal tracking-[-0.5px] text-[16px] md:text-[22px] hover:opacity-75 transition-opacity cursor-pointer"
                 >
                   {item.label}
                 </a>
               ) : (
-                <div className="nav-card-label font-normal tracking-[-0.5px] text-[18px] md:text-[22px]">
+                <div className="nav-card-label font-normal tracking-[-0.5px] text-[16px] md:text-[22px]">
                   {item.label}
                 </div>
               )}
-              <div className="nav-card-links mt-auto flex flex-col gap-1">
+              <div className="nav-card-links mt-auto flex flex-col gap-0.5">
                 {item.links?.map((lnk, i) => (
                   <a
                     key={`${lnk.label}-${i}`}
-                    className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[16px]"
+                    className="nav-card-link inline-flex items-center gap-[4px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[13px] md:text-[16px]"
                     href={lnk.href}
                     aria-label={lnk.ariaLabel}
                   >
-                    <GoArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
+                    <GoArrowUpRight className="nav-card-link-icon shrink-0 text-[14px]" aria-hidden="true" />
                     {lnk.label}
                   </a>
                 ))}
@@ -293,7 +293,7 @@ const CardNav: React.FC<CardNavProps> = ({
               href={buttonHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="md:hidden w-full text-center border-0 rounded-[calc(0.75rem-0.2rem)] px-4 py-3 font-medium cursor-pointer transition-colors duration-300"
+              className="md:hidden col-span-2 w-full text-center border-0 rounded-[calc(0.75rem-0.2rem)] px-4 py-3 font-medium cursor-pointer transition-colors duration-300"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             >
               {buttonText}

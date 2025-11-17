@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getGalleryImages } from '@/utils/getImages'
+import BookingLink from '@/components/BookingLink'
 
 export const metadata = {
   title: 'Photo Gallery - Place Lund Hotel | Lund, Sweden',
@@ -13,7 +15,7 @@ export default function GalleryPage() {
   return (
     <main className="min-h-screen">
       {/* Header Section */}
-      <section className="py-16 px-4 bg-[#FFFAF2]">
+      <section className="py-16 px-4 bg-[#FFFAF2] pt-32">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
             A Place to Imagine
@@ -45,11 +47,13 @@ export default function GalleryPage() {
                 key={index}
                 className="relative aspect-[4/3] overflow-hidden rounded-lg group cursor-pointer shadow-md hover:shadow-xl transition-shadow"
               >
-                <img
+                <Image
                   src={image}
                   alt={`Place Lund Hotel - Gallery Image ${index + 1}`}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  fill
+                  quality={100}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
             ))}
@@ -138,14 +142,9 @@ export default function GalleryPage() {
             From nightly hotel stays to monthly apartment rentals, we have the perfect accommodation for your visit to Lund, Sweden.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors"
-            >
+            <BookingLink className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors">
               Book Hotel Room
-            </a>
+            </BookingLink>
             <Link
               href="/contact"
               className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors"

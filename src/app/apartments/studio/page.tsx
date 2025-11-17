@@ -14,11 +14,11 @@ export default function StudioApartmentPage() {
     <main className="min-h-screen">
       {/* Hero Section - "A Place to Stay" */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#FFFAF2]/30 z-10" />
         <Image
           src="/images/apartments/apartment-lund-sweden-place-hotel-10.jpeg"
           alt="Studio apartment at Place Lund Hotel"
           fill
+          quality={100}
           className="object-cover"
           priority
         />
@@ -139,6 +139,7 @@ export default function StudioApartmentPage() {
                   src="/images/apartments/apartment-lund-sweden-place-hotel-11.jpeg"
                   alt="Studio apartment interior"
                   fill
+                  quality={100}
                   loading="lazy"
                   className="object-cover"
                 />
@@ -150,6 +151,7 @@ export default function StudioApartmentPage() {
                       src={`/images/apartments/apartment-lund-sweden-place-hotel-${num}.jpeg`}
                       alt={`Studio apartment view ${num}`}
                       fill
+                      quality={100}
                       loading="lazy"
                       className="object-cover"
                     />

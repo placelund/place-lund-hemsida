@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import BookingLink from '@/components/BookingLink'
 
 export const metadata = {
   title: 'About Place Lund Hotel - Our Story & Location in Lund, Sweden',
@@ -9,32 +10,15 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#FFFAF2]/30 z-10" />
-        <Image
-          src="/images/hero/hotel-rooms-hero.jpg"
-          alt="About Place Lund Hotel"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+      {/* About Section */}
+      <section className="py-16 px-4 bg-[#FFFAF2] pt-32">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#004225] mb-4 text-center">
             A Place to Discover
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8 text-center">
             Your home away from home in Lund, Sweden.
           </p>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-16 px-4 bg-[#FFFAF2]">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-8 text-center">
-            Welcome to Place Lund
-          </h2>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 mb-6 leading-relaxed text-lg">
@@ -230,14 +214,9 @@ export default function AboutPage() {
             Whether you're planning a short visit or an extended stay, we have the perfect accommodation for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors"
-            >
+            <BookingLink className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors">
               Book Hotel Room
-            </a>
+            </BookingLink>
             <Link
               href="/contact"
               className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors"

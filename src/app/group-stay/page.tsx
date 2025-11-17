@@ -10,34 +10,14 @@ export const metadata = {
 export default function GroupStayPage() {
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#FFFAF2]/30 z-10" />
-        <Image
-          src="/images/hero/hotel-rooms-hero.jpg"
-          alt="Group accommodation at Place Lund Hotel"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+      {/* Header Section */}
+      <section className="py-16 px-4 bg-[#FFFAF2] pt-32">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-6">
             A Place to Gather
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
-            Perfect accommodation and facilities for sports teams, school groups, conferences, and corporate events in Lund.
-          </p>
-        </div>
-      </section>
-
-      {/* Introduction */}
-      <section className="py-16 px-4 bg-[#FFFAF2]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
-            Welcome Groups to Place Lund
-          </h2>
-          <p className="text-gray-700 leading-relaxed text-lg mb-8">
-            Place Lund Hotel specializes in group accommodation and events, offering flexible solutions for sports teams, school groups, conferences, and corporate gatherings. With a range of rooms, apartments, and conference facilities, we can accommodate groups of all sizes.
+          <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-8 leading-relaxed">
+            Perfect accommodation and facilities for sports teams, school groups, conferences, and corporate events in Lund. Place Lund Hotel specializes in group accommodation and events, offering flexible solutions for sports teams, school groups, conferences, and corporate gatherings. With a range of rooms, apartments, and conference facilities, we can accommodate groups of all sizes.
           </p>
         </div>
       </section>

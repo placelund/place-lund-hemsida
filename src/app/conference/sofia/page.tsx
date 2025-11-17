@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { getRoomImages } from '@/utils/getImages'
 
 export const metadata = {
   title: 'Sofia Conference Room - Place Lund Hotel | Professional Meeting Space',
@@ -7,15 +8,17 @@ export const metadata = {
 }
 
 export default function SofiaConferencePage() {
+  const { heroImage, galleryImages } = getRoomImages('conference/Sofia')
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#FFFAF2]/30 z-10" />
         <Image
-          src="/images/conference/Sofia/sofia-conference-room-place-lund-hotel-1.jpeg"
+          src={heroImage}
           alt="Sofia conference room at Place Lund Hotel"
           fill
+          quality={100}
           className="object-cover"
           priority
         />
@@ -144,60 +147,18 @@ export default function SofiaConferencePage() {
 
             {/* Room Gallery */}
             <div className="h-[800px] overflow-y-auto space-y-4 pr-2">
-              {/* Image 1 */}
-              <div className="relative h-[400px] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/conference/Sofia/sofia-conference-room-place-lund-hotel-1.jpeg"
-                  alt="Sofia conference room"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              {/* Image 2 */}
-              <div className="relative h-[400px] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/conference/Sofia/conference-room-place-lund-hotel-1.jpeg"
-                  alt="Sofia conference room setup"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              {/* Image 3 */}
-              <div className="relative h-[400px] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/conference/Sofia/conference-room-place-lund-hotel-2.jpeg"
-                  alt="Sofia conference room view"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              {/* Image 4 */}
-              <div className="relative h-[400px] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/conference/Sofia/conference-room-place-lund-hotel-3.jpeg"
-                  alt="Sofia conference room presentation area"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              {/* Image 5 */}
-              <div className="relative h-[400px] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/conference/Sofia/conference-room-place-lund-hotel-4.jpeg"
-                  alt="Sofia conference room facilities"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              {/* Image 6 */}
-              <div className="relative h-[400px] overflow-hidden rounded-lg">
-                <Image
-                  src="/images/conference/Sofia/conference-room-place-lund-hotel-5.jpeg"
-                  alt="Sofia conference room details"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              {galleryImages.map((image, index) => (
+                <div key={index} className="relative h-[400px] overflow-hidden rounded-lg">
+                  <Image
+                    src={image}
+                    alt={`Sofia conference room view ${index + 1}`}
+                    fill
+                    quality={100}
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

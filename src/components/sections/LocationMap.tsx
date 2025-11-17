@@ -185,16 +185,27 @@ export default function LocationMap() {
 
   if (!apiKey || apiKey === 'YOUR_NEW_API_KEY_HERE' || apiKey === 'YOUR_API_KEY_HERE') {
     return (
-      <section className="py-20 px-4 bg-[#FFFAF2]">
-        <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#004225] mb-4">
-              Our Location
-            </h2>
-            <p className="text-xl text-gray-700">
-              Find us in northern Lund
-            </p>
+      <section className="bg-[#FFFAF2] -mt-0">
+        {/* Location Banner */}
+        <div className="bg-[#004225] py-3 px-4 flex items-center justify-center">
+          <div className="flex items-center justify-center w-full">
+            <svg
+              className="select-none w-full overflow-visible block aspect-[100/6] text-[6rem] font-bold uppercase leading-none"
+              viewBox="0 0 1440 60"
+            >
+              <text
+                x="50%"
+                y="50"
+                textAnchor="middle"
+                className="fill-[#FFFAF2] text-[2.5rem] md:text-[3.5rem] font-bold uppercase"
+              >
+                Our Location
+              </text>
+            </svg>
           </div>
+        </div>
+
+        <div className="container mx-auto py-20 px-4">
           <div className="bg-[#FFFAF2] rounded-2xl p-8 text-center">
             <p className="text-gray-700">
               Google Maps API key not configured. Add your API key to .env.local to display the map.
@@ -221,17 +232,27 @@ export default function LocationMap() {
   }
 
   return (
-    <section className="py-20 px-4 bg-[#FFFAF2]">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#004225] mb-4">
-            Our Location
-          </h2>
-          <p className="text-xl text-gray-700">
-            Find us in northern Lund
-          </p>
+    <section className="bg-[#FFFAF2] -mt-0">
+      {/* Location Banner */}
+      <div className="bg-[#004225] py-3 px-4 flex items-center justify-center">
+        <div className="flex items-center justify-center w-full">
+          <svg
+            className="select-none w-full overflow-visible block aspect-[100/6] text-[6rem] font-bold uppercase leading-none"
+            viewBox="0 0 1440 60"
+          >
+            <text
+              x="50%"
+              y="50"
+              textAnchor="middle"
+              className="fill-[#FFFAF2] text-[2.5rem] md:text-[3.5rem] font-bold uppercase"
+            >
+              Our Location
+            </text>
+          </svg>
         </div>
+      </div>
 
+      <div className="container mx-auto py-20 px-4">
         <div className="rounded-2xl overflow-hidden shadow-xl" style={{ height: '500px' }}>
           <APIProvider apiKey={apiKey}>
             <Map

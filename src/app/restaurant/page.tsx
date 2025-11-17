@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import BookingLink from '@/components/BookingLink'
 
 export const metadata = {
   title: 'Restaurant & Bar in Lund - Place Lund Hotel | A Place to Eat',
@@ -88,36 +89,88 @@ export default async function RestaurantPage() {
     <main className="min-h-screen">
       {/* Hero Section - "A Place to Eat" */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#FFFAF2]/40 z-10" />
         <Image
-          src="/images/Gallery/place-lund-hotel-gallery-1.jpeg"
+          src="/images/resturaunt/resturaunt-hero.jpeg"
           alt="Restaurant and dining at Place Lund Hotel"
           fill
+          quality={100}
           className="object-cover"
           priority
         />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to Eat
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
+        </div>
+      </section>
+
+      {/* Green Banner Section */}
+      <section className="bg-[#004225] text-white py-8 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-lg text-white/90">
             Enjoy breakfast buffet service for hotel guests and our welcoming bar open to all visitors daily.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-[#004225] text-[#E3DAC9] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors"
-            >
-              Contact Us
-            </Link>
-            <Link
-              href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-transparent text-[#004225] border-2 border-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/20 transition-colors"
-            >
-              Book a Room
-            </Link>
+        </div>
+      </section>
+
+      {/* Restaurant Images Section */}
+      <section className="py-16 px-4 bg-[#FFFAF2]">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+            Restaurant Gallery
+          </h2>
+          <p className="text-lg text-gray-700">
+            Take a look at our restaurant, bar, and dining spaces.
+          </p>
+        </div>
+
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="relative h-[300px] overflow-hidden rounded-lg">
+              <Image
+                src="/images/resturaunt/resturaunt-1.jpeg"
+                alt="Restaurant dining area"
+                fill
+                quality={100}
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-[300px] overflow-hidden rounded-lg">
+              <Image
+                src="/images/resturaunt/resturaunt-2.jpeg"
+                alt="Restaurant bar area"
+                fill
+                quality={100}
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-[300px] overflow-hidden rounded-lg">
+              <Image
+                src="/images/resturaunt/resturaunt-3.jpeg"
+                alt="Restaurant interior"
+                fill
+                quality={100}
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-[300px] overflow-hidden rounded-lg">
+              <Image
+                src="/images/resturaunt/resturaunt-4.jpeg"
+                alt="Restaurant seating area"
+                fill
+                quality={100}
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-[300px] overflow-hidden rounded-lg">
+              <Image
+                src="/images/resturaunt/resturaunt-hero.jpeg"
+                alt="Restaurant overview"
+                fill
+                quality={100}
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -171,9 +224,10 @@ export default async function RestaurantPage() {
             <div className="space-y-4">
               <div className="relative h-[400px] overflow-hidden rounded-lg">
                 <Image
-                  src="/images/Gallery/place-lund-hotel-gallery-2.jpeg"
+                  src="/images/resturaunt/resturaunt-1.jpeg"
                   alt="Breakfast buffet at Place Lund Hotel"
                   fill
+                  quality={100}
                   loading="lazy"
                   className="object-cover"
                 />
@@ -457,14 +511,9 @@ export default async function RestaurantPage() {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors"
-            >
+            <BookingLink className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors">
               Book a Room
-            </Link>
+            </BookingLink>
             <Link
               href="/contact"
               className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors"

@@ -39,6 +39,7 @@ export default function FAQSection({ showFAQPageButton = false, showCategories =
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [formMessage, setFormMessage] = useState('')
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
+  const [showRecaptcha, setShowRecaptcha] = useState(false)
 
   useEffect(() => {
     async function fetchFAQs() {
@@ -78,6 +79,13 @@ export default function FAQSection({ showFAQPageButton = false, showCategories =
     }
   }, [showCategories])
 
+  // Auto-submit when reCAPTCHA is completed
+  useEffect(() => {
+    if (recaptchaToken && showRecaptcha) {
+      handleActualSubmit()
+    }
+  }, [recaptchaToken])
+
   const trackFAQClick = async (question: string) => {
     try {
       await fetch('/api/faq-analytics', {
@@ -90,16 +98,23 @@ export default function FAQSection({ showFAQPageButton = false, showCategories =
     }
   }
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setFormStatus('submitting')
-    setFormMessage('')
 
-    if (!recaptchaToken) {
+    // Validate form first
+    if (!formData.name || !formData.email || !formData.question) {
       setFormStatus('error')
-      setFormMessage('Please complete the reCAPTCHA verification')
+      setFormMessage('Please fill in all required fields')
       return
     }
+
+    // Show reCAPTCHA
+    setShowRecaptcha(true)
+  }
+
+  const handleActualSubmit = async () => {
+    setFormStatus('submitting')
+    setFormMessage('')
 
     try {
       const response = await fetch('/api/faq-request', {
@@ -118,6 +133,7 @@ export default function FAQSection({ showFAQPageButton = false, showCategories =
         setFormMessage(data.message || 'Your question has been submitted successfully!')
         setFormData({ name: '', email: '', question: '' })
         setRecaptchaToken(null)
+        setShowRecaptcha(false)
         // Reset reCAPTCHA
         if ((window as any).grecaptcha) {
           (window as any).grecaptcha.reset()
@@ -130,6 +146,7 @@ export default function FAQSection({ showFAQPageButton = false, showCategories =
           (window as any).grecaptcha.reset()
         }
         setRecaptchaToken(null)
+        setShowRecaptcha(false)
       }
     } catch (error) {
       setFormStatus('error')
@@ -140,6 +157,7 @@ export default function FAQSection({ showFAQPageButton = false, showCategories =
         (window as any).grecaptcha.reset()
       }
       setRecaptchaToken(null)
+      setShowRecaptcha(false)
     }
   }
 
@@ -285,21 +303,30 @@ export default function FAQSection({ showFAQPageButton = false, showCategories =
                   ></textarea>
                 </div>
 
-                {/* reCAPTCHA */}
-                <div className="flex justify-center">
-                  <div
-                    className="g-recaptcha"
-                    data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-                    data-callback="onRecaptchaSuccess"
-                  ></div>
+                {/* reCAPTCHA - slides in when user clicks submit */}
+                <div
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                    showRecaptcha ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="flex flex-col items-center gap-3 py-4">
+                    <p className="text-sm text-gray-600 text-center">
+                      Please verify you're human to submit your question
+                    </p>
+                    <div
+                      className="g-recaptcha"
+                      data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                      data-callback="onRecaptchaSuccess"
+                    ></div>
+                  </div>
                 </div>
 
                 <button
                   type="submit"
-                  disabled={formStatus === 'submitting' || !recaptchaToken}
+                  disabled={formStatus === 'submitting'}
                   className="w-full bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {formStatus === 'submitting' ? 'Submitting...' : 'Submit Question'}
+                  {formStatus === 'submitting' ? 'Submitting...' : showRecaptcha ? 'Complete verification above' : 'Submit Question'}
                 </button>
               </form>
             </div>

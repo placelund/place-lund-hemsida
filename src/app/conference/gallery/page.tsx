@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata = {
   title: 'Conference Gallery - Place Lund Hotel | Meeting Room Photos',
@@ -57,11 +58,13 @@ export default function ConferenceGalleryPage() {
 
               return (
                 <div key={num} className="relative h-64 overflow-hidden rounded-lg group cursor-pointer">
-                  <img
+                  <Image
                     src={`/images/conference/Gallery/conference-gallery-place-lund-hotel-${num}.${extension}`}
                     alt={`Conference facility ${num} at Place Lund Hotel`}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    fill
+                    quality={100}
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                 </div>

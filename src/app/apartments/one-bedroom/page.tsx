@@ -14,11 +14,11 @@ export default function OneBedroomApartmentPage() {
     <main className="min-h-screen">
       {/* Hero Section - "A Place to Live" */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#FFFAF2]/30 z-10" />
         <Image
           src="/images/apartments/apartment-lund-sweden-place-hotel-1.jpg"
           alt="One bedroom apartment at Place Lund Hotel"
           fill
+          quality={100}
           className="object-cover"
           priority
         />
@@ -131,6 +131,7 @@ export default function OneBedroomApartmentPage() {
                   src="/images/apartments/apartment-lund-sweden-place-hotel-2.jpg"
                   alt="One bedroom apartment living area"
                   fill
+                  quality={100}
                   loading="lazy"
                   className="object-cover"
                 />
@@ -142,6 +143,7 @@ export default function OneBedroomApartmentPage() {
                       src={`/images/apartments/apartment-lund-sweden-place-hotel-${num}.${num <= 5 ? 'jpg' : 'jpeg'}`}
                       alt={`One bedroom apartment view ${num}`}
                       fill
+                      quality={100}
                       loading="lazy"
                       className="object-cover"
                     />

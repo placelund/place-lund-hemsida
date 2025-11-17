@@ -1,6 +1,7 @@
 'use client'
 
 import CardNav, { CardNavItem } from '@/components/CardNav'
+import BookingLink from '../BookingLink'
 
 const navItems: CardNavItem[] = [
   {

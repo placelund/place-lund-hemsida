@@ -11,11 +11,11 @@ export default function ApartmentsPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#FFFAF2]/30 z-10" />
         <Image
           src="/images/apartments/apartment-lund-sweden-place-hotel-1.jpg"
           alt="Modern apartments in Lund Sweden at Place Lund Hotel"
           fill
+          quality={100}
           className="object-cover"
           priority
         />
@@ -62,6 +62,7 @@ export default function ApartmentsPage() {
                 src="/images/apartments/apartment-lund-sweden-place-hotel-2.jpg"
                 alt="Apartment living room in Lund Sweden"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -71,6 +72,7 @@ export default function ApartmentsPage() {
                 src="/images/apartments/apartment-lund-sweden-place-hotel-3.jpg"
                 alt="Apartment kitchen Place Lund Hotel"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -80,6 +82,7 @@ export default function ApartmentsPage() {
                 src="/images/apartments/apartment-lund-sweden-place-hotel-4.jpg"
                 alt="Apartment bedroom Lund accommodation"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -89,6 +92,7 @@ export default function ApartmentsPage() {
                 src="/images/apartments/apartment-lund-sweden-place-hotel-5.jpg"
                 alt="Apartment bathroom Place Lund"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -98,6 +102,7 @@ export default function ApartmentsPage() {
                 src="/images/apartments/apartment-lund-sweden-place-hotel-6.jpeg"
                 alt="Apartment dining area Lund Sweden"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -107,6 +112,7 @@ export default function ApartmentsPage() {
                 src="/images/apartments/apartment-lund-sweden-place-hotel-7.jpeg"
                 alt="Apartment workspace Place Lund Hotel"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />

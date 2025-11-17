@@ -10,6 +10,7 @@ const heroImages = [
   '/images/hero/hero-image-slideshow/66x.jpg',
   '/images/hero/hero-image-slideshow/P1020214.JPG',
   '/images/hero/hero-image-slideshow/heroplaceholder.png',
+  '/images/conference/Gallery/conference-gallery-place-lund-hotel-16.jpg',
 ]
 
 export default function HeroFade() {
@@ -32,6 +33,7 @@ export default function HeroFade() {
           alt={`Place Lund Hotel - View ${index + 1}`}
           fill
           priority={index === 0}
+          quality={100}
           className={`object-cover transition-opacity duration-1000 ${
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}

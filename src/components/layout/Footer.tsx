@@ -25,6 +25,14 @@ export default function Footer() {
             <p className="text-brand-accent mb-4">
               Experience comfort and convenience in Lund. Choose between our hotel rooms or studio apartments.
             </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeGBRI-B_BTjF2_AhjUzOtzeDPkQtDGsLPdlPAK0ABUlUhOgg/viewform?usp=dialog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-brand-secondary text-white font-semibold py-3 px-6 rounded-md hover:bg-brand-accent hover:text-brand-main transition-colors"
+            >
+              Survey for After Your Stay
+            </a>
           </div>
 
           {/* Quick Links */}
@@ -134,7 +142,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-brand-accent/20 pt-6 text-center text-brand-accent/80">
+        <div className="border-t border-brand-accent/20 mt-8 pt-6 text-center text-brand-accent/80">
           <p>&copy; {currentYear} Place Lund. All rights reserved. | <Link href="/gdpr" className="hover:text-brand-secondary transition-colors">Privacy Policy</Link></p>
         </div>
       </div>

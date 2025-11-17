@@ -13,17 +13,25 @@ export function shuffleArray<T>(array: T[]): T[] {
 }
 
 /**
+ * Natural/numeric sort for image filenames
+ * Ensures proper ordering: 1, 2, 3, 10, 11 instead of 1, 10, 11, 2, 3
+ */
+export function naturalSort(a: string, b: string): number {
+  return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
+}
+
+/**
  * Get room images with dynamic hero selection
  *
  * Hero image selection:
  * 1. Look for image with "-hero" or "-main" in filename
- * 2. If not found, use first image alphabetically
+ * 2. If not found, use first image numerically
  *
  * @param folder - The folder name inside /public/images/ (e.g., 'rooms/single-street')
- * @param shuffle - Whether to shuffle gallery images (default: true)
+ * @param shuffle - Whether to shuffle gallery images (default: false for consistent ordering)
  * @returns Object with heroImage and galleryImages array
  */
-export function getRoomImages(folder: string, shuffle: boolean = true): {
+export function getRoomImages(folder: string, shuffle: boolean = false): {
   heroImage: string
   galleryImages: string[]
 } {
@@ -36,8 +44,8 @@ export function getRoomImages(folder: string, shuffle: boolean = true): {
       return { heroImage: '', galleryImages: [] }
     }
 
-    // Sort alphabetically for consistent fallback
-    const sortedImages = [...images].sort()
+    // Sort using natural/numeric sort for proper number ordering
+    const sortedImages = [...images].sort(naturalSort)
 
     // Find hero image (contains -hero or -main in filename)
     const heroIndex = sortedImages.findIndex(file =>
@@ -79,7 +87,7 @@ export function getRoomImages(folder: string, shuffle: boolean = true): {
 export function getGalleryImages(folder: string, shuffle: boolean = true): string[] {
   try {
     const images = (imageManifest as Record<string, string[]>)[folder] || []
-    const sortedImages = [...images].sort()
+    const sortedImages = [...images].sort(naturalSort)
 
     return shuffle ? shuffleArray(sortedImages) : sortedImages
   } catch (error) {

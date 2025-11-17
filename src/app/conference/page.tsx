@@ -11,149 +11,138 @@ export default function ConferencePage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#FFFAF2]/30 z-10" />
         <Image
           src="/images/hero/conference-hero.jpg"
           alt="Professional conference facilities at Place Lund Hotel"
           fill
+          quality={100}
           className="object-cover"
           priority
         />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to Meet
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
+        </div>
+      </section>
+
+      {/* Small Banner Section */}
+      <section className="bg-[#004225] text-white py-8 px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-lg text-white/90">
             Professional meeting spaces and conference rooms equipped with modern facilities for your business events and gatherings.
           </p>
         </div>
       </section>
 
-      {/* Conference Rooms Grid */}
-      <section className="py-16 px-4 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Sofia Conference Room */}
-          <div className="group transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-80 overflow-hidden">
-              <Image
-                src="/images/conference/Sofia/sofia-conference-room-place-lund-hotel-1.jpeg"
-                alt="Sofia conference room at Place Lund Hotel"
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="bg-[#f5f5f5] p-6 border-2 border-[#004225] flex flex-col">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Sofia</h3>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-600">
-                  <span>Medium room</span>
-                  <span>•</span>
-                  <span>20-30 people</span>
-                  <span>•</span>
-                  <span>AV equipment</span>
-                </div>
-              </div>
-              <div className="flex gap-3">
+      {/* Conference Rooms Images Section */}
+      <section className="grid grid-cols-3 h-[60vh] min-h-[400px]">
+        {/* Sofia Conference Room */}
+        <div className="relative">
+          <Image
+            src="/images/conference/Sofia/sofia-conference-room-place-lund-hotel-hero.jpg"
+            alt="Sofia conference room at Place Lund Hotel"
+            fill
+            quality={100}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/20 flex items-end">
+            <div className="p-6 text-white w-full">
+              <h3 className="text-xl md:text-2xl font-bold mb-2">Sofia</h3>
+              <p className="text-sm opacity-90 mb-3">Medium room • 20-30 people</p>
+              <div className="flex gap-2">
                 <Link
                   href="/conference/sofia"
-                  className="flex-1 text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
+                  className="text-white hover:text-[#FFFAF2] font-semibold text-xs underline"
                 >
-                  View Details
+                  Details
                 </Link>
                 <Link
                   href="/contact"
-                  className="flex-1 text-center border-2 border-[#004225] text-[#004225] py-2 px-4 rounded-md hover:bg-[#FFFAF2] transition-colors"
+                  className="bg-[#004225] text-white font-semibold py-1 px-3 rounded text-xs hover:bg-[#42001D] transition-colors"
                 >
-                  Contact Us
+                  Contact
                 </Link>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Margareta Conference Room */}
-          <div className="group transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-80 overflow-hidden">
-              <Image
-                src="/images/conference/Margaretha/margareta-conference-room-place-lund-hotel-1.jpeg"
-                alt="Margareta conference room at Place Lund Hotel"
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="bg-[#f5f5f5] p-6 border-2 border-[#004225] flex flex-col">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Margareta</h3>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-600">
-                  <span>Large room</span>
-                  <span>•</span>
-                  <span>30-90 participants</span>
-                  <span>•</span>
-                  <span>Projector</span>
-                </div>
-              </div>
-              <div className="flex gap-3">
+        {/* Margareta Conference Room */}
+        <div className="relative">
+          <Image
+            src="/images/conference/Margaretha/margaretha-conference-room-place-lund-hotel-hero.jpg"
+            alt="Margareta conference room at Place Lund Hotel"
+            fill
+            quality={100}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/20 flex items-end">
+            <div className="p-6 text-white w-full">
+              <h3 className="text-xl md:text-2xl font-bold mb-2">Margareta</h3>
+              <p className="text-sm opacity-90 mb-3">Large room • 30-90 participants</p>
+              <div className="flex gap-2">
                 <Link
                   href="/conference/margareta"
-                  className="flex-1 text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
+                  className="text-white hover:text-[#FFFAF2] font-semibold text-xs underline"
                 >
-                  View Details
+                  Details
                 </Link>
                 <Link
                   href="/contact"
-                  className="flex-1 text-center border-2 border-[#004225] text-[#004225] py-2 px-4 rounded-md hover:bg-[#FFFAF2] transition-colors"
+                  className="bg-[#004225] text-white font-semibold py-1 px-3 rounded text-xs hover:bg-[#42001D] transition-colors"
                 >
-                  Contact Us
+                  Contact
                 </Link>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Sankt Hans Conference Room */}
-          <div className="group transition-all duration-300 transform hover:-translate-y-2">
-            <div className="relative h-80 overflow-hidden">
-              <Image
-                src="/images/conference/Sankt-Hans/sankt-hans-conference-room-place-lund-hotel-1.jpeg"
-                alt="Sankt Hans conference room at Place Lund Hotel"
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div className="bg-[#f5f5f5] p-6 border-2 border-[#004225] flex flex-col">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Sankt Hans</h3>
-              <div className="mb-4 pt-4 border-t border-gray-200">
-                <div className="flex items-center justify-center gap-3 text-sm text-gray-600">
-                  <span>Small room</span>
-                  <span>•</span>
-                  <span>10-15 people</span>
-                  <span>•</span>
-                  <span>Intimate setting</span>
-                </div>
-              </div>
-              <div className="flex gap-3">
+        {/* Sankt Hans Conference Room */}
+        <div className="relative">
+          <Image
+            src="/images/conference/Sankt-Hans/sankt-hans-conference-room-place-lund-hotel-hero.jpg"
+            alt="Sankt Hans conference room at Place Lund Hotel"
+            fill
+            quality={100}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-black/20 flex items-end">
+            <div className="p-6 text-white w-full">
+              <h3 className="text-xl md:text-2xl font-bold mb-2">Sankt Hans</h3>
+              <p className="text-sm opacity-90 mb-3">Small room • 10-15 people</p>
+              <div className="flex gap-2">
                 <Link
                   href="/conference/sankt-hans"
-                  className="flex-1 text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
+                  className="text-white hover:text-[#FFFAF2] font-semibold text-xs underline"
                 >
-                  View Details
+                  Details
                 </Link>
                 <Link
                   href="/contact"
-                  className="flex-1 text-center border-2 border-[#004225] text-[#004225] py-2 px-4 rounded-md hover:bg-[#FFFAF2] transition-colors"
+                  className="bg-[#004225] text-white font-semibold py-1 px-3 rounded text-xs hover:bg-[#42001D] transition-colors"
                 >
-                  Contact Us
+                  Contact
                 </Link>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Green Banner for All Conference Rooms Include */}
+      <section className="bg-[#004225] text-white py-8 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-0">
+            All Conference Rooms Include
+          </h2>
         </div>
       </section>
 
       {/* Conference Facilities Section */}
       <section className="bg-[#FFFAF2] py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] text-center mb-12">
-            All Conference Rooms Include
-          </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <div className="text-center">
               <p className="text-gray-800 font-semibold">Free WiFi</p>

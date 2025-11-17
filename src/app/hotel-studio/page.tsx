@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import BookingLink from '@/components/BookingLink'
 
 export const metadata = {
   title: 'Hotel Studios in Lund Sweden - Place Lund Hotel | Compact Studio Rooms',
@@ -11,11 +12,11 @@ export default function HotelStudioPage() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-[#FFFAF2]/30 z-10" />
         <Image
           src="/images/studios/hotel-studio-place-lund-sweden-1.jpeg"
           alt="Modern hotel studios at Place Lund Hotel in Lund Sweden"
           fill
+          quality={100}
           className="object-cover"
           priority
         />
@@ -27,14 +28,9 @@ export default function HotelStudioPage() {
             Compact studio-style hotel rooms combining the convenience of hotel service with modern living spaces and kitchenettes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#004225] text-[#E3DAC9] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors"
-            >
+            <BookingLink className="bg-[#004225] text-[#E3DAC9] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors">
               Book Now
-            </Link>
+            </BookingLink>
             <Link
               href="/#property-selection"
               className="bg-transparent text-[#004225] border-2 border-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/20 transition-colors"
@@ -64,6 +60,7 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-2.jpeg"
                 alt="Hotel studio room Place Lund"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -73,6 +70,7 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-3.jpeg"
                 alt="Hotel studio kitchenette Lund Sweden"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -82,6 +80,7 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-4.jpeg"
                 alt="Hotel studio bathroom Place Lund Hotel"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -91,6 +90,7 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-5.jpeg"
                 alt="Hotel studio work area Lund"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -100,6 +100,7 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-6.jpeg"
                 alt="Hotel studio sleeping area Place Lund"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -109,6 +110,7 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-7.jpeg"
                 alt="Hotel studio dining space Lund Sweden"
                 fill
+                quality={100}
                 loading="lazy"
                 className="object-cover"
               />
@@ -233,14 +235,9 @@ export default function HotelStudioPage() {
             Experience the perfect combination of hotel service and apartment convenience in central Lund, Sweden.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors"
-            >
+            <BookingLink className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors">
               Book Now
-            </Link>
+            </BookingLink>
             <Link
               href="/hotel"
               className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors"

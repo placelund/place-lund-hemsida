@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getGalleryImages } from '@/utils/getImages'
+import BookingLink from '@/components/BookingLink'
 
 export const metadata = {
   title: 'Hotel Gallery - Place Lund Hotel | Room Photos',
@@ -56,11 +58,13 @@ export default function HotelGalleryPage() {
                       key={index}
                       className="relative aspect-[4/3] overflow-hidden rounded-lg group cursor-pointer"
                     >
-                      <img
+                      <Image
                         src={image}
                         alt={`${roomType.name} - Image ${index + 1}`}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        fill
+                        quality={100}
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
                   ))}
@@ -76,14 +80,9 @@ export default function HotelGalleryPage() {
               Experience comfort and convenience in Lund. Browse our rooms or contact us to discuss your accommodation needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors"
-              >
+              <BookingLink className="bg-[#FFFAF2] text-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] hover:text-white transition-colors">
                 Book Now
-              </a>
+              </BookingLink>
               <Link
                 href="/hotel"
                 className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors"
