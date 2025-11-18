@@ -10,10 +10,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
-  // Exclude public images from serverless function bundles
+  // Exclude public assets from serverless function bundles to reduce size
   outputFileTracingExcludes: {
-    '*': [
-      'public/images/**/*',
+    '/api/*': [
+      './public/**/*',
+      './public/images/**/*',
+      './public/flyers/**/*',
     ],
   },
 }
