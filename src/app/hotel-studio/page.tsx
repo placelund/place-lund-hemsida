@@ -13,7 +13,7 @@ export default function HotelStudioPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image
-          src="/images/studios/hotel-studio-place-lund-sweden-1.jpeg"
+          src="/images/studios/hotel-studio-place-lund-sweden-hero.jpeg"
           alt="Modern hotel studios at Place Lund Hotel in Lund Sweden"
           fill
           quality={100}
@@ -57,7 +57,7 @@ export default function HotelStudioPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image
-                src="/images/studios/hotel-studio-place-lund-sweden-2.jpeg"
+                src="/images/studios/hotel-studio-place-lund-sweden-3.jpeg"
                 alt="Hotel studio room Place Lund"
                 fill
                 quality={100}
@@ -67,7 +67,7 @@ export default function HotelStudioPage() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image
-                src="/images/studios/hotel-studio-place-lund-sweden-3.jpeg"
+                src="/images/studios/hotel-studio-place-lund-sweden-4.jpeg"
                 alt="Hotel studio kitchenette Lund Sweden"
                 fill
                 quality={100}
@@ -77,7 +77,7 @@ export default function HotelStudioPage() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image
-                src="/images/studios/hotel-studio-place-lund-sweden-4.jpeg"
+                src="/images/studios/hotel-studio-place-lund-sweden-5.jpeg"
                 alt="Hotel studio bathroom Place Lund Hotel"
                 fill
                 quality={100}
@@ -87,7 +87,7 @@ export default function HotelStudioPage() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image
-                src="/images/studios/hotel-studio-place-lund-sweden-5.jpeg"
+                src="/images/studios/hotel-studio-place-lund-sweden-6.jpeg"
                 alt="Hotel studio work area Lund"
                 fill
                 quality={100}
@@ -97,7 +97,7 @@ export default function HotelStudioPage() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image
-                src="/images/studios/hotel-studio-place-lund-sweden-6.jpeg"
+                src="/images/studios/hotel-studio-place-lund-sweden-7.jpeg"
                 alt="Hotel studio sleeping area Place Lund"
                 fill
                 quality={100}
@@ -107,7 +107,7 @@ export default function HotelStudioPage() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image
-                src="/images/studios/hotel-studio-place-lund-sweden-7.jpeg"
+                src="/images/studios/hotel-studio-place-lund-sweden-8.jpeg"
                 alt="Hotel studio dining space Lund Sweden"
                 fill
                 quality={100}

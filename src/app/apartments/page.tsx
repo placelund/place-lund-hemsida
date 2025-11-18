@@ -20,10 +20,10 @@ export default function ApartmentsPage() {
           priority
         />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to Live
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8">
             Spacious, fully-equipped apartments in central Lund, perfect for extended stays and self-catering accommodation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -99,7 +99,7 @@ export default function ApartmentsPage() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image
-                src="/images/apartments/apartment-lund-sweden-place-hotel-6.jpeg"
+                src="/images/apartments/apartment-lund-sweden-place-hotel-7.jpeg"
                 alt="Apartment dining area Lund Sweden"
                 fill
                 quality={100}
@@ -109,7 +109,7 @@ export default function ApartmentsPage() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-lg">
               <Image
-                src="/images/apartments/apartment-lund-sweden-place-hotel-7.jpeg"
+                src="/images/apartments/apartment-lund-sweden-place-hotel-8.jpeg"
                 alt="Apartment workspace Place Lund Hotel"
                 fill
                 quality={100}

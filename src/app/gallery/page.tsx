@@ -17,7 +17,7 @@ export default function GalleryPage() {
       {/* Header Section */}
       <section className="py-16 px-4 bg-[#FFFAF2] pt-32">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to Imagine
           </h1>
           <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
@@ -26,17 +26,6 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="py-12 px-4 bg-[#FFFAF2]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
-            Welcome to Place Lund
-          </h2>
-          <p className="text-gray-700 leading-relaxed text-lg">
-            Browse our collection of photos showcasing our hotel rooms, apartments, conference facilities, and the charming city of Lund. We invite you to imagine your stay at Place Lund Hotel.
-          </p>
-        </div>
-      </section>
 
       {/* Gallery Grid */}
       <section className="py-16 px-4 bg-[#FFFAF2]">

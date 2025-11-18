@@ -436,15 +436,15 @@ export default async function RestaurantPage() {
                 <h4 className="font-bold text-[#004225] mb-3">Special Features</h4>
                 <ul className="space-y-2 text-gray-700">
                   <li className="flex items-start gap-2">
-                    <span>🌿</span>
+                    <span className="text-green-600 font-bold">•</span>
                     <span>Outdoor garden seating (summer)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span>☕</span>
+                    <span className="text-green-600 font-bold">•</span>
                     <span>Casual visitors welcome</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span>☕</span>
+                    <span className="text-green-600 font-bold">•</span>
                     <span>Coffee and tea available</span>
                   </li>
                 </ul>

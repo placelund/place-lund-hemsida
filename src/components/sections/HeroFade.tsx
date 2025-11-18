@@ -5,11 +5,10 @@ import Image from 'next/image'
 
 const heroImages = [
   '/images/hero/hero-image-slideshow/IMG_7185.jpeg',
-  '/images/hero/hero-image-slideshow/IMG_7192.jpeg',
   '/images/hero/hero-image-slideshow/IMG_7200.jpeg',
   '/images/hero/hero-image-slideshow/66x.jpg',
   '/images/hero/hero-image-slideshow/P1020214.JPG',
-  '/images/hero/hero-image-slideshow/heroplaceholder.png',
+  '/images/Gallery/place-lund-hotel-gallery-1.jpeg',
   '/images/conference/Gallery/conference-gallery-place-lund-hotel-16.jpg',
 ]
 

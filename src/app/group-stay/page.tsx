@@ -31,7 +31,6 @@ export default function GroupStayPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center">
-              <div className="text-4xl mb-4">⚽</div>
               <h3 className="text-xl font-bold text-[#004225] mb-3">Sports Teams</h3>
               <p className="text-gray-700 text-sm">
                 Competitive rates for teams visiting Lund for tournaments and training camps
@@ -39,7 +38,6 @@ export default function GroupStayPage() {
             </div>
 
             <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center">
-              <div className="text-4xl mb-4">🎓</div>
               <h3 className="text-xl font-bold text-[#004225] mb-3">School Groups</h3>
               <p className="text-gray-700 text-sm">
                 Safe and comfortable accommodation for student groups visiting Lund University
@@ -47,7 +45,6 @@ export default function GroupStayPage() {
             </div>
 
             <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center">
-              <div className="text-4xl mb-4">💼</div>
               <h3 className="text-xl font-bold text-[#004225] mb-3">Corporate Events</h3>
               <p className="text-gray-700 text-sm">
                 Conference rooms and accommodation packages for business meetings and training
@@ -55,7 +52,6 @@ export default function GroupStayPage() {
             </div>
 
             <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center">
-              <div className="text-4xl mb-4">👥</div>
               <h3 className="text-xl font-bold text-[#004225] mb-3">Conferences</h3>
               <p className="text-gray-700 text-sm">
                 Complete packages with meeting spaces, accommodation, and catering options

@@ -76,9 +76,11 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 export async function POST(request: NextRequest) {
   try {
     // Check if API key is configured
-    if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 're_placeholder') {
+    if (!process.env.RESEND_API_KEY ||
+        process.env.RESEND_API_KEY === 're_placeholder' ||
+        process.env.RESEND_API_KEY === 'your_resend_api_key_here') {
       return NextResponse.json(
-        { error: 'Email service is not configured. Please contact us directly at info@placelund.se' },
+        { error: 'Email service is temporarily unavailable. Please contact us directly at info@placelund.se or call 046 - 33 36 00' },
         { status: 503 }
       )
     }
@@ -146,7 +148,7 @@ export async function POST(request: NextRequest) {
       if (spreadsheetId) {
         await sheets.spreadsheets.values.append({
           spreadsheetId,
-          range: "'Contact Form Data'!A:E",
+          range: "Contact Form Data!A:E",
           valueInputOption: 'RAW',
           requestBody: {
             values: [[new Date().toISOString(), email, subject, message, gdprConsent ? 'Yes' : 'No']],

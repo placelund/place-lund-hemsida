@@ -15,34 +15,26 @@ export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
-  const [showRecaptcha, setShowRecaptcha] = useState(false)
 
-  // Load reCAPTCHA script
+  // Load reCAPTCHA v3 script
   useEffect(() => {
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+    if (!siteKey) return
+
     const script = document.createElement('script')
-    script.src = 'https://www.google.com/recaptcha/api.js'
+    script.src = `https://www.google.com/recaptcha/enterprise.js?render=${siteKey}`
     script.async = true
     script.defer = true
-    document.body.appendChild(script)
-
-    // Define callback for reCAPTCHA
-    ;(window as any).onRecaptchaSuccess = (token: string) => {
-      setRecaptchaToken(token)
-    }
+    document.head.appendChild(script)
 
     return () => {
-      document.body.removeChild(script)
+      if (script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
     }
   }, [])
 
-  // Auto-submit when reCAPTCHA is completed
-  useEffect(() => {
-    if (recaptchaToken && showRecaptcha) {
-      handleActualSubmit()
-    }
-  }, [recaptchaToken])
-
-  const handleSendClick = (e: React.FormEvent) => {
+  const handleSendClick = async (e: React.FormEvent) => {
     e.preventDefault()
 
     // Validate form first
@@ -52,13 +44,46 @@ export default function ContactPage() {
       return
     }
 
-    // Show reCAPTCHA
-    setShowRecaptcha(true)
+    // Get reCAPTCHA v3 token
+    const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+    if (!siteKey) {
+      setStatus('error')
+      setErrorMessage('reCAPTCHA not configured')
+      return
+    }
+
+    try {
+      setStatus('loading')
+      setErrorMessage('')
+
+      // Execute reCAPTCHA v3
+      await new Promise(resolve => {
+        if ((window as any).grecaptcha?.enterprise?.ready) {
+          (window as any).grecaptcha.enterprise.ready(resolve)
+        } else {
+          // If not ready yet, wait a bit and try again
+          setTimeout(resolve, 1000)
+        }
+      })
+
+      const token = await (window as any).grecaptcha.enterprise.execute(siteKey, {
+        action: 'contact_form'
+      })
+
+      setRecaptchaToken(token)
+      handleActualSubmit(token)
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage('reCAPTCHA verification failed. Please try again.')
+      console.error('reCAPTCHA error:', error)
+    }
   }
 
-  const handleActualSubmit = async () => {
+  const handleActualSubmit = async (token?: string) => {
     setStatus('loading')
     setErrorMessage('')
+
+    const finalToken = token || recaptchaToken
 
     try {
       const response = await fetch('/api/contact', {
@@ -68,7 +93,7 @@ export default function ContactPage() {
         },
         body: JSON.stringify({
           ...formData,
-          recaptchaToken,
+          recaptchaToken: finalToken,
         }),
       })
 
@@ -80,20 +105,10 @@ export default function ContactPage() {
       setStatus('success')
       setFormData({ email: '', subject: '', message: '', gdprConsent: false })
       setRecaptchaToken(null)
-      setShowRecaptcha(false)
-      // Reset reCAPTCHA
-      if ((window as any).grecaptcha) {
-        (window as any).grecaptcha.reset()
-      }
     } catch (error) {
       setStatus('error')
       setErrorMessage(error instanceof Error ? error.message : 'Failed to send message. Please try again.')
-      // Reset reCAPTCHA on error
-      if ((window as any).grecaptcha) {
-        (window as any).grecaptcha.reset()
-      }
       setRecaptchaToken(null)
-      setShowRecaptcha(false)
     }
   }
 
@@ -108,7 +123,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen">
       {/* Header Section */}
-      <section className="py-16 px-4 bg-[#FFFAF2]">
+      <section className="py-16 px-4 bg-[#FFFAF2] pt-32">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
             A Place to Connect
@@ -195,23 +210,7 @@ export default function ContactPage() {
                   </label>
                 </div>
 
-                {/* reCAPTCHA - slides in when user clicks send */}
-                <div
-                  className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                    showRecaptcha ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  <div className="flex flex-col items-center gap-3 py-4">
-                    <p className="text-sm text-gray-600 text-center">
-                      Please verify you're human to send your message
-                    </p>
-                    <div
-                      className="g-recaptcha"
-                      data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-                      data-callback="onRecaptchaSuccess"
-                    ></div>
-                  </div>
-                </div>
+                {/* reCAPTCHA v3 runs in background - no UI needed */}
 
                 {/* Submit Button */}
                 <button
@@ -219,7 +218,7 @@ export default function ContactPage() {
                   disabled={status === 'loading'}
                   className="w-full bg-[#004225] text-white font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                 >
-                  {status === 'loading' ? 'Sending...' : showRecaptcha ? 'Complete verification above' : 'Send Message'}
+                  {status === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>
 
                 {/* Status Messages */}
