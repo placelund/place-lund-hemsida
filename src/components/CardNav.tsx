@@ -261,12 +261,12 @@ const CardNav: React.FC<CardNavProps> = ({
               {item.href ? (
                 <a
                   href={item.href}
-                  className="nav-card-label font-normal tracking-[-0.5px] text-[16px] md:text-[22px] hover:opacity-75 transition-opacity cursor-pointer"
+                  className="nav-card-label font-normal tracking-[-0.5px] text-[18px] md:text-[26px] hover:opacity-75 transition-opacity cursor-pointer"
                 >
                   {item.label}
                 </a>
               ) : (
-                <div className="nav-card-label font-normal tracking-[-0.5px] text-[16px] md:text-[22px]">
+                <div className="nav-card-label font-normal tracking-[-0.5px] text-[18px] md:text-[26px]">
                   {item.label}
                 </div>
               )}
@@ -274,7 +274,7 @@ const CardNav: React.FC<CardNavProps> = ({
                 {item.links?.map((lnk, i) => (
                   <a
                     key={`${lnk.label}-${i}`}
-                    className="nav-card-link inline-flex items-center gap-[4px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[13px] md:text-[16px]"
+                    className="nav-card-link inline-flex items-center gap-[4px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[18px]"
                     href={lnk.href}
                     aria-label={lnk.ariaLabel}
                   >

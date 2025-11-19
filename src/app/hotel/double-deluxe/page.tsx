@@ -5,7 +5,7 @@ import BookingLink from '@/components/BookingLink'
 
 export const metadata = {
   title: 'Double Deluxe Room Lund - Place Lund Hotel | Two Room Suite with Living Room',
-  description: 'Deluxe double room at Place Lund Hotel in Lund, Sweden. Two rooms with bedroom and separate living room, 140cm bed, some with balcony. Breakfast and dinner included.',
+  description: 'Deluxe double room at Place Lund Hotel in Lund, Sweden. Two rooms with bedroom and separate living room, 160cm bed, some with balcony. Breakfast and dinner included.',
 }
 
 export default function DoubleDeluxePage() {
@@ -16,13 +16,13 @@ export default function DoubleDeluxePage() {
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image src={heroImage} alt="Double deluxe room with living room" fill quality={100} className="object-cover" priority />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">Double Deluxe Room</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">Double Deluxe Room</h1>
           <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
             Spacious two-room suite with separate bedroom and living room, perfect for extended stays and extra comfort.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <BookingLink className="bg-[#004225] text-[#E3DAC9] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors">Book Now</BookingLink>
-            <Link href="/hotel" className="bg-transparent text-[#004225] border-2 border-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/20 transition-colors">View All Rooms</Link>
+            <Link href="/hotel" className="bg-[#66023C] text-white border-2 border-[#66023C] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors">View All Rooms</Link>
           </div>
         </div>
       </section>

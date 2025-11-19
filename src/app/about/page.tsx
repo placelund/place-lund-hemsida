@@ -35,7 +35,7 @@ export default function AboutPage() {
             <div className="bg-[#f5f5f5] p-6 rounded-lg border-2 border-[#004225]">
               <h3 className="text-xl font-bold text-[#004225] mb-4">Hotel Rooms & Studios</h3>
               <p className="text-gray-700 text-sm leading-relaxed">
-                From economy doubles to deluxe rooms, we offer comfortable accommodation with daily housekeeping. Our hotel rooms include breakfast and dinner, while studios provide self-catering options.
+                From economy doubles to deluxe rooms, we offer comfortable accommodation with weekly cleaning. Our hotel rooms include breakfast and dinner, while studios provide self-catering options.
               </p>
             </div>
 
@@ -166,7 +166,7 @@ export default function AboutPage() {
               <div>
                 <h4 className="font-bold text-[#004225] mb-2">Modern Amenities</h4>
                 <p className="text-gray-700 text-sm">
-                  Free WiFi, equipped kitchens, daily housekeeping, and more
+                  Free WiFi, equipped kitchens, weekly cleaning, and more
                 </p>
               </div>
             </div>

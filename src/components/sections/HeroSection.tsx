@@ -13,7 +13,7 @@ export default function HeroSection() {
       {/* Hero Content */}
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="text-center text-white px-4">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight text-white">
             Place Lund Hotel
           </h1>
           <h2 className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto font-light">

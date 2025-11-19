@@ -127,7 +127,7 @@ export default function DailyMenu() {
                       {/* Dinner */}
                       <div className="border-l-4 border-[#42001D] pl-4">
                         <h4 className="text-xl font-bold text-[#42001D] mb-1">
-                          19:30 - 21:00
+                          18:00 - 19:30
                         </h4>
                         <p className="text-gray-700">
                           {todayMenu.lunch && todayMenu.lunch.toLowerCase() !== 'n/a'
@@ -168,7 +168,7 @@ export default function DailyMenu() {
                       {/* Dinner */}
                       <div className="border-l-4 border-[#42001D] pl-4">
                         <h4 className="text-xl font-bold text-[#42001D] mb-1">
-                          19:30 - 21:00
+                          18:00 - 19:30
                         </h4>
                         <p className="text-gray-700">
                           {tomorrowMenu.lunch && tomorrowMenu.lunch.toLowerCase() !== 'n/a'

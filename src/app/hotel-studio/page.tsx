@@ -4,7 +4,7 @@ import BookingLink from '@/components/BookingLink'
 
 export const metadata = {
   title: 'Hotel Studios in Lund Sweden - Place Lund Hotel | Compact Studio Rooms',
-  description: 'Modern hotel studios in Lund, Sweden. Compact rooms with kitchenettes, daily housekeeping, and modern amenities. Perfect for business travelers and short stays.',
+  description: 'Modern hotel studios in Lund, Sweden. Compact rooms with kitchenettes, weekly cleaning, and modern amenities. Perfect for business travelers and short stays.',
 }
 
 export default function HotelStudioPage() {
@@ -20,11 +20,13 @@ export default function HotelStudioPage() {
           className="object-cover"
           priority
         />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Hotel Studios in Lund
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8">
             Compact studio-style hotel rooms combining the convenience of hotel service with modern living spaces and kitchenettes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -33,7 +35,7 @@ export default function HotelStudioPage() {
             </BookingLink>
             <Link
               href="/#property-selection"
-              className="bg-transparent text-[#004225] border-2 border-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/20 transition-colors"
+              className="bg-[#66023C] text-white border-2 border-[#66023C] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors"
             >
               View All Options
             </Link>
@@ -49,7 +51,7 @@ export default function HotelStudioPage() {
               Hotel Studios at Place Lund
             </h2>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Our hotel studios offer the perfect blend of hotel convenience and apartment functionality. Each studio features a compact kitchenette, modern amenities, and daily housekeeping service. Ideal for business travelers, university visitors, and guests seeking a comfortable home-away-from-home experience in central Lund.
+              Our hotel studios offer the perfect blend of hotel convenience and apartment functionality. Each studio features a compact kitchenette, modern amenities, and weekly cleaning service. Ideal for business travelers, university visitors, and guests seeking a comfortable home-away-from-home experience in central Lund.
             </p>
           </div>
 
@@ -153,7 +155,7 @@ export default function HotelStudioPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#004225] font-bold text-xl">•</span>
-                  <span className="text-gray-700">Daily housekeeping service</span>
+                  <span className="text-gray-700">Weekly cleaning service</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[#004225] font-bold text-xl">•</span>
@@ -216,7 +218,7 @@ export default function HotelStudioPage() {
           <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#42001D] mb-8">
             <h3 className="text-2xl font-bold text-[#42001D] mb-4">Booking Information</h3>
             <p className="text-gray-700 mb-4">
-              Hotel studios are available for nightly and weekly bookings. Daily housekeeping service included. Kitchenette provided for self-catering. Bed soffa available for up to 4 people. Book online or contact us for special rates and availability.
+              Hotel studios are available for nightly and weekly bookings. Weekly cleaning service included. Kitchenette provided for self-catering. Bed soffa available for up to 4 people. Book online or contact us for special rates and availability.
             </p>
             <p className="text-gray-700 text-sm italic">
               Note: Meals are NOT included with studio stays. Breakfast and dinner are only included with standard hotel room bookings.

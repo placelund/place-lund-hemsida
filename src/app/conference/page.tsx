@@ -19,9 +19,11 @@ export default function ConferencePage() {
           className="object-cover"
           priority
         />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            A Place to Meet
+            A Place to Collaborate
           </h1>
         </div>
       </section>
@@ -182,6 +184,62 @@ export default function ConferencePage() {
             </div>
             <div className="text-center">
               <p className="text-gray-800 font-semibold">Accessible</p>
+            </div>
+            <div className="text-center">
+              <p className="text-gray-800 font-semibold">EV Charging Available</p>
+            </div>
+          </div>
+
+          {/* Additional Parking Information Box */}
+          <div className="mt-12 max-w-4xl mx-auto bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225]">
+            <h3 className="text-2xl font-bold text-[#004225] mb-6 text-center">
+              Convenient Parking for Conference Attendees
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="flex items-start gap-3">
+                <svg className="w-6 h-6 mt-1 text-[#004225] flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <p className="font-semibold text-[#004225] mb-1">Free On-Site Parking</p>
+                  <p className="text-gray-700 text-sm">Complimentary parking available for all conference attendees and event guests</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <svg className="w-6 h-6 mt-1 text-[#004225] flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <p className="font-semibold text-[#004225] mb-1">First Come, First Served</p>
+                  <p className="text-gray-700 text-sm">Parking spaces allocated on arrival basis. For large events, contact us about reserved spaces</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <svg className="w-6 h-6 mt-1 text-[#004225] flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+                <div>
+                  <p className="font-semibold text-[#004225] mb-1">EV Charging Station</p>
+                  <p className="text-gray-700 text-sm">Electric vehicle charging available on-site for environmentally conscious attendees</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <svg className="w-6 h-6 mt-1 text-[#004225] flex-shrink-0" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                </svg>
+                <div>
+                  <p className="font-semibold text-[#004225] mb-1">Easy Access</p>
+                  <p className="text-gray-700 text-sm">Convenient location with easy access from E22 and main roads in Lund</p>
+                </div>
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <p className="text-gray-600 text-sm">
+                <strong>Planning a large event?</strong> Contact us in advance to discuss parking arrangements for your conference attendees.
+              </p>
             </div>
           </div>
         </div>

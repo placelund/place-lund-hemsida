@@ -29,8 +29,8 @@ const fallbackFAQs: FAQ[] = [
     answer: 'Yes, free high-speed WiFi is available throughout the hotel, in all rooms, studios, and common areas.',
   },
   {
-    question: 'Do you have parking available?',
-    answer: 'Yes, we offer parking facilities. Please contact us in advance to ensure availability and discuss parking arrangements.',
+    question: 'Is there parking available for hotel guests?',
+    answer: 'Parking is available for conference guests and attendees. For hotel guest parking inquiries, please contact us directly to discuss options.',
   },
   {
     question: 'What is the difference between a hotel room and a hotel studio?',
@@ -49,8 +49,8 @@ const fallbackFAQs: FAQ[] = [
     answer: 'Yes, we are located near Lund University and LTH (Faculty of Engineering), making us an ideal choice for university visitors, researchers, and students.',
   },
   {
-    question: 'Do you offer daily housekeeping?',
-    answer: 'Yes, daily housekeeping service is included with all hotel room and studio bookings.',
+    question: 'Do you offer weekly cleaning?',
+    answer: 'Yes, weekly cleaning service is included with all hotel room and studio bookings.',
   },
   {
     question: 'Can I book a room for just one night?',
@@ -102,7 +102,7 @@ export default async function HotelFAQPage() {
       {/* Header Section */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">
             A Place to Ask
           </h1>
           <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">

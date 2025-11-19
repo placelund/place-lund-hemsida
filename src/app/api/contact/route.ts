@@ -1,12 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
-import { google } from 'googleapis'
 
-// Initialize Resend with API key from environment variables
-// Use a placeholder key during build if not set
-const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder')
+// Use dynamic imports to reduce bundle size
+async function getResendClient() {
+  const { Resend } = await import('resend')
+  return new Resend(process.env.RESEND_API_KEY || 're_placeholder')
+}
 
-function getGoogleSheetsClient() {
+async function getGoogleSheetsClient() {
+  const { google } = await import('googleapis')
+
   const privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n')
   const clientEmail = process.env.GOOGLE_SHEETS_CLIENT_EMAIL
 
@@ -142,7 +144,7 @@ export async function POST(request: NextRequest) {
 
     // Save to Google Sheets
     try {
-      const sheets = getGoogleSheetsClient()
+      const sheets = await getGoogleSheetsClient()
       const spreadsheetId = process.env.GOOGLE_SPREADSHEET_CONTACT_ID
 
       if (spreadsheetId) {
@@ -161,6 +163,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email using Resend
+    const resend = await getResendClient()
     const { data, error: sendError } = await resend.emails.send({
       from: 'Place Lund Contact Form <onboarding@resend.dev>', // Change this to your verified domain
       to: ['info@placelund.se'],

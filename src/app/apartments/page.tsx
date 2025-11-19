@@ -19,6 +19,8 @@ export default function ApartmentsPage() {
           className="object-cover"
           priority
         />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to Live
@@ -35,7 +37,7 @@ export default function ApartmentsPage() {
             </Link>
             <Link
               href="/#property-selection"
-              className="bg-transparent text-[#004225] border-2 border-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/20 transition-colors"
+              className="bg-[#66023C] text-white border-2 border-[#66023C] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors"
             >
               View All Options
             </Link>

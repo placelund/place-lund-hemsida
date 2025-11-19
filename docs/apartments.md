@@ -22,7 +22,7 @@ Comprehensive documentation for apartment accommodations at Place Lund Hotel, in
 ## Apartment Types
 
 ### 1. Studio Apartments
-- **Size:** Approximately 25-30 m²
+- **Size:** Approximately 25-30 mï¿½
 - **Layout:** Combined living/sleeping area
 - **Beds:** Single or double bed options
 - **Capacity:** 1-2 people
@@ -40,13 +40,13 @@ Comprehensive documentation for apartment accommodations at Place Lund Hotel, in
 - Wardrobe
 - Private bathroom with shower
 - Hair dryer
-- Weekly housekeeping
+- Weekly cleaning
 - No smoking
 
 ### 2. One Bedroom Apartments
 **NOTE:** Current website content shows two-bedroom specifications. Needs verification.
 
-- **Size:** Approximately 50-60 m² (based on current content)
+- **Size:** Approximately 50-60 mï¿½ (based on current content)
 - **Layout:** Separate bedroom + living area
 - **Beds:** Queen size bed
 - **Capacity:** Up to 2-3 people
@@ -55,7 +55,7 @@ Comprehensive documentation for apartment accommodations at Place Lund Hotel, in
 - **Rental:** Monthly rentals only
 
 ### 3. Two Bedroom Apartments
-- **Size:** 86 m²
+- **Size:** 86 mï¿½
 - **Layout:** Two bedrooms + living room
 - **Beds:** Queen size beds + sofa bed
 - **Capacity:** Up to 4 people
@@ -123,7 +123,7 @@ All apartments are located in northern Lund with easy access to:
 
 - **Lund University & LTH:** Close proximity to campus
 - **City Center:** Walking distance to shops and restaurants
-- **Train Station:** Minutes away - easy access to Copenhagen, Malmö
+- **Train Station:** Minutes away - easy access to Copenhagen, Malmï¿½
 - **Ideon Science Park:** Short commute
 - **University Hospital:** Nearby
 - **Public Transportation:** Excellent bus connections
@@ -138,7 +138,7 @@ All apartments are located in northern Lund with easy access to:
 **Contact Information:**
 - **Phone:** +46 46 33 36 00
 - **Email:** info@placelund.se
-- **Address:** Margaretavägen 7, 222 40 Lund, Sweden
+- **Address:** Margaretavï¿½gen 7, 222 40 Lund, Sweden
 
 **How to Book:**
 1. Contact hotel directly for availability
@@ -225,11 +225,11 @@ Suggested image names for `/public/images/apartments/`:
 
 ## Content Issues to Address
 
-###   URGENT: One Bedroom Page Discrepancy
+### ï¿½ URGENT: One Bedroom Page Discrepancy
 The file `/src/app/apartments/one-bedroom/page.tsx` currently contains:
 - Title in metadata: "Two Bedroom Apartment"
-- Description: "86m² with two bathrooms"
-- Content: Two bedroom specifications (86m², two bathrooms, up to 4 people)
+- Description: "86mï¿½ with two bathrooms"
+- Content: Two bedroom specifications (86mï¿½, two bathrooms, up to 4 people)
 
 **This needs to be resolved by either:**
 1. Creating a separate two-bedroom page and updating one-bedroom with correct content

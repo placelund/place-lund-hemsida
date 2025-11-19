@@ -58,11 +58,6 @@ const LOCATIONS = {
     title: 'Lund University',
     color: '#EAB308', // Yellow
   },
-  parkingLot: {
-    position: { lat: 55.72057922124424, lng: 13.194596259696972 },
-    title: 'Parking + EV Charge',
-    color: '#F97316', // Orange
-  },
 }
 
 // Component to apply map styles and add markers using useMap hook
@@ -353,10 +348,6 @@ export default function LocationMap() {
               <div>
                 <p className="font-semibold text-[#004225] mb-1">From Malmö</p>
                 <p className="text-sm">15 minutes by train</p>
-              </div>
-              <div>
-                <p className="font-semibold text-[#004225] mb-1">Parking</p>
-                <p className="text-sm">Free on-site parking available</p>
               </div>
             </div>
           </div>

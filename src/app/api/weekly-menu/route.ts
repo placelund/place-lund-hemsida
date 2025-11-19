@@ -80,6 +80,8 @@ export async function GET() {
       menu,
       currentWeek,
       source: 'google-sheets',
+    }, {
+      headers: { 'Cache-Control': 'public, max-age=86400' }, // 24h cache as fallback
     })
   } catch (error) {
     console.error('Error fetching weekly menu:', error)

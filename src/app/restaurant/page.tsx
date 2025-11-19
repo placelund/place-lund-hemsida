@@ -19,7 +19,7 @@ async function getWeeklyMenu() {
   try {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
     const response = await fetch(`${baseUrl}/api/weekly-menu`, {
-      next: { revalidate: 60 }, // Revalidate every minute - auto-updates current week highlighting
+      next: { revalidate: 86400, tags: ['weekly-menu'] }, // 24h cache, webhook will revalidate
     })
 
     if (!response.ok) {
@@ -97,6 +97,8 @@ export default async function RestaurantPage() {
           className="object-cover"
           priority
         />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to Eat
@@ -370,7 +372,7 @@ export default async function RestaurantPage() {
                   </div>
                   <div>
                     <p className="font-bold text-[#42001D]">Dinner</p>
-                    <p className="text-gray-700">6:00 PM - 8:00 PM</p>
+                    <p className="text-gray-700">6:00 PM - 7:30 PM</p>
                     <p className="text-sm text-gray-600 italic">Included for hotel room guests</p>
                   </div>
                 </div>
@@ -424,7 +426,7 @@ export default async function RestaurantPage() {
               <h3 className="text-2xl font-bold text-[#004225] mb-6">Opening Hours</h3>
               <div className="space-y-4">
                 <div className="bg-[#f5f5f5] p-6 rounded-lg">
-                  <p className="text-2xl font-bold text-[#004225] mb-2">11:00 AM - 9:00 PM</p>
+                  <p className="text-2xl font-bold text-[#004225] mb-2">11:00 AM - 9:30 PM</p>
                   <p className="text-gray-700">Daily</p>
                 </div>
                 <p className="text-gray-700 text-sm italic">
@@ -448,6 +450,18 @@ export default async function RestaurantPage() {
                     <span>Coffee and tea available</span>
                   </li>
                 </ul>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <h4 className="font-bold text-[#42001D] mb-3">Important Policy</h4>
+                <div className="bg-[#FFFAF2] p-4 rounded-lg border-l-4 border-[#42001D]">
+                  <p className="text-gray-700 text-sm">
+                    <strong>Payment Policy:</strong> Drinks are paid in the bar. You cannot open a tab for your room—bring your card.
+                  </p>
+                  <p className="text-gray-700 text-sm mt-2">
+                    <strong>Kitchen closes at 21:00 (9:00 PM)</strong>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

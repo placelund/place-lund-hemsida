@@ -22,13 +22,23 @@ export default function HotelGalleryPage() {
 
   return (
     <main className="min-h-screen">
-      {/* Header Section */}
-      <section className="py-16 px-4 bg-[#FFFAF2]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+      {/* Hero Section */}
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+        <Image
+          src="/images/conference/Gallery/conference-gallery-place-lund-hotel-17.jpg"
+          alt="Hotel Gallery - Place Lund Hotel"
+          fill
+          quality={100}
+          className="object-cover"
+          priority
+        />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to See
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
             Explore our hotel rooms and studios through our gallery of accommodations in central Lund.
           </p>
         </div>

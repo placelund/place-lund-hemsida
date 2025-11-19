@@ -8,6 +8,7 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
+
       <PropertySelection />
       <DailyMenu />
       <LocationMap />

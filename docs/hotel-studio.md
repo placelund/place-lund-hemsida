@@ -22,7 +22,7 @@ Documentation for hotel studio accommodations - a hybrid offering between tradit
 ### What is a Hotel Studio?
 
 Hotel studios at Place Lund offer a middle ground between traditional hotel rooms and full apartments:
-- **Like a hotel room:** Daily housekeeping, hotel services, can book nightly
+- **Like a hotel room:** Weekly cleaning, hotel services, can book nightly
 - **Like an apartment:** Kitchenette for self-catering, more space, independent living
 - **Perfect balance:** Flexibility + services
 
@@ -108,7 +108,7 @@ Hotel studios at Place Lund offer a middle ground between traditional hotel room
 | **Size** | Standard | Medium | Large (50-86m²) |
 | **Meals** | ✅ Included | ❌ Not included | ❌ Not included |
 | **Kitchen** | ❌ None | ✅ Kitchenette | ✅ Full kitchen |
-| **Housekeeping** | ✅ Daily | ✅ Daily/Weekly | ✅ Weekly |
+| **Cleaning** | ✅ Daily | ✅ Daily/Weekly | ✅ Weekly |
 | **Min. Stay** | 1 night | 1 night | Varies |
 | **Best For** | Short stays | 1-2 weeks | 1+ months |
 | **Price Level** | $$$ | $$ | $ (monthly) |
@@ -208,7 +208,7 @@ Hotel studios at Place Lund offer a middle ground between traditional hotel room
 1. **Independence** = Kitchenette for self-catering
 2. **No Meals** = Unlike hotel rooms, meals NOT included
 3. **Flexibility** = Nightly, weekly, or monthly rentals
-4. **Services** = Still get hotel services (housekeeping, WiFi)
+4. **Services** = Still get hotel services (cleaning, WiFi)
 5. **Space** = More room than standard hotel room
 6. **Value** = Save money by cooking your own meals
 7. **Perfect Duration** = Ideal for 3-14 night stays
@@ -221,7 +221,7 @@ Hotel studios at Place Lund offer a middle ground between traditional hotel room
 - [ ] Specific bed sizes available
 - [ ] Number of studios available
 - [ ] Pricing structure (nightly/weekly/monthly)
-- [ ] Housekeeping frequency for studios
+- [ ] Cleaning frequency for studios
 - [ ] Any additional fees
 - [ ] Kitchen equipment details
 - [ ] Minimum stay requirements

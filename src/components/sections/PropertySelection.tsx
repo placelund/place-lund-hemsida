@@ -10,14 +10,14 @@ export default function PropertySelection() {
       description: 'Traditional hotel rooms with full service and amenities',
       href: '/hotel',
       image: '/images/rooms/double-deluxe/hero.jpeg',
-      features: ['Daily Housekeeping', 'Room Service', 'Breakfast Included'],
+      features: ['Weekly Cleaning', 'Room Service', 'Breakfast Included'],
     },
     {
       title: 'Hotel Studio',
       description: 'Compact studio-style hotel rooms with modern conveniences',
       href: '/hotel-studio',
       image: '/images/studios/hotel-studio-place-lund-sweden-hero.jpeg',
-      features: ['Kitchenette', 'Daily Housekeeping', 'Modern Design'],
+      features: ['Kitchenette', 'Weekly Cleaning', 'Modern Design'],
     },
     {
       title: 'Apartments',

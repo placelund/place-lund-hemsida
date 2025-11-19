@@ -12,21 +12,9 @@ const navItems: CardNavItem[] = [
     links: [
       { label: 'Rooms', href: '/hotel#rooms', ariaLabel: 'View hotel rooms' },
       { label: 'Studios', href: '/hotel#studios', ariaLabel: 'View hotel studios' },
-      { label: 'FAQ', href: '/hotel/faq', ariaLabel: 'Hotel frequently asked questions' },
+      { label: 'Restaurant', href: '/restaurant', ariaLabel: 'Restaurant and bar' },
       { label: 'Gallery', href: '/hotel/gallery', ariaLabel: 'Hotel gallery' },
       { label: 'Book Now', href: 'https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872', ariaLabel: 'Book a hotel room' },
-    ],
-  },
-  {
-    label: 'Apartments',
-    bgColor: '#42001D',
-    textColor: '#eae2d6',
-    href: '/apartments',
-    links: [
-      { label: 'Overview', href: '/apartments', ariaLabel: 'Apartment overview' },
-      { label: 'Studio', href: '/apartments/studio', ariaLabel: 'Studio apartments' },
-      { label: 'Gallery', href: '/apartments/gallery', ariaLabel: 'Apartment gallery' },
-      { label: 'Contact', href: '/contact', ariaLabel: 'Contact about apartments' },
     ],
   },
   {
@@ -42,14 +30,26 @@ const navItems: CardNavItem[] = [
     ],
   },
   {
+    label: 'Apartments',
+    bgColor: '#42001D',
+    textColor: '#eae2d6',
+    href: '/apartments',
+    links: [
+      { label: 'Overview', href: '/apartments', ariaLabel: 'Apartment overview' },
+      { label: 'Studio', href: '/apartments/studio', ariaLabel: 'Studio apartments' },
+      { label: 'Gallery', href: '/apartments/gallery', ariaLabel: 'Apartment gallery' },
+      { label: 'Contact', href: '/contact', ariaLabel: 'Contact about apartments' },
+    ],
+  },
+  {
     label: 'More',
     bgColor: '#c7b294',
     textColor: '#004225',
     href: '/about',
     links: [
       { label: 'About', href: '/about', ariaLabel: 'About Place Lund' },
-      { label: 'Restaurant', href: '/restaurant', ariaLabel: 'Restaurant and bar' },
       { label: 'Group Stay', href: '/group-stay', ariaLabel: 'Group accommodation options' },
+      { label: 'Work With Us', href: '/work-with-us', ariaLabel: 'Career opportunities' },
       { label: 'Gallery', href: '/gallery', ariaLabel: 'Picture gallery' },
       { label: 'FAQ', href: '/faq', ariaLabel: 'Frequently asked questions' },
       { label: 'Contact', href: '/contact', ariaLabel: 'Contact us' },

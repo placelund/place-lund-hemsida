@@ -154,8 +154,8 @@ Place Lund Hotel is ideal for hosting groups of various sizes and purposes, offe
 
 ### Included Services
 - Free WiFi throughout property
-- Daily housekeeping (hotel rooms)
-- Weekly housekeeping (studios/apartments)
+- Weekly cleaning (hotel rooms)
+- Weekly cleaning (studios/apartments)
 - Reception services
 - Technical support for meetings
 - Free parking

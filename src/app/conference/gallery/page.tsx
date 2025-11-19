@@ -15,7 +15,7 @@ export default function ConferenceGalleryPage() {
       {/* Header Section */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">
             Conference Gallery
           </h1>
           <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
@@ -30,7 +30,7 @@ export default function ConferenceGalleryPage() {
             </Link>
             <Link
               href="/conference"
-              className="bg-transparent text-[#004225] border-2 border-[#004225] font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/20 transition-colors"
+              className="bg-[#66023C] text-white border-2 border-[#66023C] font-semibold py-3 px-8 rounded-md hover:bg-[#42001D] transition-colors"
             >
               View Conference Rooms
             </Link>
