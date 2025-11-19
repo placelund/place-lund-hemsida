@@ -76,8 +76,16 @@ const fallbackFAQs: FAQ[] = [
 
 async function getFAQs() {
   try {
+    // Only make API calls during runtime, not during build
+    const isProduction = process.env.NODE_ENV === 'production' && !process.env.VERCEL_URL
+    if (isProduction) {
+      return fallbackFAQs
+    }
+
     // Fetch from API route
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+    const baseUrl = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : (process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000')
     const response = await fetch(`${baseUrl}/api/faq`, {
       next: { revalidate: 300 }, // Revalidate every 5 minutes
     })

@@ -17,7 +17,19 @@ interface WeeklyMenuItem {
 
 async function getWeeklyMenu() {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+    // Only make API calls during runtime, not during build
+    const isProduction = process.env.NODE_ENV === 'production' && !process.env.VERCEL_URL
+    if (isProduction) {
+      return {
+        menu: [],
+        currentWeek: 1,
+        source: 'build-time-fallback',
+      }
+    }
+
+    const baseUrl = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : (process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000')
     const response = await fetch(`${baseUrl}/api/weekly-menu`, {
       next: { revalidate: 86400, tags: ['weekly-menu'] }, // 24h cache, webhook will revalidate
     })

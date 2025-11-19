@@ -4,6 +4,9 @@ import DailyMenu from '@/components/sections/DailyMenu'
 import LocationMap from '@/components/sections/LocationMap'
 import FAQSection from '@/components/sections/FAQSection'
 
+// Force dynamic rendering to prevent SSG fetch issues
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   return (
     <main>

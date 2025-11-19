@@ -1,5 +1,8 @@
 import FAQSection from '@/components/sections/FAQSection'
 
+// Force dynamic rendering to prevent SSG fetch issues
+export const dynamic = 'force-dynamic'
+
 export const metadata = {
   title: 'Frequently Asked Questions - Place Lund Hotel',
   description: 'Find answers to common questions about Place Lund Hotel including check-in times, meals, WiFi, and more.',
