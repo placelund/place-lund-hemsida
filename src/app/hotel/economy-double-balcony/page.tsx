@@ -16,7 +16,7 @@ export default function EconomyDoubleBalconyPage() {
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image src={heroImage} alt="Economy double room with balcony" fill quality={100} className="object-cover" priority />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">Economy Double Room with Patio</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-outline">Economy Double Room with Patio</h1>
           <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
             Special value room with private patio and direct garden access on the first floor.
           </p>

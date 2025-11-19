@@ -30,7 +30,7 @@ export default function PropertySelection() {
       title: 'Conference',
       description: 'Professional meeting spaces for events and conferences',
       href: '/conference',
-      image: '/images/conference/Sofia/sofia-conference-room-place-lund-hotel-hero.jpg',
+      image: '/images/conference/Sofia/conference-room-place-lund-hotel-1.jpeg',
       features: ['Modern Facilities', 'Catering Available', 'Flexible Setup'],
     },
   ]

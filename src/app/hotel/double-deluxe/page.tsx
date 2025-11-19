@@ -16,7 +16,7 @@ export default function DoubleDeluxePage() {
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image src={heroImage} alt="Double deluxe room with living room" fill quality={100} className="object-cover" priority />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">Double Deluxe Room</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-outline">Double Deluxe Room</h1>
           <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
             Spacious two-room suite with separate bedroom and living room, perfect for extended stays and extra comfort.
           </p>

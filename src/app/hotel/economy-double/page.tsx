@@ -16,7 +16,7 @@ export default function EconomyDoublePage() {
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image src={heroImage} alt="Economy double room at Place Lund Hotel" fill quality={100} className="object-cover" priority />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">Economy Double Room</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-outline">Economy Double Room</h1>
           <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
             Great value accommodation on the first floor with street view, offering all essential amenities for a comfortable stay.
           </p>

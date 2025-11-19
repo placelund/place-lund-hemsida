@@ -60,7 +60,7 @@ const navItems: CardNavItem[] = [
 export default function PlaceLundNav() {
   return (
     <CardNav
-      logo="/images/logo.png"
+      logo="/images/Logo.png"
       logoAlt="Place Lund Hotel"
       items={navItems}
       baseColor="#ffffff"

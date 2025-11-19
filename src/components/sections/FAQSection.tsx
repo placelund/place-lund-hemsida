@@ -173,7 +173,7 @@ export default function FAQSection({ showFAQPageButton = false, showCategories =
 
   if (loading) {
     return (
-      <section className="py-16 px-4 bg-[#f5f5f5]">
+      <section className="py-16 px-4 bg-gray-100">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-[#004225] text-center mb-12">
             Frequently Asked Questions
@@ -187,7 +187,7 @@ export default function FAQSection({ showFAQPageButton = false, showCategories =
   // Show categories view (for main FAQ page)
   if (showCategories) {
     return (
-      <section className="py-16 px-4 bg-[#f5f5f5]">
+      <section className="py-16 px-4 bg-gray-100">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-[#004225] text-center mb-12">
             Frequently Asked Questions
@@ -338,7 +338,7 @@ export default function FAQSection({ showFAQPageButton = false, showCategories =
 
   // Default view (for homepage or other pages - shows top 5)
   return (
-    <section className="py-16 px-4 bg-[#f5f5f5]">
+    <section className="py-16 px-4 bg-gray-100">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-[#004225] text-center mb-12">
           Frequently Asked Questions
