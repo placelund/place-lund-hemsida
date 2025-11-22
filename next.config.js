@@ -8,7 +8,11 @@ const nextConfig = {
   // Updated for Next.js 16
   serverExternalPackages: ['googleapis'],
   // Empty turbopack config to silence warning
-  turbopack: {}
+  turbopack: {},
+  // Configure image qualities to fix warnings
+  images: {
+    qualities: [100, 75]
+  }
 }
 
 module.exports = nextConfig

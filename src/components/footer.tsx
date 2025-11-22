@@ -103,34 +103,29 @@ export default function FooterSection() {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
     const [statusMessage, setStatusMessage] = useState('')
     const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
-    const [showRecaptcha, setShowRecaptcha] = useState(false)
 
-    // Load reCAPTCHA script
+    // Load reCAPTCHA v3 script only if not already loaded
     useEffect(() => {
+        const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+        if (!siteKey) return
+
+        // Check if reCAPTCHA script is already loaded
+        const existingScript = document.querySelector('script[src*="recaptcha"]')
+        if (existingScript) return
+
         const script = document.createElement('script')
-        script.src = 'https://www.google.com/recaptcha/api.js'
+        script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
         script.async = true
         script.defer = true
         document.body.appendChild(script)
 
-        // Define callback for reCAPTCHA
-        ;(window as any).onRecaptchaSuccessFooter = (token: string) => {
-            setRecaptchaToken(token)
-        }
-
         return () => {
-            document.body.removeChild(script)
+            // Don't remove script as it might be used by other components
         }
     }, [])
 
-    // Auto-submit when reCAPTCHA is completed
-    useEffect(() => {
-        if (recaptchaToken && showRecaptcha) {
-            handleActualSubmit()
-        }
-    }, [recaptchaToken])
 
-    const handleSendClick = (e: React.FormEvent) => {
+    const handleSendClick = async (e: React.FormEvent) => {
         e.preventDefault()
 
         // Validate form first
@@ -140,13 +135,46 @@ export default function FooterSection() {
             return
         }
 
-        // Show reCAPTCHA
-        setShowRecaptcha(true)
+        // Execute reCAPTCHA v3
+        const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+        if (!siteKey) {
+            setStatus('error')
+            setStatusMessage('reCAPTCHA not configured')
+            return
+        }
+
+        try {
+            setStatus('loading')
+            setStatusMessage('')
+
+            // Execute reCAPTCHA v3
+            await new Promise(resolve => {
+                if ((window as any).grecaptcha?.ready) {
+                    (window as any).grecaptcha.ready(resolve)
+                } else {
+                    // If not ready yet, wait a bit and try again
+                    setTimeout(resolve, 1000)
+                }
+            })
+
+            const token = await (window as any).grecaptcha.execute(siteKey, {
+                action: 'quick_contact'
+            })
+
+            setRecaptchaToken(token)
+            handleActualSubmit(token)
+        } catch (error) {
+            setStatus('error')
+            setStatusMessage('reCAPTCHA verification failed. Please try again.')
+            console.error('reCAPTCHA error:', error)
+        }
     }
 
-    const handleActualSubmit = async () => {
+    const handleActualSubmit = async (token?: string) => {
         setStatus('loading')
         setStatusMessage('')
+
+        const finalToken = token || recaptchaToken
 
         try {
             const response = await fetch('/api/quick-contact', {
@@ -156,7 +184,7 @@ export default function FooterSection() {
                 },
                 body: JSON.stringify({
                     ...formData,
-                    recaptchaToken,
+                    recaptchaToken: finalToken,
                 }),
             })
 
@@ -169,20 +197,10 @@ export default function FooterSection() {
             setStatusMessage('Message sent successfully!')
             setFormData({ name: '', email: '', message: '' })
             setRecaptchaToken(null)
-            setShowRecaptcha(false)
-            // Reset reCAPTCHA
-            if ((window as any).grecaptcha) {
-                (window as any).grecaptcha.reset()
-            }
         } catch (error) {
             setStatus('error')
             setStatusMessage(error instanceof Error ? error.message : 'Failed to send message. Please try again.')
-            // Reset reCAPTCHA on error
-            if ((window as any).grecaptcha) {
-                (window as any).grecaptcha.reset()
-            }
             setRecaptchaToken(null)
-            setShowRecaptcha(false)
         }
     }
 
@@ -271,30 +289,14 @@ export default function FooterSection() {
                                     className="w-full px-3 py-2 text-sm bg-white border border-[#004225]/20 rounded focus:outline-none focus:border-[#004225] transition-colors resize-none"
                                 ></textarea>
 
-                                {/* reCAPTCHA - slides in when user clicks send */}
-                                <div
-                                    className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                                        showRecaptcha ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
-                                    }`}
-                                >
-                                    <div className="flex flex-col items-center gap-2 py-3">
-                                        <p className="text-xs text-gray-600 text-center">
-                                            Please verify you're human
-                                        </p>
-                                        <div
-                                            className="g-recaptcha"
-                                            data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-                                            data-callback="onRecaptchaSuccessFooter"
-                                        ></div>
-                                    </div>
-                                </div>
+                                {/* reCAPTCHA v3 runs in background - no UI needed */}
 
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
                                     className="w-full bg-[#004225] text-white text-sm font-semibold py-2 px-4 rounded hover:bg-[#42001D] transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                                 >
-                                    {status === 'loading' ? 'Sending...' : showRecaptcha ? 'Verify above' : 'Send Message'}
+                                    {status === 'loading' ? 'Sending...' : 'Send Message'}
                                 </button>
 
                                 {/* Status Messages */}

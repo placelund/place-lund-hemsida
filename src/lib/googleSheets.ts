@@ -259,7 +259,7 @@ export async function getFAQAnalyticsFromSheet(
   try {
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId,
-      range: "'FAQ Analytics'!A2:B",
+      range: "'FAQ - Analytics'!A2:B",
     })
 
     const rows = response.data.values || []
@@ -305,13 +305,13 @@ export async function updateFAQAnalytics(
     // Write back to the sheet (clear and rewrite)
     await sheets.spreadsheets.values.clear({
       spreadsheetId,
-      range: "'FAQ Analytics'!A2:B",
+      range: "'FAQ - Analytics'!A2:B",
     })
 
     if (data.length > 0) {
       await sheets.spreadsheets.values.update({
         spreadsheetId,
-        range: "'FAQ Analytics'!A2:B",
+        range: "'FAQ - Analytics'!A2:B",
         valueInputOption: 'RAW',
         requestBody: {
           values: data,

@@ -60,19 +60,32 @@
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-33.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-34.jpg"
   ],
+  "conference/Margaretha": [
+    "/images/conference/Margaretha/margaretha-conference-room-1.jpg",
+    "/images/conference/Margaretha/margaretha-conference-room-2.jpg",
+    "/images/conference/Margaretha/margaretha-conference-room-hero.jpg"
+  ],
   "conference/Sankt-Hans": [
     "/images/conference/Sankt-Hans/conference-room-place-lund-hotel-3.jpeg",
     "/images/conference/Sankt-Hans/conference-room-place-lund-hotel-4.jpeg",
-    "/images/conference/Sankt-Hans/conference-room-place-lund-hotel-5.jpeg"
+    "/images/conference/Sankt-Hans/conference-room-place-lund-hotel-5.jpeg",
+    "/images/conference/Sankt-Hans/sankt-hans-conference-room-1.jpg",
+    "/images/conference/Sankt-Hans/sankt-hans-conference-room-hero.jpg"
   ],
   "conference/Sofia": [
     "/images/conference/Sofia/conference-room-place-lund-hotel-1.jpeg",
-    "/images/conference/Sofia/conference-room-place-lund-hotel-2.jpeg"
+    "/images/conference/Sofia/conference-room-place-lund-hotel-2.jpeg",
+    "/images/conference/Sofia/sofia-conference-room-3.jpg",
+    "/images/conference/Sofia/sofia-conference-room-hero.jpg"
   ],
   "hero": [
+    "/images/hero/apartment-hero.jpg",
+    "/images/hero/conference-hero.jpg",
     "/images/hero/conference-placeholder.png",
     "/images/hero/hotel-placeholder.png",
+    "/images/hero/hotel-studio-hero.jpeg",
     "/images/hero/hotel-studio-placeholder.png",
+    "/images/hero/place-lund-hotel-hero.jpeg",
     "/images/hero/studio-apartments-placeholder.png"
   ],
   "hero/hero-image-slideshow": [
@@ -104,6 +117,9 @@
   ],
   "rooms/single-garden": [
     "/images/rooms/single-garden/single-garden-view-room-place-lund-hotel-4.jpeg"
+  ],
+  "rooms/single-street": [
+    "/images/rooms/single-street/single-street-view-room-place-lund-hotel-hero.jpeg"
   ],
   "rooms/twin-garden": [
     "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-1.jpg",

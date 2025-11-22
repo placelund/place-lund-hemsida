@@ -16,21 +16,23 @@ export default function ContactPage() {
   const [errorMessage, setErrorMessage] = useState('')
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null)
 
-  // Load reCAPTCHA v3 script
+  // Load reCAPTCHA v3 script only if not already loaded
   useEffect(() => {
     const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
     if (!siteKey) return
 
+    // Check if reCAPTCHA script is already loaded
+    const existingScript = document.querySelector('script[src*="recaptcha"]')
+    if (existingScript) return
+
     const script = document.createElement('script')
-    script.src = `https://www.google.com/recaptcha/enterprise.js?render=${siteKey}`
+    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`
     script.async = true
     script.defer = true
     document.head.appendChild(script)
 
     return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script)
-      }
+      // Don't remove script as it might be used by other components
     }
   }, [])
 
@@ -58,15 +60,15 @@ export default function ContactPage() {
 
       // Execute reCAPTCHA v3
       await new Promise(resolve => {
-        if ((window as any).grecaptcha?.enterprise?.ready) {
-          (window as any).grecaptcha.enterprise.ready(resolve)
+        if ((window as any).grecaptcha?.ready) {
+          (window as any).grecaptcha.ready(resolve)
         } else {
           // If not ready yet, wait a bit and try again
           setTimeout(resolve, 1000)
         }
       })
 
-      const token = await (window as any).grecaptcha.enterprise.execute(siteKey, {
+      const token = await (window as any).grecaptcha.execute(siteKey, {
         action: 'contact_form'
       })
 

@@ -139,7 +139,7 @@ export async function POST(request: NextRequest) {
       if (spreadsheetId) {
         await sheets.spreadsheets.values.append({
           spreadsheetId,
-          range: "'Contact Form Data'!A:D",
+          range: "Sheet1!A:D", // Using default sheet name
           valueInputOption: 'RAW',
           requestBody: {
             values: [[new Date().toISOString(), name, email, message]],
@@ -154,7 +154,7 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const { data, error: sendError } = await resend.emails.send({
       from: 'Place Lund Quick Contact <onboarding@resend.dev>', // Change this to your verified domain
-      to: ['info@placelund.se'],
+      to: ['placelund@gmail.com'], // Using verified email for testing
       replyTo: email,
       subject: `Quick Contact: Message from ${name}`,
       html: `
