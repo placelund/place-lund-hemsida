@@ -53,9 +53,9 @@ export default function HotelRoomsPage() {
           </div>
           {/* Content */}
           <div className="bg-[#FFFAF2] p-8 lg:p-16 flex flex-col justify-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
               Single Rooms
-            </h2>
+            </h3>
             <p className="text-gray-700 mb-8 leading-relaxed">
               Perfect for solo travelers, our single rooms offer comfort and tranquility with 140cm beds. Choose from street or garden views, all located on the 3rd floor.
             </p>
@@ -112,9 +112,9 @@ export default function HotelRoomsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
           {/* Content */}
           <div className="bg-[#FFFAF2] p-8 lg:p-16 flex flex-col justify-center order-2 lg:order-1">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
               Twin Rooms
-            </h2>
+            </h3>
             <p className="text-gray-700 mb-8 leading-relaxed">
               Ideal for friends or colleagues, our twin rooms feature two separate beds (90-100cm each). Available with street or garden views on the 2nd floor.
             </p>
@@ -191,9 +191,9 @@ export default function HotelRoomsPage() {
           </div>
           {/* Content */}
           <div className="bg-[#FFFAF2] p-8 lg:p-16 flex flex-col justify-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
               Double Rooms
-            </h2>
+            </h3>
             <p className="text-gray-700 mb-8 leading-relaxed">
               Perfect for couples, our double rooms range from cozy economy options to luxurious deluxe suites. Choose from various layouts and amenities to suit your needs.
             </p>
@@ -268,9 +268,9 @@ export default function HotelRoomsPage() {
       {/* Green Banner for All Rooms Include */}
       <section className="bg-[#004225] text-white py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-0">
+          <h3 className="text-3xl md:text-4xl font-bold mb-0">
             All Rooms Include
-          </h2>
+          </h3>
         </div>
       </section>
 
@@ -323,9 +323,9 @@ export default function HotelRoomsPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+              <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
                 Breakfast Buffet & Restaurant
-              </h2>
+              </h3>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Start your day with our complimentary breakfast buffet, featuring fresh bread, croissants, coffee, tea, and a variety of cold buffet options. Enjoy your evening with our included dinner service.
               </p>
@@ -377,9 +377,9 @@ export default function HotelRoomsPage() {
       {/* Bottom CTA Section */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Book Your Stay?
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             Experience comfort and hospitality at Place Lund Hotel. Breakfast and dinner included with every booking.
           </p>

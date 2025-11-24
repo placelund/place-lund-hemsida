@@ -25,9 +25,9 @@ export default function GroupStayPage() {
       {/* Group Types */}
       <section className="bg-[#FFFAF2] py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-12 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-12 text-center">
             Perfect For
-          </h2>
+          </h3>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center">
@@ -64,9 +64,9 @@ export default function GroupStayPage() {
       {/* What We Offer for Groups */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-12 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-12 text-center">
             Group Accommodation Options
-          </h2>
+          </h3>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Hotel Rooms */}
@@ -171,9 +171,9 @@ export default function GroupStayPage() {
       {/* Benefits Section */}
       <section className="bg-[#FFFAF2] py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-12 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-12 text-center">
             Why Choose Place Lund for Your Group?
-          </h2>
+          </h3>
 
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225]">
@@ -224,9 +224,9 @@ export default function GroupStayPage() {
       {/* CTA Section */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Plan Your Group Stay?
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             Contact us today to discuss your group's needs and receive a customized quote for accommodation and conference facilities.
           </p>
@@ -254,9 +254,9 @@ export default function GroupStayPage() {
       {/* Group-Specific Amenities and Services */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4 text-center">
             Group-Specific Amenities & Services
-          </h2>
+          </h3>
           <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12">
             We provide comprehensive services and amenities designed specifically for group stays, ensuring your event or gathering runs smoothly.
           </p>
@@ -383,9 +383,9 @@ export default function GroupStayPage() {
       {/* Contact Information for Group Coordinators */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4 text-center">
             Contact Our Group Coordinators
-          </h2>
+          </h3>
           <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-12">
             Our dedicated team is ready to help you plan the perfect group stay. Reach out today to get started.
           </p>
@@ -501,9 +501,9 @@ export default function GroupStayPage() {
       {/* Additional Info */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[#004225] mb-6">
+          <h3 className="text-2xl font-bold text-[#004225] mb-6">
             Questions About Group Bookings?
-          </h2>
+          </h3>
           <p className="text-gray-700 mb-8">
             Our experienced group coordinators are here to answer all your questions and help create a customized package that meets your specific needs and budget.
           </p>

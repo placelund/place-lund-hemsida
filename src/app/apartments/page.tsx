@@ -50,9 +50,9 @@ export default function ApartmentsPage() {
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
               Self-Catering Apartments in Lund
-            </h2>
+            </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Our apartments offer the perfect solution for extended stays, families, or those who prefer the flexibility of self-catering accommodation. Conveniently located in Lund, Sweden, each apartment is fully equipped with modern amenities and comfortable furnishings.
             </p>
@@ -98,9 +98,9 @@ export default function ApartmentsPage() {
       <section className="py-16 px-4 bg-[#f5f5f5]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
               Two Apartment Options Available
-            </h2>
+            </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Choose the apartment that best fits your needs. We offer a modern One Bedroom Apartment (43 m²) and a spacious Two Bedroom Apartment (86 m²).
             </p>
@@ -274,9 +274,9 @@ export default function ApartmentsPage() {
       {/* Location & Booking Info */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
             Northern Location in Lund
-          </h2>
+          </h3>
           <p className="text-lg text-gray-700 mb-8">
             Our apartments are conveniently located in Lund, with easy access to Lund University, the city center, restaurants, shops, and public transportation. The train station is just minutes away, providing easy access to Copenhagen, Malmö, and the rest of southern Sweden.
           </p>
@@ -292,9 +292,9 @@ export default function ApartmentsPage() {
       {/* Bottom CTA Section */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Book an Apartment?
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             Contact us today to check availability and discuss your specific requirements for extended stays in Lund, Sweden.
           </p>

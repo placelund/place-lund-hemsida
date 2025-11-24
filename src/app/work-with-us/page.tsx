@@ -50,9 +50,9 @@ export default function WorkWithUsPage() {
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
               Why Work at Place Lund Hotel?
-            </h2>
+            </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               We're more than just a hotel - we're a close-knit team dedicated to creating memorable experiences for our guests while fostering a positive work environment for our staff.
             </p>
@@ -85,9 +85,9 @@ export default function WorkWithUsPage() {
       <section id="application-interest" className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
               Application of Interest
-            </h2>
+            </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               While we don't have specific openings at the moment, we're always interested in meeting talented individuals who want to be part of our hospitality family. Submit your application of interest and we'll contact you when suitable positions become available.
             </p>
@@ -182,9 +182,9 @@ export default function WorkWithUsPage() {
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
               How to Submit Your Application of Interest
-            </h2>
+            </h3>
             <p className="text-lg text-gray-700">
               Ready to express your interest in joining our team? Here's how to submit your application of interest.
             </p>
@@ -251,9 +251,9 @@ export default function WorkWithUsPage() {
       {/* Contact CTA Section */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Submit Your Application of Interest?
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             We'd love to hear from you! Submit your application of interest today and join our talent pool for future opportunities at Place Lund Hotel.
           </p>

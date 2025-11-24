@@ -136,9 +136,9 @@ export default function ConferencePage() {
       {/* Green Banner for All Conference Rooms Include */}
       <section className="bg-[#004225] text-white py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-0">
+          <h3 className="text-3xl md:text-4xl font-bold mb-0">
             All Conference Rooms Include
-          </h2>
+          </h3>
         </div>
       </section>
 
@@ -248,9 +248,9 @@ export default function ConferencePage() {
       {/* Conference Packages Section */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] text-center mb-12">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] text-center mb-12">
             Conference Packages
-          </h2>
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Half Day Package */}
             <div className="bg-[#f5f5f5] p-8 border-2 border-[#004225] rounded-lg flex flex-col h-full">
@@ -375,9 +375,9 @@ export default function ConferencePage() {
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
               Conference Room Pricing
-            </h2>
+            </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Transparent pricing for all our conference rooms. All packages include standard AV equipment, WiFi, and refreshments.
             </p>
@@ -527,9 +527,9 @@ export default function ConferencePage() {
       {/* Bottom CTA Section */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Book Your Conference?
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             Contact us today to discuss your conference needs and get a customized quote for your event.
           </p>

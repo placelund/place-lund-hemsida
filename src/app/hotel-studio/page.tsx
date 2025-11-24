@@ -47,9 +47,9 @@ export default function HotelStudioPage() {
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
               Hotel Studios at Place Lund
-            </h2>
+            </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Our hotel studios offer the perfect blend of hotel convenience and apartment functionality. Each studio features a compact kitchenette, modern amenities, and weekly cleaning service. Ideal for business travelers, university visitors, and guests seeking a comfortable home-away-from-home experience in central Lund.
             </p>
@@ -209,9 +209,9 @@ export default function HotelStudioPage() {
       {/* Location & Booking Info */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
             Convenient Location in Lund
-          </h2>
+          </h3>
           <p className="text-lg text-gray-700 mb-8">
             Our hotel studios are conveniently located in Lund, with easy access to Lund University, the city center, restaurants, shops, and public transportation. The train station is just minutes away, providing easy access to Copenhagen, Malmö, and the rest of southern Sweden.
           </p>
@@ -230,9 +230,9 @@ export default function HotelStudioPage() {
       {/* Bottom CTA Section */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Book a Hotel Studio?
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             Experience the perfect combination of hotel service and apartment convenience in central Lund, Sweden.
           </p>

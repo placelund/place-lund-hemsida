@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import CurvedLoop from '@/components/ui/CurvedLoop'
 
 export default function PropertySelection() {
   const properties = [
@@ -37,15 +36,14 @@ export default function PropertySelection() {
 
   return (
     <section className="bg-[#FFFAF2]">
-      <div className="bg-[#004225] py-3 px-4 flex items-center justify-center">
-        <CurvedLoop
-          marqueeText="Choose Your Stay ▲ "
-          speed={0.8}
-          curveAmount={0}
-          direction="left"
-          interactive={true}
-          className="text-[2.5rem] md:text-[3.5rem]"
-        />
+      <div className="bg-[#004225] py-6 px-4 flex items-center justify-center">
+        <div className="flex items-center gap-6 md:gap-8">
+          <div className="w-0 h-0 border-l-[20px] md:border-l-[30px] border-r-[20px] md:border-r-[30px] border-b-[35px] md:border-b-[50px] border-l-transparent border-r-transparent border-b-white"></div>
+          <h2 className="text-[2.5rem] md:text-[3.5rem] font-bold text-white text-center whitespace-nowrap">
+            Choose Your Stay
+          </h2>
+          <div className="w-0 h-0 border-l-[20px] md:border-l-[30px] border-r-[20px] md:border-r-[30px] border-b-[35px] md:border-b-[50px] border-l-transparent border-r-transparent border-b-white"></div>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 min-h-screen">
         {properties.map((property) => (

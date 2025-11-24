@@ -130,9 +130,9 @@ export default async function RestaurantPage() {
       {/* Restaurant Images Section */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
             Restaurant Gallery
-          </h2>
+          </h3>
           <p className="text-lg text-gray-700">
             Take a look at our restaurant, bar, and dining spaces.
           </p>
@@ -194,9 +194,9 @@ export default async function RestaurantPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+              <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
                 Breakfast Buffet
-              </h2>
+              </h3>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Start your day with our complimentary breakfast buffet, featuring a delicious selection of fresh items. Enjoy fresh bread, croissants, coffee, tea, juice, and a variety of cold buffet options to suit all tastes.
               </p>
@@ -254,9 +254,9 @@ export default async function RestaurantPage() {
       {/* Weekly Menu Section */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-6xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
             Weekly Menu
-          </h2>
+          </h3>
           <p className="text-lg text-gray-800 max-w-2xl mx-auto mb-6">
             Our menu rotates every two weeks with fresh breakfast and dinner options.
           </p>
@@ -398,9 +398,9 @@ export default async function RestaurantPage() {
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
+            <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-4">
               A Place to Drink
-            </h2>
+            </h3>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Our bar welcomes both hotel guests and visitors for drinks, coffee, and casual socializing in a relaxed atmosphere.
             </p>
@@ -483,9 +483,9 @@ export default async function RestaurantPage() {
       {/* Atmosphere & Features */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold text-[#004225] mb-6">
             Relax & Unwind
-          </h2>
+          </h3>
           <p className="text-lg text-gray-700 mb-8">
             Whether you're starting your day with breakfast or unwinding with an evening drink, our restaurant and bar offer a welcoming atmosphere for hotel guests and local visitors alike.
           </p>
@@ -509,9 +509,9 @@ export default async function RestaurantPage() {
       {/* Contact & CTA */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Visit Our Restaurant & Bar
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             Questions about our restaurant or bar service? Get in touch with us for more information or to book a hotel room with breakfast included.
           </p>

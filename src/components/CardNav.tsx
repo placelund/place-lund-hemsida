@@ -51,7 +51,7 @@ const CardNav: React.FC<CardNavProps> = ({
 
   const calculateHeight = () => {
     const navEl = navRef.current;
-    if (!navEl) return 290;
+    if (!navEl) return 340;
 
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     if (isMobile) {
@@ -70,18 +70,19 @@ const CardNav: React.FC<CardNavProps> = ({
         contentEl.offsetHeight;
 
         const topBar = 60;
-        const padding = 16;
+        const padding = 24; // Increased padding
         const contentHeight = contentEl.scrollHeight;
+        const additionalBuffer = 20; // Extra buffer for content
 
         contentEl.style.visibility = wasVisible;
         contentEl.style.pointerEvents = wasPointerEvents;
         contentEl.style.position = wasPosition;
         contentEl.style.height = wasHeight;
 
-        return topBar + contentHeight + padding;
+        return topBar + contentHeight + padding + additionalBuffer;
       }
     }
-    return 290;
+    return 340; // Increased default height
   };
 
   const createTimeline = () => {
@@ -254,7 +255,7 @@ const CardNav: React.FC<CardNavProps> = ({
           {(items || []).slice(0, 4).map((item, idx) => (
             <div
               key={`${item.label}-${idx}`}
-              className="nav-card select-none relative flex flex-col gap-[6px] p-[10px_12px] rounded-[calc(0.75rem-0.2rem)] min-w-0 flex-[1_1_auto] h-auto min-h-[60px] md:h-full md:min-h-0 md:flex-[1_1_0%] md:p-[12px_16px] md:gap-[10px]"
+              className="nav-card select-none relative flex flex-col gap-[6px] p-[10px_12px] rounded-[calc(0.75rem-0.2rem)] min-w-0 flex-[1_1_auto] h-auto min-h-[80px] md:h-full md:min-h-0 md:flex-[1_1_0%] md:p-[12px_16px] md:gap-[10px]"
               ref={setCardRef(idx)}
               style={{ backgroundColor: item.bgColor, color: item.textColor }}
             >
