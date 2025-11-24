@@ -253,10 +253,13 @@ export default function ConferencePage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Half Day Package */}
-            <div className="bg-[#f5f5f5] p-8 border-2 border-[#004225] rounded-lg">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Half Day</h3>
-              <p className="text-gray-700 mb-6">Perfect for shorter meetings and workshops</p>
-              <ul className="space-y-3 mb-6">
+            <div className="bg-[#f5f5f5] p-8 border-2 border-[#004225] rounded-lg flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#004225] mb-4">Half Day</h3>
+                <p className="text-gray-700 mb-6">Perfect for shorter meetings and workshops</p>
+              </div>
+
+              <ul className="space-y-3 mb-6 flex-1">
                 <li className="flex items-start gap-2">
                   <span className="text-[#004225] font-bold">•</span>
                   <span className="text-gray-700">Conference room rental (4 hours)</span>
@@ -274,19 +277,25 @@ export default function ConferencePage() {
                   <span className="text-gray-700">WiFi access</span>
                 </li>
               </ul>
-              <Link
-                href="/contact"
-                className="block w-full text-center bg-[#004225] text-white py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors font-semibold"
-              >
-                Request Quote
-              </Link>
+
+              <div className="mt-auto">
+                <Link
+                  href="/contact"
+                  className="block w-full text-center bg-[#004225] text-white py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors font-semibold"
+                >
+                  Request Quote
+                </Link>
+              </div>
             </div>
 
             {/* Full Day Package */}
-            <div className="bg-[#f5f5f5] p-8 border-2 border-[#42001D] rounded-lg">
-              <h3 className="text-2xl font-bold text-[#42001D] mb-4">Full Day</h3>
-              <p className="text-gray-700 mb-6">Comprehensive package for full-day events</p>
-              <ul className="space-y-3 mb-6">
+            <div className="bg-[#f5f5f5] p-8 border-2 border-[#42001D] rounded-lg flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#42001D] mb-4">Full Day</h3>
+                <p className="text-gray-700 mb-6">Comprehensive package for full-day events</p>
+              </div>
+
+              <ul className="space-y-3 mb-6 flex-1">
                 <li className="flex items-start gap-2">
                   <span className="text-[#42001D] font-bold">•</span>
                   <span className="text-gray-700">Conference room rental (8 hours)</span>
@@ -308,19 +317,25 @@ export default function ConferencePage() {
                   <span className="text-gray-700">Dedicated support staff</span>
                 </li>
               </ul>
-              <Link
-                href="/contact"
-                className="block w-full text-center bg-[#42001D] text-white py-3 px-6 rounded-md hover:bg-[#004225] transition-colors font-semibold"
-              >
-                Request Quote
-              </Link>
+
+              <div className="mt-auto">
+                <Link
+                  href="/contact"
+                  className="block w-full text-center bg-[#42001D] text-white py-3 px-6 rounded-md hover:bg-[#004225] transition-colors font-semibold"
+                >
+                  Request Quote
+                </Link>
+              </div>
             </div>
 
             {/* Multi-Day Package */}
-            <div className="bg-[#f5f5f5] p-8 border-2 border-[#004225] rounded-lg">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Multi-Day</h3>
-              <p className="text-gray-700 mb-6">Extended packages for conferences and training</p>
-              <ul className="space-y-3 mb-6">
+            <div className="bg-[#f5f5f5] p-8 border-2 border-[#004225] rounded-lg flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#004225] mb-4">Multi-Day</h3>
+                <p className="text-gray-700 mb-6">Extended packages for conferences and training</p>
+              </div>
+
+              <ul className="space-y-3 mb-6 flex-1">
                 <li className="flex items-start gap-2">
                   <span className="text-[#004225] font-bold">•</span>
                   <span className="text-gray-700">Conference room rental (multiple days)</span>
@@ -342,12 +357,15 @@ export default function ConferencePage() {
                   <span className="text-gray-700">Flexible scheduling</span>
                 </li>
               </ul>
-              <Link
-                href="/contact"
-                className="block w-full text-center bg-[#004225] text-white py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors font-semibold"
-              >
-                Request Quote
-              </Link>
+
+              <div className="mt-auto">
+                <Link
+                  href="/contact"
+                  className="block w-full text-center bg-[#004225] text-white py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors font-semibold"
+                >
+                  Request Quote
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -367,11 +385,13 @@ export default function ConferencePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             {/* Sofia Pricing */}
-            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225]">
-              <h3 className="text-2xl font-bold text-[#004225] mb-6 text-center">Sofia</h3>
-              <p className="text-center text-gray-600 mb-6">Medium room • 20-30 people</p>
+            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225] flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#004225] mb-6 text-center">Sofia</h3>
+                <p className="text-center text-gray-600 mb-6">Medium room • 20-30 people</p>
+              </div>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-4 mb-6 flex-1">
                 <div className="bg-[#f5f5f5] p-4 rounded-lg">
                   <p className="text-sm font-bold text-[#004225] mb-2">Half Day</p>
                   <div className="space-y-1 text-sm">
@@ -391,20 +411,24 @@ export default function ConferencePage() {
                 </div>
               </div>
 
-              <Link
-                href="/conference/sofia"
-                className="block w-full text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
-              >
-                View Details
-              </Link>
+              <div className="mt-auto">
+                <Link
+                  href="/conference/sofia"
+                  className="block w-full text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
+                >
+                  View Details
+                </Link>
+              </div>
             </div>
 
             {/* Margareta Pricing */}
-            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#42001D]">
-              <h3 className="text-2xl font-bold text-[#42001D] mb-6 text-center">Margareta</h3>
-              <p className="text-center text-gray-600 mb-6">Large room • 30-90 participants</p>
+            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#42001D] flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#42001D] mb-6 text-center">Margareta</h3>
+                <p className="text-center text-gray-600 mb-6">Large room • 30-90 participants</p>
+              </div>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-4 mb-6 flex-1">
                 <div className="bg-[#f5f5f5] p-4 rounded-lg">
                   <p className="text-sm font-bold text-[#42001D] mb-2">Half Day</p>
                   <div className="text-center">
@@ -422,20 +446,24 @@ export default function ConferencePage() {
                 </div>
               </div>
 
-              <Link
-                href="/conference/margareta"
-                className="block w-full text-center bg-[#42001D] text-white py-2 px-4 rounded-md hover:bg-[#004225] transition-colors"
-              >
-                View Details
-              </Link>
+              <div className="mt-auto">
+                <Link
+                  href="/conference/margareta"
+                  className="block w-full text-center bg-[#42001D] text-white py-2 px-4 rounded-md hover:bg-[#004225] transition-colors"
+                >
+                  View Details
+                </Link>
+              </div>
             </div>
 
             {/* Sankt Hans Pricing */}
-            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225]">
-              <h3 className="text-2xl font-bold text-[#004225] mb-6 text-center">Sankt Hans</h3>
-              <p className="text-center text-gray-600 mb-6">Small room • 10-15 people</p>
+            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225] flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#004225] mb-6 text-center">Sankt Hans</h3>
+                <p className="text-center text-gray-600 mb-6">Small room • 10-15 people</p>
+              </div>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-4 mb-6 flex-1">
                 <div className="bg-[#f5f5f5] p-4 rounded-lg">
                   <p className="text-sm font-bold text-[#004225] mb-2">Half Day</p>
                   <div className="text-center">
@@ -453,12 +481,14 @@ export default function ConferencePage() {
                 </div>
               </div>
 
-              <Link
-                href="/conference/sankt-hans"
-                className="block w-full text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
-              >
-                View Details
-              </Link>
+              <div className="mt-auto">
+                <Link
+                  href="/conference/sankt-hans"
+                  className="block w-full text-center bg-[#004225] text-white py-2 px-4 rounded-md hover:bg-[#42001D] transition-colors"
+                >
+                  View Details
+                </Link>
+              </div>
             </div>
           </div>
 

@@ -15,9 +15,11 @@ export default function EconomyDoublePage() {
     <main className="min-h-screen">
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image src={heroImage} alt="Economy double room at Place Lund Hotel" fill quality={100} className="object-cover" priority />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-outline">Economy Double Room</h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8">
             Great value accommodation on the first floor with street view, offering all essential amenities for a comfortable stay.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -69,12 +71,14 @@ export default function EconomyDoublePage() {
             </div>
 
             <div className="space-y-4">
+              {/* Featured Image */}
               <div className="relative h-[400px] overflow-hidden rounded-lg">
                 <Image src={galleryImages[0] || heroImage} alt="Economy double room" fill quality={100} loading="lazy" className="object-cover" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                {galleryImages.slice(1, 3).map((image, index) => (
-                  <div key={index} className="relative h-64 overflow-hidden rounded-lg">
+              {/* Gallery Grid - Show ALL remaining images */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {galleryImages.slice(1).map((image, index) => (
+                  <div key={index} className="relative h-48 overflow-hidden rounded-lg">
                     <Image src={image} alt={`Economy room view ${index + 2}`} fill quality={100} loading="lazy" className="object-cover" />
                   </div>
                 ))}

@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { generateMetadata } from '@/lib/seo/metadata'
+import { PAGE_METADATA } from '@/lib/seo/page-metadata'
 
-export const metadata = {
-  title: 'Two Bedroom Apartment in Lund - Place Lund Hotel | 86m² Family Apartment',
-  description: 'Spacious two bedroom apartment in Lund, Sweden. 86m² with two bathrooms, full kitchen, perfect for families and extended stays. Monthly rentals available.',
-}
+// SEO Metadata
+export const metadata = generateMetadata(PAGE_METADATA.apartmentsOneBedroom)
 
 export default function OneBedroomApartmentPage() {
   // Images 1-9 for one bedroom apartments
@@ -27,7 +27,7 @@ export default function OneBedroomApartmentPage() {
             A Place to Live
           </h1>
           <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
-            Spacious 86m² two bedroom apartment with separate living areas, perfect for families and extended stays in northern Lund.
+            Modern 43m² one bedroom apartment with separate living area, perfect for professionals and couples in northern Lund.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -51,9 +51,9 @@ export default function OneBedroomApartmentPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-[#004225] mb-6">Two Bedroom Apartment Overview</h2>
+              <h2 className="text-3xl font-bold text-[#004225] mb-6">One Bedroom Apartment Overview</h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                Our spacious 86 m² two bedroom apartment offers generous space with two separate bedrooms, a living area, two bathrooms, and a fully equipped kitchen. Perfect for families, couples, or professionals seeking comfortable long-term accommodation in Lund. This apartment comfortably accommodates up to 4 people.
+                Our modern 43 m² one bedroom apartment offers comfortable space with a separate bedroom, living area, bathroom, and fully equipped kitchen. Perfect for professionals, couples, or researchers seeking comfortable long-term accommodation in Lund. This apartment comfortably accommodates up to 2 people.
               </p>
 
               <div className="bg-[#f5f5f5] p-6 rounded-lg border-2 border-[#004225] mb-6">
@@ -61,19 +61,19 @@ export default function OneBedroomApartmentPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Size:</strong> 86 m²</span>
+                    <span className="text-gray-700"><strong>Size:</strong> 43 m²</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Layout:</strong> Two bedrooms + living room</span>
+                    <span className="text-gray-700"><strong>Layout:</strong> Separate bedroom + living area</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Beds:</strong> Queen size beds + sofa bed</span>
+                    <span className="text-gray-700"><strong>Bed:</strong> Queen size bed + sofa bed option</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Capacity:</strong> Up to 4 people</span>
+                    <span className="text-gray-700"><strong>Capacity:</strong> Up to 2 people</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
@@ -81,11 +81,11 @@ export default function OneBedroomApartmentPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Bathrooms:</strong> Two full bathrooms</span>
+                    <span className="text-gray-700"><strong>Bathroom:</strong> One full bathroom</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Storage:</strong> Large wardrobe</span>
+                    <span className="text-gray-700"><strong>Storage:</strong> Wardrobe & storage</span>
                   </li>
                 </ul>
               </div>
@@ -105,19 +105,19 @@ export default function OneBedroomApartmentPage() {
               <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#42001D] mb-6">
                 <h3 className="text-xl font-bold text-[#42001D] mb-3">Perfect For:</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• Families with children</li>
-                  <li>• Extended business stays (1+ months)</li>
-                  <li>• University relocation</li>
-                  <li>• Temporary stays for family patients</li>
-                  <li>• Couples wanting extra space</li>
-                  <li>• Temporary housing during renovation</li>
+                  <li>• Professionals and business travelers</li>
+                  <li>• Researchers and university guests</li>
+                  <li>• Couples seeking comfortable accommodation</li>
+                  <li>• Extended stays (1+ months)</li>
+                  <li>• Family patients requiring temporary housing</li>
+                  <li>• Solo travelers wanting extra space</li>
                 </ul>
               </div>
 
               <div className="bg-[#004225] text-white p-6 rounded-lg">
                 <h3 className="text-xl font-bold mb-3">Booking Information</h3>
                 <p className="mb-4">
-                  Two bedroom apartments are available for monthly rentals.
+                  One bedroom apartments are available for monthly rentals.
                 </p>
                 <p className="text-sm text-white/80">
                   Note: Meals are NOT included with apartment stays. Fully equipped kitchen for self-catering.
@@ -184,9 +184,9 @@ export default function OneBedroomApartmentPage() {
       {/* CTA Section */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Make Place Lund Your Home?
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             Contact us today to check availability and discuss your requirements for extended stays in Lund, Sweden.
           </p>
@@ -201,7 +201,7 @@ export default function OneBedroomApartmentPage() {
               href="/apartments/studio"
               className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors"
             >
-              View One Bedroom Apartment
+              View Studio Apartment
             </Link>
           </div>
         </div>

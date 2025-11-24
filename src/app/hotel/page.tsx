@@ -13,7 +13,7 @@ export default function HotelRoomsPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image
-          src="/images/conference/Gallery/conference-gallery-place-lund-hotel-17.jpg"
+          src="/images/rooms/HERO 2.JPG"
           alt="Comfortable hotel rooms at Place Lund Hotel"
           fill
           quality={100}

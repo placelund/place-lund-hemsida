@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { ImageGrid } from '@/components/ui/FullscreenGallery'
 
 export const metadata = {
   title: 'Apartments in Lund Sweden - Place Lund Hotel | Self-Catering Accommodation',
@@ -57,69 +58,39 @@ export default function ApartmentsPage() {
             </p>
           </div>
 
-          {/* Apartment Images Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image
-                src="/images/apartments/apartment-lund-sweden-place-hotel-2.jpg"
-                alt="Apartment living room in Lund Sweden"
-                fill
-                quality={100}
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image
-                src="/images/apartments/apartment-lund-sweden-place-hotel-3.jpg"
-                alt="Apartment kitchen Place Lund Hotel"
-                fill
-                quality={100}
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image
-                src="/images/apartments/apartment-lund-sweden-place-hotel-4.jpg"
-                alt="Apartment bedroom Lund accommodation"
-                fill
-                quality={100}
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image
-                src="/images/apartments/apartment-lund-sweden-place-hotel-5.jpg"
-                alt="Apartment bathroom Place Lund"
-                fill
-                quality={100}
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image
-                src="/images/apartments/apartment-lund-sweden-place-hotel-7.jpeg"
-                alt="Apartment dining area Lund Sweden"
-                fill
-                quality={100}
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <Image
-                src="/images/apartments/apartment-lund-sweden-place-hotel-8.jpeg"
-                alt="Apartment workspace Place Lund Hotel"
-                fill
-                quality={100}
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
-          </div>
+          {/* Apartment Images Grid with Fullscreen Gallery */}
+          <ImageGrid
+            images={[
+              {
+                src: "/images/apartments/apartment-lund-sweden-place-hotel-2.jpg",
+                alt: "Apartment living room in Lund Sweden"
+              },
+              {
+                src: "/images/apartments/apartment-lund-sweden-place-hotel-3.jpg",
+                alt: "Apartment kitchen Place Lund Hotel"
+              },
+              {
+                src: "/images/apartments/apartment-lund-sweden-place-hotel-4.jpg",
+                alt: "Apartment bedroom Lund accommodation"
+              },
+              {
+                src: "/images/apartments/apartment-lund-sweden-place-hotel-5.jpg",
+                alt: "Apartment bathroom Place Lund"
+              },
+              {
+                src: "/images/apartments/apartment-lund-sweden-place-hotel-7.jpeg",
+                alt: "Apartment dining area Lund Sweden"
+              },
+              {
+                src: "/images/apartments/apartment-lund-sweden-place-hotel-8.jpeg",
+                alt: "Apartment workspace Place Lund Hotel"
+              },
+            ]}
+            columns={{ default: 1, md: 2, lg: 3 }}
+            aspectRatio="aspect-video"
+            gap="gap-6"
+            className="mb-12"
+          />
         </div>
       </section>
 
@@ -137,12 +108,15 @@ export default function ApartmentsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Two Bedroom Apartment */}
-            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225] hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Two Bedroom Apartment (86 m²)</h3>
-              <p className="text-gray-700 mb-6">
-                Spacious 86 m² apartment with separate bedrooms, living room, and fully equipped kitchen. Perfect for families and extended stays. Accommodates up to 4 people.
-              </p>
-              <ul className="space-y-3 mb-6">
+            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225] hover:shadow-xl transition-shadow flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#004225] mb-4">Two Bedroom Apartment (86 m²)</h3>
+                <p className="text-gray-700 mb-6">
+                  Spacious 86 m² apartment with separate bedrooms, living room, and fully equipped kitchen. Perfect for families and extended stays. Accommodates up to 4 people.
+                </p>
+              </div>
+
+              <ul className="space-y-3 mb-6 flex-1">
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">✓</span>
                   <span className="text-gray-700">Separate bedroom + living room</span>
@@ -160,21 +134,27 @@ export default function ApartmentsPage() {
                   <span className="text-gray-700">Ideal for families</span>
                 </li>
               </ul>
-              <Link
-                href="/apartments/one-bedroom"
-                className="block w-full text-center bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors"
-              >
-                View Two Bedroom Apartment
-              </Link>
+
+              <div className="mt-auto">
+                <Link
+                  href="/apartments/one-bedroom"
+                  className="block w-full text-center bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors"
+                >
+                  View Two Bedroom Apartment
+                </Link>
+              </div>
             </div>
 
             {/* One Bedroom Apartment */}
-            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225] hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">One Bedroom Apartment (43 m²)</h3>
-              <p className="text-gray-700 mb-6">
-                Modern 43 m² apartment with one bedroom, living area, and fully equipped kitchen. Ideal for professionals, researchers, and family patients. Accommodates 2 people.
-              </p>
-              <ul className="space-y-3 mb-6">
+            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225] hover:shadow-xl transition-shadow flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#004225] mb-4">One Bedroom Apartment (43 m²)</h3>
+                <p className="text-gray-700 mb-6">
+                  Modern 43 m² apartment with one bedroom, living area, and fully equipped kitchen. Ideal for professionals, researchers, and family patients. Accommodates 2 people.
+                </p>
+              </div>
+
+              <ul className="space-y-3 mb-6 flex-1">
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">✓</span>
                   <span className="text-gray-700">43 m² layout</span>
@@ -192,12 +172,15 @@ export default function ApartmentsPage() {
                   <span className="text-gray-700">Washing machine & dryer</span>
                 </li>
               </ul>
-              <Link
-                href="/apartments/studio"
-                className="block w-full text-center bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors"
-              >
-                View One Bedroom Apartment
-              </Link>
+
+              <div className="mt-auto">
+                <Link
+                  href="/apartments/studio"
+                  className="block w-full text-center bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors"
+                >
+                  View One Bedroom Apartment
+                </Link>
+              </div>
             </div>
           </div>
         </div>

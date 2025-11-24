@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { generateMetadata } from '@/lib/seo/metadata'
+import { PAGE_METADATA } from '@/lib/seo/page-metadata'
 
-export const metadata = {
-  title: 'One Bedroom Apartment in Lund - Place Lund Hotel | Monthly Rental',
-  description: 'Modern one bedroom apartment in Lund, Sweden. 43m² with full kitchen, perfect for professionals, researchers, and family patients. Monthly rentals available.',
-}
+// SEO Metadata
+export const metadata = generateMetadata(PAGE_METADATA.apartmentsStudio)
 
 export default function StudioApartmentPage() {
   // Images 10-17 for studio apartments
@@ -24,10 +24,10 @@ export default function StudioApartmentPage() {
         />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">
-            A Place to Stay
+            A Place to Spread Out
           </h1>
           <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
-            Modern one bedroom apartment with everything you need for comfortable extended stays in northern Lund.
+            Spacious 86m² studio apartment with open-plan living and everything you need for comfortable extended stays in northern Lund.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -51,12 +51,12 @@ export default function StudioApartmentPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-[#004225] mb-6">One Bedroom Apartment Overview</h2>
+              <h2 className="text-3xl font-bold text-[#004225] mb-6">Studio Apartment Overview</h2>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                This modern 43 m² one bedroom apartment offers a comfortable and practical home for long-term stays in Lund. It is fully furnished and designed for professionals, researchers, and family patients who need temporary accommodation with all conveniences. Accommodates 2 people.
+                This spacious 86 m² studio apartment offers generous open-plan living for comfortable long-term stays in Lund. It is fully furnished and designed for families, couples, or professionals who need spacious temporary accommodation with all conveniences. Accommodates up to 4 people.
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">
-                The apartment includes a spacious living area with a Smart TV, a separate bedroom, a private bathroom, and a fully equipped kitchen. A washing machine and dryer are available inside the bathroom for complete independence during longer stays.
+                The apartment features a large open-plan layout with combined living, dining, and sleeping areas, plus a fully equipped kitchen and private bathroom. A washing machine and dryer are available for complete independence during longer stays.
               </p>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 Located next to a bus stop with direct connections to Lund city center, you can reach workplaces, universities, and shops within minutes. The surrounding area offers several fast-food options and international restaurants.
@@ -70,23 +70,23 @@ export default function StudioApartmentPage() {
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Size:</strong> 43 m²</span>
+                    <span className="text-gray-700"><strong>Size:</strong> 86 m²</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Layout:</strong> Separate bedroom + living area</span>
+                    <span className="text-gray-700"><strong>Layout:</strong> Open-plan living + sleeping area</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Bed:</strong> Queen size (140-160cm) + sofa bed option</span>
+                    <span className="text-gray-700"><strong>Bed:</strong> Queen size bed + sofa bed for extra guests</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Capacity:</strong> 2 people</span>
+                    <span className="text-gray-700"><strong>Capacity:</strong> Up to 4 people</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
-                    <span className="text-gray-700"><strong>Kitchen:</strong> Fully equipped kitchen</span>
+                    <span className="text-gray-700"><strong>Kitchen:</strong> Full kitchen with dining area</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-[#004225] font-bold text-xl">•</span>
@@ -110,12 +110,12 @@ export default function StudioApartmentPage() {
               <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#42001D] mb-6">
                 <h3 className="text-xl font-bold text-[#42001D] mb-3">Perfect For:</h3>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• Family patients requiring temporary accommodation</li>
-                  <li>• Business travelers and professionals</li>
-                  <li>• Researchers and company guests</li>
-                  <li>• Monthly long-term stays</li>
-                  <li>• Those seeking temporary housing</li>
-                  <li>• 2 people maximum occupancy</li>
+                  <li>• Families needing spacious accommodation</li>
+                  <li>• Extended business stays and relocations</li>
+                  <li>• Groups of professionals or researchers</li>
+                  <li>• Monthly long-term stays (1+ months)</li>
+                  <li>• Couples wanting extra living space</li>
+                  <li>• Up to 4 people maximum occupancy</li>
                 </ul>
               </div>
 
@@ -167,12 +167,12 @@ export default function StudioApartmentPage() {
       <section className="bg-[#FFFAF2] py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-12 text-center">
-            43 m² vs 80 m² Apartment
+            43 m² vs 86 m² Apartment
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Studio Column */}
+            {/* One Bedroom Column */}
             <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225]">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">43 m² Apartment</h3>
+              <h3 className="text-2xl font-bold text-[#004225] mb-4">43 m² One Bedroom</h3>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">✓</span>
@@ -188,38 +188,11 @@ export default function StudioApartmentPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">✓</span>
-                  <span>Washing machine & dryer</span>
+                  <span>Private and cozy</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600 font-bold">✓</span>
-                  <span>Up to 4 people</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* One Bedroom Column */}
-            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225]">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">80 m² Apartment</h3>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
-                  <span>Spacious 80 m² layout</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
-                  <span>Separate bedroom + living room</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
-                  <span>Full kitchen with oven</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
-                  <span>More space and privacy</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-green-600 font-bold">✓</span>
-                  <span>Up to 4 people - ideal for families</span>
+                  <span>Up to 2 people - ideal for couples</span>
                 </li>
               </ul>
               <Link
@@ -229,6 +202,33 @@ export default function StudioApartmentPage() {
                 View One Bedroom
               </Link>
             </div>
+
+            {/* Studio Column */}
+            <div className="bg-[#FFFAF2] p-8 rounded-lg border-2 border-[#004225]">
+              <h3 className="text-2xl font-bold text-[#004225] mb-4">86 m² Studio</h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Spacious 86 m² layout</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Open-plan living + sleeping area</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Full kitchen with dining area</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Maximum space and flexibility</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600 font-bold">✓</span>
+                  <span>Up to 4 people - ideal for families</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -236,9 +236,9 @@ export default function StudioApartmentPage() {
       {/* CTA Section */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready for Your Lund Stay?
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             Contact us today to check studio apartment availability and discuss your requirements for stays in Lund, Sweden.
           </p>

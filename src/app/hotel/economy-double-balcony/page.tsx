@@ -15,9 +15,11 @@ export default function EconomyDoubleBalconyPage() {
     <main className="min-h-screen">
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image src={heroImage} alt="Economy double room with balcony" fill quality={100} className="object-cover" priority />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-outline">Economy Double Room with Patio</h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8">
             Special value room with private patio and direct garden access on the first floor.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -70,12 +72,14 @@ export default function EconomyDoubleBalconyPage() {
             </div>
 
             <div className="space-y-4">
+              {/* Featured Image */}
               <div className="relative h-[400px] overflow-hidden rounded-lg">
                 <Image src={galleryImages[0] || heroImage} alt="Economy room with balcony" fill quality={100} loading="lazy" className="object-cover" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                {galleryImages.slice(1, 3).map((image, index) => (
-                  <div key={index} className="relative h-64 overflow-hidden rounded-lg">
+              {/* Gallery Grid - Show ALL remaining images */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {galleryImages.slice(1).map((image, index) => (
+                  <div key={index} className="relative h-48 overflow-hidden rounded-lg">
                     <Image src={image} alt={`Room with patio ${index + 2}`} fill quality={100} loading="lazy" className="object-cover" />
                   </div>
                 ))}

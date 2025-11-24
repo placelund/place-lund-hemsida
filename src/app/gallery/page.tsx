@@ -2,11 +2,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getGalleryImages } from '@/utils/getImages'
 import BookingLink from '@/components/BookingLink'
+import { ImageGrid } from '@/components/ui/FullscreenGallery'
+import { generateMetadata } from '@/lib/seo/metadata'
+import { PAGE_METADATA } from '@/lib/seo/page-metadata'
 
-export const metadata = {
-  title: 'Photo Gallery - Place Lund Hotel | Lund, Sweden',
-  description: 'Browse our photo gallery showcasing Place Lund Hotel, rooms, apartments, conference facilities, and location in Lund, Sweden.',
-}
+// SEO Metadata
+export const metadata = generateMetadata(PAGE_METADATA.gallery)
 
 export default function GalleryPage() {
   // Get all gallery images
@@ -37,26 +38,18 @@ export default function GalleryPage() {
       </section>
 
 
-      {/* Gallery Grid */}
+      {/* Gallery Grid with Fullscreen Functionality */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {galleryImages.map((image, index) => (
-              <div
-                key={index}
-                className="relative aspect-[4/3] overflow-hidden rounded-lg group cursor-pointer shadow-md hover:shadow-xl transition-shadow"
-              >
-                <Image
-                  src={image}
-                  alt={`Place Lund Hotel - Gallery Image ${index + 1}`}
-                  fill
-                  quality={100}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-              </div>
-            ))}
-          </div>
+          <ImageGrid
+            images={galleryImages.map((image, index) => ({
+              src: image,
+              alt: `Place Lund Hotel - Gallery Image ${index + 1}`,
+            }))}
+            columns={{ default: 1, sm: 2, lg: 3, xl: 4 }}
+            aspectRatio="aspect-[4/3]"
+            gap="gap-4"
+          />
         </div>
       </section>
 
@@ -69,63 +62,78 @@ export default function GalleryPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Hotel Rooms */}
-            <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Hotel Rooms</h3>
-              <p className="text-gray-700 mb-6">
-                View our collection of hotel rooms from economy doubles to deluxe accommodations.
-              </p>
-              <Link
-                href="/hotel/gallery"
-                className="block bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors mb-3"
-              >
-                Hotel Gallery
-              </Link>
-              <Link
-                href="/hotel"
-                className="block border-2 border-[#004225] text-[#004225] font-semibold py-2 px-6 rounded-md hover:bg-[#004225] hover:text-white transition-colors text-sm"
-              >
-                View Rooms
-              </Link>
+            <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#004225] mb-4">Hotel Rooms</h3>
+                <p className="text-gray-700 mb-6">
+                  View our collection of hotel rooms from economy doubles to deluxe accommodations.
+                </p>
+              </div>
+
+              <div className="mt-auto space-y-3">
+                <Link
+                  href="/hotel/gallery"
+                  className="block bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors"
+                >
+                  Hotel Gallery
+                </Link>
+                <Link
+                  href="/hotel"
+                  className="block border-2 border-[#004225] text-[#004225] font-semibold py-2 px-6 rounded-md hover:bg-[#004225] hover:text-white transition-colors text-sm"
+                >
+                  View Rooms
+                </Link>
+              </div>
             </div>
 
             {/* Apartments */}
-            <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Apartments</h3>
-              <p className="text-gray-700 mb-6">
-                Browse our one bedroom and studio apartments perfect for extended stays.
-              </p>
-              <Link
-                href="/apartments/gallery"
-                className="block bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors mb-3"
-              >
-                Apartment Gallery
-              </Link>
-              <Link
-                href="/apartments"
-                className="block border-2 border-[#004225] text-[#004225] font-semibold py-2 px-6 rounded-md hover:bg-[#004225] hover:text-white transition-colors text-sm"
-              >
-                View Apartments
-              </Link>
+            <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#004225] mb-4">Apartments</h3>
+                <p className="text-gray-700 mb-6">
+                  Browse our one bedroom and studio apartments perfect for extended stays.
+                </p>
+              </div>
+
+              <div className="mt-auto space-y-3">
+                <Link
+                  href="/apartments/gallery"
+                  className="block bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors"
+                >
+                  Apartment Gallery
+                </Link>
+                <Link
+                  href="/apartments"
+                  className="block border-2 border-[#004225] text-[#004225] font-semibold py-2 px-6 rounded-md hover:bg-[#004225] hover:text-white transition-colors text-sm"
+                >
+                  View Apartments
+                </Link>
+              </div>
             </div>
 
             {/* Conference */}
-            <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center">
-              <h3 className="text-2xl font-bold text-[#004225] mb-4">Conference Rooms</h3>
-              <p className="text-gray-700 mb-6">
-                Explore our three conference rooms equipped for meetings and events.
-              </p>
-              <Link
-                href="/conference/gallery"
-                className="block bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors mb-3"
-              >
-                Conference Gallery
-              </Link>
-              <Link
-                href="/conference"
-                className="block border-2 border-[#004225] text-[#004225] font-semibold py-2 px-6 rounded-md hover:bg-[#004225] hover:text-white transition-colors text-sm"
-              >
-                View Conference Rooms
-              </Link>
+            <div className="bg-[#FFFAF2] p-6 rounded-lg border-2 border-[#004225] text-center flex flex-col h-full">
+              <div>
+                <h3 className="text-2xl font-bold text-[#004225] mb-4">Conference Rooms</h3>
+                <p className="text-gray-700 mb-6">
+                  Explore our three conference rooms equipped for meetings and events.
+                </p>
+              </div>
+
+              <div className="mt-auto space-y-3">
+                <Link
+                  href="/conference/gallery"
+                  className="block bg-[#004225] text-white font-semibold py-3 px-6 rounded-md hover:bg-[#42001D] transition-colors"
+                >
+                  Conference Gallery
+                </Link>
+                <Link
+                  href="/conference"
+                  className="block border-2 border-[#004225] text-[#004225] font-semibold py-2 px-6 rounded-md hover:bg-[#004225] hover:text-white transition-colors text-sm"
+                >
+                  View Conference Rooms
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -157,9 +165,9 @@ export default function GalleryPage() {
       {/* Location Info */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[#004225] mb-6">
+          <h3 className="text-2xl font-bold text-[#004225] mb-6">
             Visit Us in Lund
-          </h2>
+          </h3>
           <p className="text-gray-700 mb-4">
             <strong>Place Lund Hotel</strong><br />
             Margaretavägen 7<br />

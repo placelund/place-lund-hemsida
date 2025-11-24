@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { generateMetadata } from '@/lib/seo/metadata'
+import { PAGE_METADATA } from '@/lib/seo/page-metadata'
 
-export const metadata = {
-  title: 'Conference Gallery - Place Lund Hotel | Meeting Room Photos',
-  description: 'Browse our conference facilities photo gallery at Place Lund Hotel in Lund, Sweden. See our modern meeting rooms, event spaces, and professional conference amenities.',
-}
+// SEO Metadata
+export const metadata = generateMetadata(PAGE_METADATA.conferenceGallery)
 
 export default function ConferenceGalleryPage() {
   // Generate array of image numbers for the 36 gallery images
@@ -171,9 +171,9 @@ export default function ConferenceGalleryPage() {
       {/* Bottom CTA Section */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Book Your Conference?
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             Contact us today to discuss your conference needs and get a customized quote for your event at Place Lund Hotel.
           </p>

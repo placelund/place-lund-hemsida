@@ -490,17 +490,17 @@ export default async function RestaurantPage() {
             Whether you're starting your day with breakfast or unwinding with an evening drink, our restaurant and bar offer a welcoming atmosphere for hotel guests and local visitors alike.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-[#f5f5f5] p-6 rounded-lg">
+            <div className="bg-[#f5f5f5] p-6 rounded-lg flex flex-col h-full">
               <h3 className="text-xl font-bold text-[#004225] mb-3">Breakfast Buffet</h3>
-              <p className="text-gray-700">Daily breakfast for hotel guests with vegetarian and vegan options</p>
+              <p className="text-gray-700 flex-1">Daily breakfast for hotel guests with vegetarian and vegan options</p>
             </div>
-            <div className="bg-[#f5f5f5] p-6 rounded-lg">
+            <div className="bg-[#f5f5f5] p-6 rounded-lg flex flex-col h-full">
               <h3 className="text-xl font-bold text-[#004225] mb-3">Bar Service</h3>
-              <p className="text-gray-700">Drinks, coffee, and light refreshments daily from 11 AM to 9 PM</p>
+              <p className="text-gray-700 flex-1">Drinks, coffee, and light refreshments daily from 11 AM to 9 PM</p>
             </div>
-            <div className="bg-[#f5f5f5] p-6 rounded-lg">
+            <div className="bg-[#f5f5f5] p-6 rounded-lg flex flex-col h-full">
               <h3 className="text-xl font-bold text-[#004225] mb-3">Garden Seating</h3>
-              <p className="text-gray-700">Enjoy outdoor seating in our beautiful garden area during summer</p>
+              <p className="text-gray-700 flex-1">Enjoy outdoor seating in our beautiful garden area during summer</p>
             </div>
           </div>
         </div>

@@ -23,11 +23,13 @@ export default function SingleRoomGardenPage() {
           className="object-cover"
           priority
         />
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-outline">
             Single Room Garden View
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8">
             Peaceful single room on the third floor with serene garden views, ideal for a quiet and relaxing stay.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -155,9 +157,10 @@ export default function SingleRoomGardenPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                {galleryImages.slice(1, 5).map((image, index) => (
-                  <div key={index} className="relative h-64 overflow-hidden rounded-lg">
+              {/* Gallery Grid - Show ALL remaining images */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {galleryImages.slice(1).map((image, index) => (
+                  <div key={index} className="relative h-48 overflow-hidden rounded-lg">
                     <Image
                       src={image}
                       alt={`Single garden view ${index + 2}`}

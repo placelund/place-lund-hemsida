@@ -22,19 +22,31 @@
   ".": [
     "/images/Logo.png"
   ],
+  "apartments/43": [
+    "/images/apartments/43/apartment-lund-sweden-place-hotel-1 copy.jpg",
+    "/images/apartments/43/apartment-lund-sweden-place-hotel-12.jpeg",
+    "/images/apartments/43/apartment-lund-sweden-place-hotel-13.jpeg",
+    "/images/apartments/43/apartment-lund-sweden-place-hotel-2 copy.jpg",
+    "/images/apartments/43/apartment-lund-sweden-place-hotel-3.jpg",
+    "/images/apartments/43/apartment-lund-sweden-place-hotel-4.jpg",
+    "/images/apartments/43/apartment-lund-sweden-place-hotel-5 copy.jpg",
+    "/images/apartments/43/apartment-lund-sweden-place-hotel-7.jpeg",
+    "/images/apartments/43/place-lund-apartments-hero.jpeg"
+  ],
+  "apartments/86": [
+    "/images/apartments/86/apartment-lund-sweden-place-hotel-1.jpg",
+    "/images/apartments/86/apartment-lund-sweden-place-hotel-10.jpeg",
+    "/images/apartments/86/apartment-lund-sweden-place-hotel-11.jpeg",
+    "/images/apartments/86/apartment-lund-sweden-place-hotel-12.jpeg",
+    "/images/apartments/86/apartment-lund-sweden-place-hotel-13.jpeg",
+    "/images/apartments/86/apartment-lund-sweden-place-hotel-2.jpg",
+    "/images/apartments/86/apartment-lund-sweden-place-hotel-5.jpg",
+    "/images/apartments/86/apartment-lund-sweden-place-hotel-8.jpeg",
+    "/images/apartments/86/apartment-lund-sweden-place-hotel-9.jpeg",
+    "/images/apartments/86/place-lund-apartments-hero.jpeg"
+  ],
   "apartments": [
-    "/images/apartments/apartment-lund-sweden-place-hotel-1.jpg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-10.jpeg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-11.jpeg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-12.jpeg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-13.jpeg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-2.jpg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-3.jpg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-4.jpg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-5.jpg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-7.jpeg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-8.jpeg",
-    "/images/apartments/apartment-lund-sweden-place-hotel-9.jpeg"
+    "/images/apartments/place-lund-apartments-hero.jpeg"
   ],
   "conference/Gallery": [
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-13.jpg",
@@ -102,32 +114,72 @@
     "/images/resturaunt/resturaunt-4.jpeg",
     "/images/resturaunt/resturaunt-hero.jpeg"
   ],
+  "rooms": [
+    "/images/rooms/HERO 2.JPG"
+  ],
   "rooms/double-deluxe": [
-    "/images/rooms/double-deluxe/double-deluxe-room-place-lund-hotel-2.jpeg",
-    "/images/rooms/double-deluxe/hero.jpeg"
+    "/images/rooms/double-deluxe/place-lund-doubledeluxe- hero.jpeg",
+    "/images/rooms/double-deluxe/place-lund-doubledeluxe-1.jpeg",
+    "/images/rooms/double-deluxe/place-lund-doubledeluxe-2.jpeg",
+    "/images/rooms/double-deluxe/place-lund-doubledeluxe-4.jpeg",
+    "/images/rooms/double-deluxe/place-lund-doubledeluxe-5.jpeg",
+    "/images/rooms/double-deluxe/place-lund-doubledeluxe-6.jpeg",
+    "/images/rooms/double-deluxe/place-lund-doubledeluxe-7.jpeg"
   ],
   "rooms/economy-double": [
-    "/images/rooms/economy-double/economy-double-room-place-lund-hotel-1.jpeg",
-    "/images/rooms/economy-double/twin-garden-view-room-place-lund-hotel-6.jpeg",
-    "/images/rooms/economy-double/twin-garden-view-room-place-lund-hotel-hero.jpeg"
+    "/images/rooms/economy-double/economy-double-balcony-room-place-lund-hotel-hero.jpeg",
+    "/images/rooms/economy-double/place-lund-economy-double-1.jpeg",
+    "/images/rooms/economy-double/place-lund-economy-double-2.jpeg",
+    "/images/rooms/economy-double/place-lund-economy-double-3.jpeg",
+    "/images/rooms/economy-double/place-lund-economy-double-5.jpeg",
+    "/images/rooms/economy-double/place-lund-economy-double-6.jpeg",
+    "/images/rooms/economy-double/place-lund-economy-double-7.jpeg",
+    "/images/rooms/economy-double/place-lund-econoy-double-4.jpeg"
   ],
   "rooms/economy-double-balcony": [
+    "/images/rooms/economy-double-balcony/HERO-2.jpeg",
     "/images/rooms/economy-double-balcony/economy-double-balcony-room-place-lund-hotel-1.jpeg",
-    "/images/rooms/economy-double-balcony/economy-double-balcony-room-place-lund-hotel-3.jpeg"
+    "/images/rooms/economy-double-balcony/economy-double-balcony-room-place-lund-hotel-3.jpeg",
+    "/images/rooms/economy-double-balcony/place-lund-hotel-gallery-14.jpeg",
+    "/images/rooms/economy-double-balcony/place-lund-hotel-gallery-5.jpeg",
+    "/images/rooms/economy-double-balcony/place-lund-hotel-gallery-7.jpeg",
+    "/images/rooms/economy-double-balcony/place-lund-hotel-gallery-8.jpeg"
   ],
   "rooms/single-garden": [
-    "/images/rooms/single-garden/single-garden-view-room-place-lund-hotel-4.jpeg"
+    "/images/rooms/single-garden/single-garden-place-lund-1.jpeg",
+    "/images/rooms/single-garden/single-garden-place-lund-2.jpeg",
+    "/images/rooms/single-garden/single-garden-place-lund-3.jpeg",
+    "/images/rooms/single-garden/single-garden-place-lund-4.jpeg",
+    "/images/rooms/single-garden/single-garden-place-lund-5.jpeg",
+    "/images/rooms/single-garden/single-garden-place-lund-6.jpeg",
+    "/images/rooms/single-garden/single-garden-place-lund-hero.jpeg"
   ],
   "rooms/single-street": [
-    "/images/rooms/single-street/single-street-view-room-place-lund-hotel-hero.jpeg"
+    "/images/rooms/single-street/single-street-room-place-lund-1.jpeg",
+    "/images/rooms/single-street/single-street-room-place-lund-2.jpeg",
+    "/images/rooms/single-street/single-street-room-place-lund-3.jpeg",
+    "/images/rooms/single-street/single-street-room-place-lund-4.jpeg",
+    "/images/rooms/single-street/single-street-room-place-lund-5.jpeg",
+    "/images/rooms/single-street/single-street-room-place-lund-6.jpeg",
+    "/images/rooms/single-street/single-street-room-place-lund-hero.jpeg"
   ],
   "rooms/twin-garden": [
-    "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-1.jpg",
+    "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-1.jpeg",
+    "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-2.jpeg",
+    "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-3.jpg",
     "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-4.jpeg",
+    "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-5.jpeg",
+    "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-6.jpeg",
+    "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-7.jpeg",
     "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-hero.jpeg"
   ],
   "rooms/twin-street": [
-    "/images/rooms/twin-street/twin-street-view-room-place-lund-hotel-6.jpeg",
+    "/images/rooms/twin-street/place-lund-hotel-gallery-7.jpeg",
+    "/images/rooms/twin-street/twin-street-view-room-place-lund-hotel-1.jpeg",
+    "/images/rooms/twin-street/twin-street-view-room-place-lund-hotel-2.jpeg",
+    "/images/rooms/twin-street/twin-street-view-room-place-lund-hotel-3.jpeg",
+    "/images/rooms/twin-street/twin-street-view-room-place-lund-hotel-4.jpeg",
+    "/images/rooms/twin-street/twin-street-view-room-place-lund-hotel-5.jpeg",
     "/images/rooms/twin-street/twin-street-view-room-place-lund-hotel-hero.jpeg"
   ],
   "studios": [

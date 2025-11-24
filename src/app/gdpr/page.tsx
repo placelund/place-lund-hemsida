@@ -1,9 +1,9 @@
 import Link from 'next/link'
+import { generateMetadata } from '@/lib/seo/metadata'
+import { PAGE_METADATA } from '@/lib/seo/page-metadata'
 
-export const metadata = {
-  title: 'Privacy Policy & GDPR - Place Lund Hotel',
-  description: 'Learn about how Place Lund Hotel collects, uses, and protects your personal data in accordance with GDPR regulations.',
-}
+// SEO Metadata
+export const metadata = generateMetadata(PAGE_METADATA.gdpr)
 
 export default function GDPRPage() {
   return (
@@ -86,7 +86,7 @@ export default function GDPRPage() {
 
           {/* How We Use Your Data */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-[#004225] mb-4">How We Use Your Data</h2>
+            <h3 className="text-2xl font-bold text-[#004225] mb-4">How We Use Your Data</h3>
             <p className="text-gray-700 mb-4">We use your personal data for the following purposes:</p>
 
             <ul className="space-y-3">
@@ -115,7 +115,7 @@ export default function GDPRPage() {
 
           {/* Your Rights */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-[#004225] mb-4">Your Rights Under GDPR</h2>
+            <h3 className="text-2xl font-bold text-[#004225] mb-4">Your Rights Under GDPR</h3>
             <p className="text-gray-700 mb-4">You have the following rights regarding your personal data:</p>
 
             <div className="bg-[#FFFAF2] p-6 rounded-lg space-y-4">
@@ -153,7 +153,7 @@ export default function GDPRPage() {
 
           {/* Data Storage */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-[#004225] mb-4">Data Storage & Security</h2>
+            <h3 className="text-2xl font-bold text-[#004225] mb-4">Data Storage & Security</h3>
 
             <div className="space-y-4 text-gray-700">
               <p><strong>How Long We Keep Your Data:</strong></p>
@@ -177,7 +177,7 @@ export default function GDPRPage() {
 
           {/* Third Parties */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-[#004225] mb-4">Third-Party Services</h2>
+            <h3 className="text-2xl font-bold text-[#004225] mb-4">Third-Party Services</h3>
             <p className="text-gray-700 mb-4">We may share your data with the following third-party services:</p>
 
             <ul className="space-y-2 text-gray-700">
@@ -193,7 +193,7 @@ export default function GDPRPage() {
 
           {/* Cookies */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-[#004225] mb-4">Cookies</h2>
+            <h3 className="text-2xl font-bold text-[#004225] mb-4">Cookies</h3>
             <p className="text-gray-700 mb-4">
               Our website uses cookies to improve your experience. Cookies are small text files stored on your device.
             </p>
@@ -211,7 +211,7 @@ export default function GDPRPage() {
 
           {/* Contact for Data Requests */}
           <div className="bg-[#004225] text-white p-8 rounded-lg mb-12">
-            <h2 className="text-2xl font-bold mb-4">Data Protection Requests</h2>
+            <h3 className="text-2xl font-bold mb-4">Data Protection Requests</h3>
             <p className="mb-4">
               To exercise any of your rights or if you have questions about how we handle your data, please contact us:
             </p>
@@ -229,7 +229,7 @@ export default function GDPRPage() {
 
           {/* Updates to Policy */}
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-[#004225] mb-4">Updates to This Policy</h2>
+            <h3 className="text-2xl font-bold text-[#004225] mb-4">Updates to This Policy</h3>
             <p className="text-gray-700">
               We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this policy periodically to stay informed about how we protect your data.
             </p>

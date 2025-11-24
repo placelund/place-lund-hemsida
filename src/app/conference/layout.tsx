@@ -8,9 +8,9 @@ const navItems: CardNavItem[] = [
     bgColor: '#004225',
     textColor: '#eae2d6',
     links: [
-      { label: 'Rooms', href: '/hotel#rooms', ariaLabel: 'View hotel rooms' },
-      { label: 'Studios', href: '/hotel#studios', ariaLabel: 'View hotel studios' },
-      { label: 'N/A', href: '#', ariaLabel: 'Coming soon' },
+      { label: 'Rooms', href: '/hotel', ariaLabel: 'View hotel rooms' },
+      { label: 'Studios', href: '/hotel-studio', ariaLabel: 'View hotel studios' },
+      { label: 'Restaurant', href: '/restaurant', ariaLabel: 'Hotel restaurant' },
       { label: 'Gallery', href: '/hotel/gallery', ariaLabel: 'Hotel gallery' },
       { label: 'Book Now', href: 'https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872', ariaLabel: 'Book a hotel room' },
     ],
@@ -20,11 +20,11 @@ const navItems: CardNavItem[] = [
     bgColor: '#42001D',
     textColor: '#eae2d6',
     links: [
-      { label: 'Availability', href: '/apartments#availability', ariaLabel: 'Check apartment availability' },
-      { label: 'N/A', href: '#', ariaLabel: 'Coming soon' },
-      { label: 'N/A', href: '#', ariaLabel: 'Coming soon' },
+      { label: 'Overview', href: '/apartments', ariaLabel: 'Apartment overview' },
+      { label: 'One-Bedroom', href: '/apartments/one-bedroom', ariaLabel: 'One bedroom apartment' },
+      { label: 'Studio', href: '/apartments/studio', ariaLabel: 'Studio apartment' },
       { label: 'Gallery', href: '/apartments/gallery', ariaLabel: 'Apartment gallery' },
-      { label: 'N/A', href: '#', ariaLabel: 'Coming soon' },
+      { label: 'Contact', href: '/contact', ariaLabel: 'Contact about apartments' },
     ],
   },
   {

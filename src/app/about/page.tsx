@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import BookingLink from '@/components/BookingLink'
+import { generateMetadata } from '@/lib/seo/metadata'
+import { PAGE_METADATA } from '@/lib/seo/page-metadata'
 
-export const metadata = {
-  title: 'About Place Lund Hotel - Our Story & Location in Lund, Sweden',
-  description: 'Learn about Place Lund Hotel in central Lund, Sweden. Discover our history, location near Lund University, and commitment to comfortable accommodation.',
-}
+// SEO Metadata
+export const metadata = generateMetadata(PAGE_METADATA.about)
 
 export default function AboutPage() {
   return (
@@ -207,9 +207,9 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="bg-[#004225] text-white py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Experience Place Lund?
-          </h2>
+          </h3>
           <p className="text-lg mb-8 text-white/90">
             Whether you're planning a short visit or an extended stay, we have the perfect accommodation for you.
           </p>
