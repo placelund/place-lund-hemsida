@@ -8,7 +8,7 @@ export default function PropertySelection() {
       title: 'Hotel',
       description: 'Traditional hotel rooms with full service and amenities',
       href: '/hotel',
-      image: '/images/rooms/double-deluxe/hero.jpeg',
+      image: '/images/rooms/double-deluxe/place-lund-doubledeluxe- hero.jpeg',
       features: ['Weekly Cleaning', 'Room Service', 'Breakfast Included'],
     },
     {
@@ -22,14 +22,14 @@ export default function PropertySelection() {
       title: 'Apartments',
       description: 'Self-contained studio apartments for extended stays',
       href: '/apartments',
-      image: '/images/apartments/apartment-lund-sweden-place-hotel-1.jpg',
+      image: '/images/apartments/place-lund-apartments-hero.jpeg',
       features: ['Full Kitchen', 'Flexible Stay', 'Weekly Cleaning'],
     },
     {
       title: 'Conference',
       description: 'Professional meeting spaces for events and conferences',
       href: '/conference',
-      image: '/images/conference/Sofia/conference-room-place-lund-hotel-1.jpeg',
+      image: '/images/conference/Sofia/sofia-conference-room-hero.jpg',
       features: ['Modern Facilities', 'Catering Available', 'Flexible Setup'],
     },
   ]
