@@ -8,14 +8,17 @@ export const metadata = generateMetadata(PAGE_METADATA.apartmentsStudio)
 
 export default function StudioApartmentPage() {
   // Images 10-17 for studio apartments
-  const studioImages = [10, 11, 12, 13, 14, 15, 16, 17]
+  const studioImages = [
+    { num: 12, folder: '86', ext: 'jpeg' },
+    { num: 13, folder: '86', ext: 'jpeg' },
+  ]
 
   return (
     <main className="min-h-screen">
       {/* Hero Section - "A Place to Stay" */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image
-          src="/images/apartments/apartment-lund-sweden-place-hotel-10.jpeg"
+          src="/images/apartments/86/apartment-lund-sweden-place-hotel-10.jpeg"
           alt="Studio apartment at Place Lund Hotel"
           fill
           quality={100}
@@ -136,7 +139,7 @@ export default function StudioApartmentPage() {
             <div className="space-y-4">
               <div className="relative h-[400px] overflow-hidden rounded-lg">
                 <Image
-                  src="/images/apartments/apartment-lund-sweden-place-hotel-11.jpeg"
+                  src="/images/apartments/86/apartment-lund-sweden-place-hotel-11.jpeg"
                   alt="Studio apartment interior"
                   fill
                   quality={100}
@@ -145,11 +148,11 @@ export default function StudioApartmentPage() {
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
-                {studioImages.slice(2).map((num) => (
-                  <div key={num} className="relative h-64 overflow-hidden rounded-lg">
+                {studioImages.map((image) => (
+                  <div key={image.num} className="relative h-64 overflow-hidden rounded-lg">
                     <Image
-                      src={`/images/apartments/apartment-lund-sweden-place-hotel-${num}.jpeg`}
-                      alt={`Studio apartment view ${num}`}
+                      src={`/images/apartments/${image.folder}/apartment-lund-sweden-place-hotel-${image.num}.${image.ext}`}
+                      alt={`Studio apartment view ${image.num}`}
                       fill
                       quality={100}
                       loading="lazy"

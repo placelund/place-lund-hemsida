@@ -8,14 +8,21 @@ export const metadata = generateMetadata(PAGE_METADATA.apartmentsOneBedroom)
 
 export default function OneBedroomApartmentPage() {
   // Images 1-9 for one bedroom apartments
-  const apartmentImages = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const apartmentImages = [
+    { num: 3, folder: '43', ext: 'jpg' },
+    { num: 4, folder: '43', ext: 'jpg' },
+    { num: 5, folder: '86', ext: 'jpg' },
+    { num: 7, folder: '43', ext: 'jpeg' },
+    { num: 8, folder: '86', ext: 'jpeg' },
+    { num: 9, folder: '86', ext: 'jpeg' },
+  ]
 
   return (
     <main className="min-h-screen">
       {/* Hero Section - "A Place to Live" */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image
-          src="/images/apartments/apartment-lund-sweden-place-hotel-1.jpg"
+          src="/images/apartments/86/apartment-lund-sweden-place-hotel-1.jpg"
           alt="One bedroom apartment at Place Lund Hotel"
           fill
           quality={100}
@@ -128,7 +135,7 @@ export default function OneBedroomApartmentPage() {
             <div className="space-y-4">
               <div className="relative h-[400px] overflow-hidden rounded-lg">
                 <Image
-                  src="/images/apartments/apartment-lund-sweden-place-hotel-2.jpg"
+                  src="/images/apartments/86/apartment-lund-sweden-place-hotel-2.jpg"
                   alt="One bedroom apartment living area"
                   fill
                   quality={100}
@@ -137,11 +144,11 @@ export default function OneBedroomApartmentPage() {
                 />
               </div>
               <div className="grid grid-cols-2 gap-4">
-                {apartmentImages.slice(2, 9).map((num) => (
-                  <div key={num} className="relative h-64 overflow-hidden rounded-lg">
+                {apartmentImages.map((image) => (
+                  <div key={image.num} className="relative h-64 overflow-hidden rounded-lg">
                     <Image
-                      src={`/images/apartments/apartment-lund-sweden-place-hotel-${num}.${num <= 5 ? 'jpg' : 'jpeg'}`}
-                      alt={`One bedroom apartment view ${num}`}
+                      src={`/images/apartments/${image.folder}/apartment-lund-sweden-place-hotel-${image.num}.${image.ext}`}
+                      alt={`One bedroom apartment view ${image.num}`}
                       fill
                       quality={100}
                       loading="lazy"

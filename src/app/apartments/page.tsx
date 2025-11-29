@@ -13,7 +13,7 @@ export default function ApartmentsPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image
-          src="/images/apartments/apartment-lund-sweden-place-hotel-1.jpg"
+          src="/images/apartments/86/apartment-lund-sweden-place-hotel-1.jpg"
           alt="Modern apartments in Lund Sweden at Place Lund Hotel"
           fill
           quality={100}
@@ -62,27 +62,27 @@ export default function ApartmentsPage() {
           <ImageGrid
             images={[
               {
-                src: "/images/apartments/apartment-lund-sweden-place-hotel-2.jpg",
+                src: "/images/apartments/86/apartment-lund-sweden-place-hotel-2.jpg",
                 alt: "Apartment living room in Lund Sweden"
               },
               {
-                src: "/images/apartments/apartment-lund-sweden-place-hotel-3.jpg",
+                src: "/images/apartments/43/apartment-lund-sweden-place-hotel-3.jpg",
                 alt: "Apartment kitchen Place Lund Hotel"
               },
               {
-                src: "/images/apartments/apartment-lund-sweden-place-hotel-4.jpg",
+                src: "/images/apartments/43/apartment-lund-sweden-place-hotel-4.jpg",
                 alt: "Apartment bedroom Lund accommodation"
               },
               {
-                src: "/images/apartments/apartment-lund-sweden-place-hotel-5.jpg",
+                src: "/images/apartments/86/apartment-lund-sweden-place-hotel-5.jpg",
                 alt: "Apartment bathroom Place Lund"
               },
               {
-                src: "/images/apartments/apartment-lund-sweden-place-hotel-7.jpeg",
+                src: "/images/apartments/43/apartment-lund-sweden-place-hotel-7.jpeg",
                 alt: "Apartment dining area Lund Sweden"
               },
               {
-                src: "/images/apartments/apartment-lund-sweden-place-hotel-8.jpeg",
+                src: "/images/apartments/86/apartment-lund-sweden-place-hotel-8.jpeg",
                 alt: "Apartment workspace Place Lund Hotel"
               },
             ]}

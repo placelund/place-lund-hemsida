@@ -8,10 +8,24 @@ export const metadata = {
 
 export default function ApartmentsGalleryPage() {
   // One bedroom apartment images (1-9)
-  const oneBedroomImages = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const oneBedroomImages = [
+    { num: 1, folder: '86', ext: 'jpg' },
+    { num: 2, folder: '86', ext: 'jpg' },
+    { num: 3, folder: '43', ext: 'jpg' },
+    { num: 4, folder: '43', ext: 'jpg' },
+    { num: 5, folder: '86', ext: 'jpg' },
+    { num: 7, folder: '43', ext: 'jpeg' },
+    { num: 8, folder: '86', ext: 'jpeg' },
+    { num: 9, folder: '86', ext: 'jpeg' },
+  ]
 
   // Studio apartment images (10-17)
-  const studioImages = [10, 11, 12, 13, 14, 15, 16, 17]
+  const studioImages = [
+    { num: 10, folder: '86', ext: 'jpeg' },
+    { num: 11, folder: '86', ext: 'jpeg' },
+    { num: 12, folder: '86', ext: 'jpeg' },
+    { num: 13, folder: '86', ext: 'jpeg' },
+  ]
 
   return (
     <main className="min-h-screen">
@@ -51,24 +65,21 @@ export default function ApartmentsGalleryPage() {
               Spacious apartments with separate bedroom, living room, and fully equipped kitchen. Perfect for families and extended stays.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {oneBedroomImages.map((num) => {
-                const extension = num <= 5 ? 'jpg' : 'jpeg'
-                return (
+              {oneBedroomImages.map((image) => (
                   <div
-                    key={num}
+                    key={image.num}
                     className="relative aspect-[4/3] overflow-hidden rounded-lg group cursor-pointer"
                   >
                     <Image
-                      src={`/images/apartments/apartment-lund-sweden-place-hotel-${num}.${extension}`}
-                      alt={`One Bedroom Apartment - Image ${num}`}
+                      src={`/images/apartments/${image.folder}/apartment-lund-sweden-place-hotel-${image.num}.${image.ext}`}
+                      alt={`One Bedroom Apartment - Image ${image.num}`}
                       fill
                       quality={100}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                       className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
-                )
-              })}
+                ))}
             </div>
           </div>
 
@@ -89,14 +100,14 @@ export default function ApartmentsGalleryPage() {
               Efficient 40m² studios with combined living/sleeping area and compact kitchenette. Ideal for solo travelers and couples.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {studioImages.map((num) => (
+              {studioImages.map((image) => (
                 <div
-                  key={num}
+                  key={image.num}
                   className="relative aspect-[4/3] overflow-hidden rounded-lg group cursor-pointer"
                 >
                   <Image
-                    src={`/images/apartments/apartment-lund-sweden-place-hotel-${num}.jpeg`}
-                    alt={`Studio Apartment - Image ${num}`}
+                    src={`/images/apartments/${image.folder}/apartment-lund-sweden-place-hotel-${image.num}.${image.ext}`}
+                    alt={`Studio Apartment - Image ${image.num}`}
                     fill
                     quality={100}
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
