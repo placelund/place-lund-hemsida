@@ -71,23 +71,25 @@ function MapWithMarkers() {
     map.setOptions({ styles: MAP_STYLES })
 
     // Add custom markers and text overlays using Google Maps API
-    const markers: google.maps.Marker[] = []
+    const markers: google.maps.marker.AdvancedMarkerElement[] = []
     const overlays: google.maps.OverlayView[] = []
 
     Object.entries(LOCATIONS).forEach(([key, location]) => {
-      // Create marker without label
-      const marker = new google.maps.Marker({
+      // Create a custom marker icon element
+      const markerIcon = document.createElement('div')
+      markerIcon.style.width = '20px'
+      markerIcon.style.height = '20px'
+      markerIcon.style.borderRadius = '50%'
+      markerIcon.style.backgroundColor = location.color
+      markerIcon.style.border = '2px solid #000000'
+      markerIcon.style.cursor = 'pointer'
+
+      // Create advanced marker without label
+      const marker = new google.maps.marker.AdvancedMarkerElement({
         position: location.position,
         map: map,
         title: location.title,
-        icon: {
-          path: google.maps.SymbolPath.CIRCLE,
-          fillColor: location.color,
-          fillOpacity: 1,
-          strokeColor: '#000000',
-          strokeWeight: 2,
-          scale: 10,
-        },
+        content: markerIcon,
       })
 
       // Create custom text overlay positioned to the left of marker
@@ -167,7 +169,7 @@ function MapWithMarkers() {
 
     // Cleanup markers and overlays on unmount
     return () => {
-      markers.forEach((marker) => marker.setMap(null))
+      markers.forEach((marker) => marker.map = null)
       overlays.forEach((overlay) => overlay.setMap(null))
     }
   }, [map])
@@ -249,7 +251,7 @@ export default function LocationMap() {
 
       <div className="container mx-auto py-20 px-4">
         <div className="rounded-2xl overflow-hidden shadow-xl" style={{ height: '500px' }}>
-          <APIProvider apiKey={apiKey}>
+          <APIProvider apiKey={apiKey} libraries={['marker']}>
             <Map
               defaultCenter={HOTEL_LOCATION}
               defaultZoom={15}
