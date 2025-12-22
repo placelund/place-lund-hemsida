@@ -25,11 +25,13 @@ export default function StudioApartmentPage() {
           className="object-cover"
           priority
         />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-outline">
             A Place to Spread Out
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8">
             Spacious 86m² studio apartment with open-plan living and everything you need for comfortable extended stays in northern Lund.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

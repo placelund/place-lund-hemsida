@@ -150,7 +150,7 @@ export async function POST(request: NextRequest) {
       if (spreadsheetId) {
         await sheets.spreadsheets.values.append({
           spreadsheetId,
-          range: "Sheet1!A:E", // Using default sheet name
+          range: "Contact Form Data!A:E", // Actual sheet name from spreadsheet
           valueInputOption: 'RAW',
           requestBody: {
             values: [[new Date().toISOString(), email, subject, message, gdprConsent ? 'Yes' : 'No']],
@@ -165,8 +165,8 @@ export async function POST(request: NextRequest) {
     // Send email using Resend
     const resend = await getResendClient()
     const { data, error: sendError } = await resend.emails.send({
-      from: 'Place Lund Contact Form <onboarding@resend.dev>', // Change this to your verified domain
-      to: ['placelund@gmail.com'], // Using verified email for testing
+      from: 'Place Lund Contact Form <noreply@placelund.se>', // Verified domain email
+      to: ['info@placelund.se'], // Hotel's main email address
       replyTo: email,
       subject: `Contact Form: ${subject}`,
       html: `

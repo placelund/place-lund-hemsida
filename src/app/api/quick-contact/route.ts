@@ -133,13 +133,13 @@ export async function POST(request: NextRequest) {
 
     // Save to Google Sheets
     try {
-      const sheets = getGoogleSheetsClient()
+      const sheets = await getGoogleSheetsClient()
       const spreadsheetId = process.env.GOOGLE_SPREADSHEET_CONTACT_ID
 
       if (spreadsheetId) {
         await sheets.spreadsheets.values.append({
           spreadsheetId,
-          range: "Sheet1!A:D", // Using default sheet name
+          range: "Contact Form Data!A:D", // Actual sheet name from spreadsheet
           valueInputOption: 'RAW',
           requestBody: {
             values: [[new Date().toISOString(), name, email, message]],
@@ -153,8 +153,8 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error: sendError } = await resend.emails.send({
-      from: 'Place Lund Quick Contact <onboarding@resend.dev>', // Change this to your verified domain
-      to: ['placelund@gmail.com'], // Using verified email for testing
+      from: 'Place Lund Quick Contact <noreply@placelund.se>', // Verified domain email
+      to: ['info@placelund.se'], // Hotel's main email address
       replyTo: email,
       subject: `Quick Contact: Message from ${name}`,
       html: `

@@ -23,13 +23,10 @@
     "/images/Logo.png"
   ],
   "apartments/43": [
-    "/images/apartments/43/apartment-lund-sweden-place-hotel-1 copy.jpg",
     "/images/apartments/43/apartment-lund-sweden-place-hotel-12.jpeg",
     "/images/apartments/43/apartment-lund-sweden-place-hotel-13.jpeg",
-    "/images/apartments/43/apartment-lund-sweden-place-hotel-2 copy.jpg",
     "/images/apartments/43/apartment-lund-sweden-place-hotel-3.jpg",
     "/images/apartments/43/apartment-lund-sweden-place-hotel-4.jpg",
-    "/images/apartments/43/apartment-lund-sweden-place-hotel-5 copy.jpg",
     "/images/apartments/43/apartment-lund-sweden-place-hotel-7.jpeg",
     "/images/apartments/43/place-lund-apartments-hero.jpeg"
   ],
@@ -46,9 +43,26 @@
     "/images/apartments/86/place-lund-apartments-hero.jpeg"
   ],
   "apartments": [
+    "/images/apartments/apartment-lund-sweden-place-hotel-1.jpg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-14.jpeg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-15.jpeg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-16.jpeg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-17.jpeg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-2.jpg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-3.jpg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-4.jpg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-5.jpg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-6.jpeg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-7.jpeg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-8.jpeg",
+    "/images/apartments/apartment-lund-sweden-place-hotel-9.jpeg",
     "/images/apartments/place-lund-apartments-hero.jpeg"
   ],
   "conference/Gallery": [
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-1.jpeg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-10.jpeg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-11.jpeg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-12.jpeg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-13.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-14.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-15.jpg",
@@ -56,6 +70,7 @@
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-17.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-18.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-19.jpg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-2.jpeg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-20.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-21.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-22.jpg",
@@ -63,32 +78,44 @@
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-24.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-25.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-26.jpg",
-    "/images/conference/Gallery/conference-gallery-place-lund-hotel-27 copy.jpg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-27.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-28.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-29.jpg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-3.jpeg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-30.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-31.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-32.jpg",
     "/images/conference/Gallery/conference-gallery-place-lund-hotel-33.jpg",
-    "/images/conference/Gallery/conference-gallery-place-lund-hotel-34.jpg"
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-34.jpg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-35.jpg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-36.jpg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-4.jpeg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-5.jpeg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-6.jpeg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-7.jpeg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-8.jpeg",
+    "/images/conference/Gallery/conference-gallery-place-lund-hotel-9.jpeg"
   ],
   "conference/Margaretha": [
     "/images/conference/Margaretha/margaretha-conference-room-1.jpg",
     "/images/conference/Margaretha/margaretha-conference-room-2.jpg",
-    "/images/conference/Margaretha/margaretha-conference-room-hero.jpg"
+    "/images/conference/Margaretha/margaretha-conference-room-hero.jpg",
+    "/images/conference/Margaretha/margaretha-conference-room-place-lund-hotel-hero.jpg"
   ],
   "conference/Sankt-Hans": [
     "/images/conference/Sankt-Hans/conference-room-place-lund-hotel-3.jpeg",
     "/images/conference/Sankt-Hans/conference-room-place-lund-hotel-4.jpeg",
     "/images/conference/Sankt-Hans/conference-room-place-lund-hotel-5.jpeg",
     "/images/conference/Sankt-Hans/sankt-hans-conference-room-1.jpg",
-    "/images/conference/Sankt-Hans/sankt-hans-conference-room-hero.jpg"
+    "/images/conference/Sankt-Hans/sankt-hans-conference-room-hero.jpg",
+    "/images/conference/Sankt-Hans/sankt-hans-conference-room-place-lund-hotel-hero.jpg"
   ],
   "conference/Sofia": [
     "/images/conference/Sofia/conference-room-place-lund-hotel-1.jpeg",
     "/images/conference/Sofia/conference-room-place-lund-hotel-2.jpeg",
     "/images/conference/Sofia/sofia-conference-room-3.jpg",
-    "/images/conference/Sofia/sofia-conference-room-hero.jpg"
+    "/images/conference/Sofia/sofia-conference-room-hero.jpg",
+    "/images/conference/Sofia/sofia-conference-room-place-lund-hotel-hero.jpg"
   ],
   "hero": [
     "/images/hero/apartment-hero.jpg",
@@ -118,6 +145,8 @@
     "/images/rooms/HERO 2.JPG"
   ],
   "rooms/double-deluxe": [
+    "/images/rooms/double-deluxe/hero.jpeg",
+    "/images/rooms/double-deluxe/hero_original.jpeg",
     "/images/rooms/double-deluxe/place-lund-doubledeluxe- hero.jpeg",
     "/images/rooms/double-deluxe/place-lund-doubledeluxe-1.jpeg",
     "/images/rooms/double-deluxe/place-lund-doubledeluxe-2.jpeg",
@@ -161,10 +190,12 @@
     "/images/rooms/single-street/single-street-room-place-lund-4.jpeg",
     "/images/rooms/single-street/single-street-room-place-lund-5.jpeg",
     "/images/rooms/single-street/single-street-room-place-lund-6.jpeg",
-    "/images/rooms/single-street/single-street-room-place-lund-hero.jpeg"
+    "/images/rooms/single-street/single-street-room-place-lund-hero.jpeg",
+    "/images/rooms/single-street/single-street-view-room-place-lund-hotel-hero.jpeg"
   ],
   "rooms/twin-garden": [
     "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-1.jpeg",
+    "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-1.jpg",
     "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-2.jpeg",
     "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-3.jpg",
     "/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-4.jpeg",

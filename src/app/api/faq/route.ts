@@ -93,10 +93,10 @@ export async function GET() {
 
     // Fetch FAQs from all 4 tabs (Column B = Questions, Column C = Answers, starting from row 3 to skip header)
     const [generalFAQs, restaurantFAQs, conferenceFAQs, apartmentFAQs] = await Promise.all([
-      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - General'!B3:C"),
-      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - Restaurant'!B3:C"),
-      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - Conference'!B3:C"),
-      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - Apartment'!B3:C"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQGeneral!B3:C500"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQRestaurant!B3:C500"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQConference!B3:C500"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQApartment!B3:C500"),
     ])
 
     // Tag FAQs with their category

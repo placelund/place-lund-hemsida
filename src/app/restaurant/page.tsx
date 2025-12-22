@@ -17,29 +17,32 @@ interface WeeklyMenuItem {
 
 async function getWeeklyMenu() {
   try {
-    // Only make API calls during runtime, not during build
-    const isProduction = process.env.NODE_ENV === 'production' && !process.env.VERCEL_URL
-    if (isProduction) {
+    // During build time, return fallback data to prevent localhost fetch
+    if (process.env.NODE_ENV === 'production' && !process.env.VERCEL_URL) {
       return {
-        menu: [],
+        menu: [
+          { day: "Monday", dish: "Daily Special", description: "Check our daily menu for today's offering", week: 1 },
+          { day: "Tuesday", dish: "Fresh Catch", description: "Seasonal fish with local vegetables", week: 1 },
+        ],
         currentWeek: 1,
-        source: 'build-time-fallback',
+        source: 'build-fallback',
       }
     }
 
+    // Runtime: Use API call
     const baseUrl = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : (process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000')
+
     const response = await fetch(`${baseUrl}/api/weekly-menu`, {
-      next: { revalidate: 86400, tags: ['weekly-menu'] }, // 24h cache, webhook will revalidate
+      next: { revalidate: 86400, tags: ['weekly-menu'] },
     })
 
     if (!response.ok) {
       throw new Error('Failed to fetch weekly menu')
     }
 
-    const data = await response.json()
-    return data
+    return await response.json()
   } catch (error) {
     console.error('Error fetching weekly menu:', error)
     return {

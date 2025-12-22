@@ -198,11 +198,11 @@ export async function getCustomWeeklyMenuFromSheet(
   const [oddWeekResponse, evenWeekResponse] = await Promise.all([
     sheets.spreadsheets.values.get({
       spreadsheetId,
-      range: "'Menu Odd Week'!A3:B",
+      range: "MenuOddWeek!A3:B100",
     }),
     sheets.spreadsheets.values.get({
       spreadsheetId,
-      range: "'Menu Even Week'!A3:B",
+      range: "MenuEvenWeek!A3:B100",
     }),
   ])
 
@@ -378,10 +378,10 @@ export async function updateFAQStatistics(spreadsheetId: string): Promise<void> 
   try {
     // Fetch all FAQs with their categories
     const [generalFAQs, restaurantFAQs, conferenceFAQs, apartmentFAQs] = await Promise.all([
-      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - General'!B3:C"),
-      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - Restaurant'!B3:C"),
-      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - Conference'!B3:C"),
-      getCustomFAQsFromSheet(spreadsheetId, "'FAQ - Apartment'!B3:C"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQGeneral!B3:C500"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQRestaurant!B3:C500"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQConference!B3:C500"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQApartment!B3:C500"),
     ])
 
     // Get analytics data

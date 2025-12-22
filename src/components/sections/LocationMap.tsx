@@ -9,25 +9,113 @@ const HOTEL_LOCATION = {
   lng: 13.194961555876336,
 }
 
-// Map styles to hide ALL default POI markers and labels
+// Comprehensive map styles to completely hide ALL default markers and POI - only show our custom ones
 const MAP_STYLES = [
+  // Hide ALL POI categories and subcategories
   {
     featureType: 'poi',
     stylers: [{ visibility: 'off' }],
   },
   {
+    featureType: 'poi.attraction',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'poi.business',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'poi.government',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'poi.medical',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'poi.park',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'poi.place_of_worship',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'poi.school',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'poi.sports_complex',
+    stylers: [{ visibility: 'off' }],
+  },
+  // Hide ALL transit
+  {
     featureType: 'transit',
     stylers: [{ visibility: 'off' }],
   },
   {
+    featureType: 'transit.line',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'transit.station',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'transit.station.airport',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'transit.station.bus',
+    stylers: [{ visibility: 'off' }],
+  },
+  {
+    featureType: 'transit.station.rail',
+    stylers: [{ visibility: 'off' }],
+  },
+  // Hide ALL establishments and businesses
+  {
+    featureType: 'establishment',
+    stylers: [{ visibility: 'off' }],
+  },
+  // Keep administrative labels (city/country names) - text only, no icons
+  {
     featureType: 'administrative',
-    elementType: 'labels',
-    stylers: [{ visibility: 'on' }], // Keep city/street names
+    elementType: 'labels.text',
+    stylers: [{ visibility: 'on' }],
+  },
+  {
+    featureType: 'administrative',
+    elementType: 'labels.icon',
+    stylers: [{ visibility: 'off' }],
+  },
+  // Keep road labels (street names) - text only, no icons
+  {
+    featureType: 'road',
+    elementType: 'labels.text',
+    stylers: [{ visibility: 'on' }],
   },
   {
     featureType: 'road',
-    elementType: 'labels',
-    stylers: [{ visibility: 'on' }], // Keep road names
+    elementType: 'labels.icon',
+    stylers: [{ visibility: 'off' }],
+  },
+  // Keep water labels - text only, no icons
+  {
+    featureType: 'water',
+    elementType: 'labels.text',
+    stylers: [{ visibility: 'on' }],
+  },
+  {
+    featureType: 'water',
+    elementType: 'labels.icon',
+    stylers: [{ visibility: 'off' }],
+  },
+  // Hide landscape features that might have POI
+  {
+    featureType: 'landscape',
+    elementType: 'labels.icon',
+    stylers: [{ visibility: 'off' }],
   },
 ]
 
@@ -67,24 +155,23 @@ function MapWithMarkers() {
   useEffect(() => {
     if (!map) return
 
-    // Apply custom styles to hide POI markers
-    map.setOptions({ styles: MAP_STYLES })
+    // Note: Styles are now controlled via Cloud Console Map ID - no JavaScript styling needed
 
-    // Add custom markers and text overlays using Google Maps API
+    // Add custom markers and text overlays using Advanced Markers API
     const markers: google.maps.marker.AdvancedMarkerElement[] = []
     const overlays: google.maps.OverlayView[] = []
 
     Object.entries(LOCATIONS).forEach(([key, location]) => {
       // Create a custom marker icon element
       const markerIcon = document.createElement('div')
-      markerIcon.style.width = '20px'
-      markerIcon.style.height = '20px'
+      markerIcon.style.width = '24px'
+      markerIcon.style.height = '24px'
       markerIcon.style.borderRadius = '50%'
       markerIcon.style.backgroundColor = location.color
       markerIcon.style.border = '2px solid #000000'
       markerIcon.style.cursor = 'pointer'
 
-      // Create advanced marker without label
+      // Create advanced marker
       const marker = new google.maps.marker.AdvancedMarkerElement({
         position: location.position,
         map: map,
@@ -253,11 +340,19 @@ export default function LocationMap() {
         <div className="rounded-2xl overflow-hidden shadow-xl" style={{ height: '500px' }}>
           <APIProvider apiKey={apiKey} libraries={['marker']}>
             <Map
+              mapId="94916d718e7bc90dcee235de" // Custom map style with POI hidden
               defaultCenter={HOTEL_LOCATION}
               defaultZoom={15}
               style={{ width: '100%', height: '100%' }}
               gestureHandling="greedy"
               disableDefaultUI={false}
+              clickableIcons={false}
+              zoomControl={true}
+              mapTypeControl={false}
+              scaleControl={false}
+              streetViewControl={false}
+              rotateControl={false}
+              fullscreenControl={false}
             >
               {/* Apply custom map styles and add markers */}
               <MapWithMarkers />
