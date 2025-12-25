@@ -28,7 +28,8 @@ export default function HotelGalleryPage() {
           src="/images/conference/Gallery/conference-gallery-place-lund-hotel-17.jpg"
           alt="Hotel Gallery - Place Lund Hotel"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -72,7 +73,7 @@ export default function HotelGalleryPage() {
                         src={image}
                         alt={`${roomType.name} - Image ${index + 1}`}
                         fill
-                        quality={100}
+                        quality={85}
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                         className="object-cover transition-transform duration-300 group-hover:scale-110"
                       />

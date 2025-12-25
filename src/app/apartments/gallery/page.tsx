@@ -74,8 +74,8 @@ export default function ApartmentsGalleryPage() {
                       src={`/images/apartments/${image.folder}/apartment-lund-sweden-place-hotel-${image.num}.${image.ext}`}
                       alt={`One Bedroom Apartment - Image ${image.num}`}
                       fill
-                      quality={100}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                      quality={85}
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
@@ -109,8 +109,8 @@ export default function ApartmentsGalleryPage() {
                     src={`/images/apartments/${image.folder}/apartment-lund-sweden-place-hotel-${image.num}.${image.ext}`}
                     alt={`Studio Apartment - Image ${image.num}`}
                     fill
-                    quality={100}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                    quality={85}
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>

@@ -28,7 +28,8 @@ export default function HeroFade() {
           src={image}
           alt="Place Lund Hotel"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className={`object-cover transition-opacity duration-1000 ${
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}

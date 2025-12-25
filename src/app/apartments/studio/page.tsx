@@ -21,7 +21,8 @@ export default function StudioApartmentPage() {
           src="/images/apartments/86/apartment-lund-sweden-place-hotel-10.jpeg"
           alt="Studio apartment at Place Lund Hotel"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -144,7 +145,8 @@ export default function StudioApartmentPage() {
                   src="/images/apartments/86/apartment-lund-sweden-place-hotel-11.jpeg"
                   alt="Studio apartment interior"
                   fill
-                  quality={100}
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   loading="lazy"
                   className="object-cover"
                 />
@@ -156,7 +158,8 @@ export default function StudioApartmentPage() {
                       src={`/images/apartments/${image.folder}/apartment-lund-sweden-place-hotel-${image.num}.${image.ext}`}
                       alt={`Studio apartment view ${image.num}`}
                       fill
-                      quality={100}
+                      quality={85}
+                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       loading="lazy"
                       className="object-cover"
                     />

@@ -25,7 +25,8 @@ export default function OneBedroomApartmentPage() {
           src="/images/apartments/86/apartment-lund-sweden-place-hotel-1.jpg"
           alt="One bedroom apartment at Place Lund Hotel"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -140,7 +141,8 @@ export default function OneBedroomApartmentPage() {
                   src="/images/apartments/86/apartment-lund-sweden-place-hotel-2.jpg"
                   alt="One bedroom apartment living area"
                   fill
-                  quality={100}
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   loading="lazy"
                   className="object-cover"
                 />
@@ -152,7 +154,8 @@ export default function OneBedroomApartmentPage() {
                       src={`/images/apartments/${image.folder}/apartment-lund-sweden-place-hotel-${image.num}.${image.ext}`}
                       alt={`One bedroom apartment view ${image.num}`}
                       fill
-                      quality={100}
+                      quality={85}
+                      sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                       loading="lazy"
                       className="object-cover"
                     />

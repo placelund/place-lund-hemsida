@@ -15,7 +15,8 @@ export default function ConferencePage() {
           src="/images/hero/conference-hero.jpg"
           alt="Professional conference facilities at Place Lund Hotel"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -45,7 +46,8 @@ export default function ConferencePage() {
             src="/images/conference/Sofia/sofia-conference-room-place-lund-hotel-hero.jpg"
             alt="Sofia conference room at Place Lund Hotel"
             fill
-            quality={100}
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/20 flex items-end">
@@ -76,7 +78,8 @@ export default function ConferencePage() {
             src="/images/conference/Margaretha/margaretha-conference-room-place-lund-hotel-hero.jpg"
             alt="Margareta conference room at Place Lund Hotel"
             fill
-            quality={100}
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/20 flex items-end">
@@ -107,7 +110,8 @@ export default function ConferencePage() {
             src="/images/conference/Sankt-Hans/sankt-hans-conference-room-place-lund-hotel-hero.jpg"
             alt="Sankt Hans conference room at Place Lund Hotel"
             fill
-            quality={100}
+            quality={85}
+            sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-black/20 flex items-end">

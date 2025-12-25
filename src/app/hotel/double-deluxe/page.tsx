@@ -14,7 +14,7 @@ export default function DoubleDeluxePage() {
   return (
     <main className="min-h-screen">
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
-        <Image src={heroImage} alt="Double deluxe room with living room" fill quality={100} className="object-cover" priority />
+        <Image src={heroImage} alt="Double deluxe room with living room" fill quality={90} sizes="100vw" className="object-cover" priority />
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
@@ -76,13 +76,13 @@ export default function DoubleDeluxePage() {
             <div className="space-y-4">
               {/* Featured Image */}
               <div className="relative h-[400px] overflow-hidden rounded-lg">
-                <Image src={galleryImages[0] || heroImage} alt="Double deluxe room" fill quality={100} loading="lazy" className="object-cover" />
+                <Image src={galleryImages[0] || heroImage} alt="Double deluxe room" fill quality={85} sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" className="object-cover" />
               </div>
               {/* Gallery Grid - Show ALL remaining images */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {galleryImages.slice(1).map((image, index) => (
                   <div key={index} className="relative h-48 overflow-hidden rounded-lg">
-                    <Image src={image} alt={`Deluxe room view ${index + 2}`} fill quality={100} loading="lazy" className="object-cover" />
+                    <Image src={image} alt={`Deluxe room view ${index + 2}`} fill quality={85} sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" loading="lazy" className="object-cover" />
                   </div>
                 ))}
               </div>

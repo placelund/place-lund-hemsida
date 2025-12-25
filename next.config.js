@@ -22,7 +22,7 @@ const nextConfig = {
     formats: ['image/webp'],
     // Allow larger file sizes
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
+    // REMOVED: contentDispositionType: 'attachment', // This breaks image optimization
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   }
 }

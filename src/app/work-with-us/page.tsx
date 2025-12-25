@@ -16,7 +16,8 @@ export default function WorkWithUsPage() {
           src="/images/resturaunt/resturaunt-hero.jpeg"
           alt="Work with Place Lund Hotel team"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />

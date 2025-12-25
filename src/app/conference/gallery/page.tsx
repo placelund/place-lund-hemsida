@@ -62,7 +62,7 @@ export default function ConferenceGalleryPage() {
                     src={`/images/conference/Gallery/conference-gallery-place-lund-hotel-${num}.${extension}`}
                     alt={`Conference facility ${num} at Place Lund Hotel`}
                     fill
-                    quality={100}
+                    quality={85}
                     sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />

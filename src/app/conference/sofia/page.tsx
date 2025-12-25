@@ -18,7 +18,8 @@ export default function SofiaConferencePage() {
           src={heroImage}
           alt="Sofia conference room at Place Lund Hotel"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -153,7 +154,8 @@ export default function SofiaConferencePage() {
                     src={image}
                     alt={`Sofia conference room view ${index + 1}`}
                     fill
-                    quality={100}
+                    quality={85}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
                     loading="lazy"
                   />

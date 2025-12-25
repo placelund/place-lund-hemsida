@@ -21,7 +21,8 @@ export default function GalleryPage() {
           src="/images/Gallery/place-lund-hotel-gallery-1.jpeg"
           alt="Place Lund Hotel Gallery"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />

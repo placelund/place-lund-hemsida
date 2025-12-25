@@ -16,7 +16,8 @@ export default function ApartmentsPage() {
           src="/images/apartments/86/apartment-lund-sweden-place-hotel-1.jpg"
           alt="Modern apartments in Lund Sweden at Place Lund Hotel"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />

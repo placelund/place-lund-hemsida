@@ -108,7 +108,8 @@ export default async function RestaurantPage() {
           src="/images/resturaunt/resturaunt-hero.jpeg"
           alt="Restaurant and dining at Place Lund Hotel"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -148,7 +149,8 @@ export default async function RestaurantPage() {
                 src="/images/resturaunt/resturaunt-1.jpeg"
                 alt="Restaurant dining area"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
             </div>
@@ -157,7 +159,8 @@ export default async function RestaurantPage() {
                 src="/images/resturaunt/resturaunt-2.jpeg"
                 alt="Restaurant bar area"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
             </div>
@@ -166,7 +169,8 @@ export default async function RestaurantPage() {
                 src="/images/resturaunt/resturaunt-3.jpeg"
                 alt="Restaurant interior"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
             </div>
@@ -175,7 +179,8 @@ export default async function RestaurantPage() {
                 src="/images/resturaunt/resturaunt-4.jpeg"
                 alt="Restaurant seating area"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
             </div>
@@ -184,7 +189,8 @@ export default async function RestaurantPage() {
                 src="/images/resturaunt/resturaunt-hero.jpeg"
                 alt="Restaurant overview"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover"
               />
             </div>
@@ -244,7 +250,8 @@ export default async function RestaurantPage() {
                   src="/images/resturaunt/resturaunt-1.jpeg"
                   alt="Breakfast buffet at Place Lund Hotel"
                   fill
-                  quality={100}
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   loading="lazy"
                   className="object-cover"
                 />

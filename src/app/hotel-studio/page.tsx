@@ -16,7 +16,8 @@ export default function HotelStudioPage() {
           src="/images/studios/hotel-studio-place-lund-sweden-hero.jpeg"
           alt="Modern hotel studios at Place Lund Hotel in Lund Sweden"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -62,7 +63,8 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-3.jpeg"
                 alt="Hotel studio room Place Lund"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 loading="lazy"
                 className="object-cover"
               />
@@ -72,7 +74,8 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-4.jpeg"
                 alt="Hotel studio kitchenette Lund Sweden"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 loading="lazy"
                 className="object-cover"
               />
@@ -82,7 +85,8 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-5.jpeg"
                 alt="Hotel studio bathroom Place Lund Hotel"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 loading="lazy"
                 className="object-cover"
               />
@@ -92,7 +96,8 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-6.jpeg"
                 alt="Hotel studio work area Lund"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 loading="lazy"
                 className="object-cover"
               />
@@ -102,7 +107,8 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-7.jpeg"
                 alt="Hotel studio sleeping area Place Lund"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 loading="lazy"
                 className="object-cover"
               />
@@ -112,7 +118,8 @@ export default function HotelStudioPage() {
                 src="/images/studios/hotel-studio-place-lund-sweden-8.jpeg"
                 alt="Hotel studio dining space Lund Sweden"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 loading="lazy"
                 className="object-cover"
               />

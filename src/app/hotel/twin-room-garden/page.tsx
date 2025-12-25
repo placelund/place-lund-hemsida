@@ -18,7 +18,8 @@ export default function TwinRoomGardenPage() {
           src={heroImage}
           alt="Twin room with garden view at Place Lund Hotel"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -86,13 +87,13 @@ export default function TwinRoomGardenPage() {
 
             <div className="space-y-4">
               <div className="relative h-[400px] overflow-hidden rounded-lg">
-                <Image src={galleryImages[0] || heroImage} alt="Twin garden view room" fill quality={100} loading="lazy" className="object-cover" />
+                <Image src={galleryImages[0] || heroImage} alt="Twin garden view room" fill quality={85} sizes="(max-width: 768px) 100vw, 50vw" loading="lazy" className="object-cover" />
               </div>
               {/* Gallery Grid - Show ALL remaining images */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {galleryImages.slice(1).map((image, index) => (
                   <div key={index} className="relative h-48 overflow-hidden rounded-lg">
-                    <Image src={image} alt={`Twin garden room ${index + 2}`} fill quality={100} loading="lazy" className="object-cover" />
+                    <Image src={image} alt={`Twin garden room ${index + 2}`} fill quality={85} sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw" loading="lazy" className="object-cover" />
                   </div>
                 ))}
               </div>

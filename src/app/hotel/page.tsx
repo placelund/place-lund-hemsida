@@ -16,7 +16,8 @@ export default function HotelRoomsPage() {
           src="/images/rooms/HERO 2.JPG"
           alt="Comfortable hotel rooms at Place Lund Hotel"
           fill
-          quality={100}
+          quality={90}
+          sizes="100vw"
           className="object-cover"
           priority
         />
@@ -47,7 +48,8 @@ export default function HotelRoomsPage() {
               src="/images/rooms/single-street/single-street-view-room-place-lund-hotel-hero.jpeg"
               alt="Single rooms at Place Lund Hotel"
               fill
-              quality={100}
+              quality={85}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
@@ -169,7 +171,8 @@ export default function HotelRoomsPage() {
               src="/images/rooms/twin-garden/twin-garden-view-room-place-lund-hotel-1.jpg"
               alt="Twin rooms at Place Lund Hotel"
               fill
-              quality={100}
+              quality={85}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
@@ -185,7 +188,8 @@ export default function HotelRoomsPage() {
               src="/images/rooms/double-deluxe/hero.jpeg"
               alt="Double rooms at Place Lund Hotel"
               fill
-              quality={100}
+              quality={85}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
           </div>
@@ -365,7 +369,8 @@ export default function HotelRoomsPage() {
                 src="/images/resturaunt/resturaunt-hero.jpeg"
                 alt="Breakfast buffet at Place Lund Hotel"
                 fill
-                quality={100}
+                quality={85}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 loading="lazy"
                 className="object-cover"
               />
