@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
 import { google } from 'googleapis'
 
-// Initialize Resend with API key from environment variables
-// Use a placeholder key during build if not set
-const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder')
+async function getResendClient() {
+  const { Resend } = await import('resend')
+  return new Resend(process.env.RESEND_API_KEY)
+}
 
 function getGoogleSheetsClient() {
   const privateKey = process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, '\n')
@@ -76,7 +76,7 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
 export async function POST(request: NextRequest) {
   try {
     // Check if API key is configured
-    if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 're_placeholder') {
+    if (!process.env.RESEND_API_KEY) {
       return NextResponse.json(
         { error: 'Email service is not configured. Please contact us directly at info@placelund.se' },
         { status: 503 }
@@ -152,6 +152,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email using Resend
+    const resend = await getResendClient()
     const { data, error: sendError } = await resend.emails.send({
       from: 'Place Lund Quick Contact <noreply@placelund.se>', // Verified domain email
       to: ['info@placelund.se'], // Hotel's main email address

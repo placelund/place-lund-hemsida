@@ -13,7 +13,7 @@ export default function WorkWithUsPage() {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image
-          src="/images/resturaunt/resturaunt-hero.jpeg"
+          src="/images/restaurant/restaurant-hero.jpeg"
           alt="Work with Place Lund Hotel team"
           fill
           quality={90}
@@ -262,7 +262,7 @@ export default function WorkWithUsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left">
             <div>
               <h3 className="font-bold mb-2">Phone</h3>
-              <a href="tel:+46463336 00" className="text-white/90 hover:text-white transition-colors">
+              <a href="tel:+4646333600" className="text-white/90 hover:text-white transition-colors">
                 046 - 33 36 00
               </a>
             </div>

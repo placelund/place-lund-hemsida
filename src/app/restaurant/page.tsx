@@ -105,7 +105,7 @@ export default async function RestaurantPage() {
       {/* Hero Section - "A Place to Eat" */}
       <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
         <Image
-          src="/images/resturaunt/resturaunt-hero.jpeg"
+          src="/images/restaurant/restaurant-hero.jpeg"
           alt="Restaurant and dining at Place Lund Hotel"
           fill
           quality={90}
@@ -146,7 +146,7 @@ export default async function RestaurantPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="relative h-[300px] overflow-hidden rounded-lg">
               <Image
-                src="/images/resturaunt/resturaunt-1.jpeg"
+                src="/images/restaurant/restaurant-1.jpeg"
                 alt="Restaurant dining area"
                 fill
                 quality={85}
@@ -156,7 +156,7 @@ export default async function RestaurantPage() {
             </div>
             <div className="relative h-[300px] overflow-hidden rounded-lg">
               <Image
-                src="/images/resturaunt/resturaunt-2.jpeg"
+                src="/images/restaurant/restaurant-2.jpeg"
                 alt="Restaurant bar area"
                 fill
                 quality={85}
@@ -166,7 +166,7 @@ export default async function RestaurantPage() {
             </div>
             <div className="relative h-[300px] overflow-hidden rounded-lg">
               <Image
-                src="/images/resturaunt/resturaunt-3.jpeg"
+                src="/images/restaurant/restaurant-3.jpeg"
                 alt="Restaurant interior"
                 fill
                 quality={85}
@@ -176,7 +176,7 @@ export default async function RestaurantPage() {
             </div>
             <div className="relative h-[300px] overflow-hidden rounded-lg">
               <Image
-                src="/images/resturaunt/resturaunt-4.jpeg"
+                src="/images/restaurant/restaurant-4.jpeg"
                 alt="Restaurant seating area"
                 fill
                 quality={85}
@@ -186,7 +186,7 @@ export default async function RestaurantPage() {
             </div>
             <div className="relative h-[300px] overflow-hidden rounded-lg">
               <Image
-                src="/images/resturaunt/resturaunt-hero.jpeg"
+                src="/images/restaurant/restaurant-hero.jpeg"
                 alt="Restaurant overview"
                 fill
                 quality={85}
@@ -247,7 +247,7 @@ export default async function RestaurantPage() {
             <div className="space-y-4">
               <div className="relative h-[400px] overflow-hidden rounded-lg">
                 <Image
-                  src="/images/resturaunt/resturaunt-1.jpeg"
+                  src="/images/restaurant/restaurant-1.jpeg"
                   alt="Breakfast buffet at Place Lund Hotel"
                   fill
                   quality={85}
@@ -528,7 +528,7 @@ export default async function RestaurantPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-left">
             <div>
               <h3 className="font-bold mb-2">Phone</h3>
-              <a href="tel:+46463336 00" className="text-white/90 hover:text-white transition-colors">
+              <a href="tel:+4646333600" className="text-white/90 hover:text-white transition-colors">
                 046 - 33 36 00
               </a>
             </div>

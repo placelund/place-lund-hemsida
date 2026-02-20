@@ -156,7 +156,7 @@ export default async function HotelFAQPage() {
                 Contact Us
               </Link>
               <a
-                href="tel:+46463336 00"
+                href="tel:+4646333600"
                 className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors"
               >
                 Call: 046 - 33 36 00

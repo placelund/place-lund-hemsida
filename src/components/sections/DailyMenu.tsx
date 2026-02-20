@@ -196,7 +196,7 @@ export default function DailyMenu() {
         {/* Right side - Restaurant image */}
         <div className="relative h-[400px] md:h-[500px]">
           <Image
-            src="/images/resturaunt/resturaunt-hero.jpeg"
+            src="/images/restaurant/restaurant-hero.jpeg"
             alt="Restaurant"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"

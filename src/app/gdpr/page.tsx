@@ -218,7 +218,7 @@ export default function GDPRPage() {
 
             <div className="space-y-2">
               <p><strong>Email:</strong> <a href="mailto:info@placelund.se" className="underline hover:text-[#E3DAC9]">info@placelund.se</a></p>
-              <p><strong>Phone:</strong> <a href="tel:+46463336 00" className="underline hover:text-[#E3DAC9]">046 - 33 36 00</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+4646333600" className="underline hover:text-[#E3DAC9]">046 - 33 36 00</a></p>
               <p><strong>Mail:</strong> Place Lund Hotel, Margaretavägen 7, 222 40 Lund, Sweden</p>
             </div>
 

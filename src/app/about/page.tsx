@@ -104,7 +104,7 @@ export default function AboutPage() {
                 <div>
                   <p className="font-semibold text-[#004225]">Phone</p>
                   <p>
-                    <a href="tel:+46463336 00" className="hover:text-[#42001D] transition-colors">
+                    <a href="tel:+4646333600" className="hover:text-[#42001D] transition-colors">
                       046 - 33 36 00
                     </a>
                   </p>

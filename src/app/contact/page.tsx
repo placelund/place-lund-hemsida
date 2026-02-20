@@ -269,7 +269,7 @@ export default function ContactPage() {
                     </svg>
                     Phone
                   </h3>
-                  <a href="tel:+46463336 00" className="text-[#004225] hover:text-[#42001D] font-semibold">
+                  <a href="tel:+4646333600" className="text-[#004225] hover:text-[#42001D] font-semibold">
                     046 - 33 36 00
                   </a>
                 </div>

@@ -246,7 +246,7 @@ export default function FooterSection() {
                             <p>Margaretavägen 7</p>
                             <p>222 40 Lund, Sweden</p>
                             <p className="mt-3">
-                                <a href="tel:+46463336 00" className="hover:text-[#42001D] transition-colors">
+                                <a href="tel:+4646333600" className="hover:text-[#42001D] transition-colors">
                                     046 - 33 36 00
                                 </a>
                             </p>
@@ -261,7 +261,9 @@ export default function FooterSection() {
                         <div>
                             <p className="font-semibold text-[#004225] mb-3 text-sm">Quick Contact</p>
                             <form onSubmit={handleSendClick} className="space-y-3">
+                                <label htmlFor="footer-name" className="sr-only">Your Name</label>
                                 <input
+                                    id="footer-name"
                                     type="text"
                                     name="name"
                                     value={formData.name}
@@ -270,7 +272,9 @@ export default function FooterSection() {
                                     required
                                     className="w-full px-3 py-2 text-sm bg-white border border-[#004225]/20 rounded focus:outline-none focus:border-[#004225] transition-colors"
                                 />
+                                <label htmlFor="footer-email" className="sr-only">Your Email</label>
                                 <input
+                                    id="footer-email"
                                     type="email"
                                     name="email"
                                     value={formData.email}
@@ -279,7 +283,9 @@ export default function FooterSection() {
                                     required
                                     className="w-full px-3 py-2 text-sm bg-white border border-[#004225]/20 rounded focus:outline-none focus:border-[#004225] transition-colors"
                                 />
+                                <label htmlFor="footer-message" className="sr-only">Your Message</label>
                                 <textarea
+                                    id="footer-message"
                                     name="message"
                                     value={formData.message}
                                     onChange={handleChange}
@@ -301,13 +307,13 @@ export default function FooterSection() {
 
                                 {/* Status Messages */}
                                 {status === 'success' && (
-                                    <div className="text-green-700 text-xs bg-green-50 border border-green-200 p-2 rounded">
+                                    <div role="alert" className="text-green-700 text-xs bg-green-50 border border-green-200 p-2 rounded">
                                         {statusMessage}
                                     </div>
                                 )}
 
                                 {status === 'error' && (
-                                    <div className="text-red-700 text-xs bg-red-50 border border-red-200 p-2 rounded">
+                                    <div role="alert" className="text-red-700 text-xs bg-red-50 border border-red-200 p-2 rounded">
                                         {statusMessage}
                                     </div>
                                 )}

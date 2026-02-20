@@ -240,7 +240,7 @@ function MapWithMarkers() {
       const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${location.position.lat},${location.position.lng}`
 
       // Add click listener to both marker and text overlay
-      marker.addListener('click', () => {
+      marker.addListener('gmp-click', () => {
         window.open(googleMapsUrl, '_blank', 'noopener,noreferrer')
       })
 
@@ -401,7 +401,7 @@ export default function LocationMap() {
                 </svg>
                 <div>
                   <p className="font-semibold text-[#004225]">Phone</p>
-                  <a href="tel:+46463336 00" className="hover:text-[#42001D] transition-colors">
+                  <a href="tel:+4646333600" className="hover:text-[#42001D] transition-colors">
                     046 - 33 36 00
                   </a>
                 </div>

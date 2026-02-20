@@ -366,7 +366,7 @@ export default function HotelRoomsPage() {
             </div>
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
               <Image
-                src="/images/resturaunt/resturaunt-hero.jpeg"
+                src="/images/restaurant/restaurant-hero.jpeg"
                 alt="Breakfast buffet at Place Lund Hotel"
                 fill
                 quality={85}

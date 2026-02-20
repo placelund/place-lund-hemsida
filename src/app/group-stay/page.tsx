@@ -238,7 +238,7 @@ export default function GroupStayPage() {
               Request Group Quote
             </Link>
             <a
-              href="tel:+46463336 00"
+              href="tel:+4646333600"
               className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-[#FFFAF2]/10 transition-colors"
             >
               Call: 046 - 33 36 00
@@ -399,7 +399,7 @@ export default function GroupStayPage() {
                 <h3 className="font-bold text-xl text-[#004225]">Phone</h3>
               </div>
               <p className="text-gray-700 mb-2">
-                <a href="tel:+46463336 00" className="text-2xl font-bold text-[#42001D] hover:text-[#004225]">
+                <a href="tel:+4646333600" className="text-2xl font-bold text-[#42001D] hover:text-[#004225]">
                   046 - 33 36 00
                 </a>
               </p>
@@ -488,7 +488,7 @@ export default function GroupStayPage() {
                 Send Email Inquiry
               </a>
               <a
-                href="tel:+46463336 00"
+                href="tel:+4646333600"
                 className="border-2 border-white text-white font-semibold py-3 px-8 rounded-md hover:bg-white/10 transition-colors text-center"
               >
                 Call Now

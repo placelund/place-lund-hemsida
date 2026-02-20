@@ -176,7 +176,7 @@ export default function GalleryPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
             <a
-              href="tel:+46463336 00"
+              href="tel:+4646333600"
               className="text-[#004225] hover:text-[#42001D] font-semibold"
             >
               046 - 33 36 00

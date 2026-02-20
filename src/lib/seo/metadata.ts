@@ -73,7 +73,7 @@ export function generateMetadata({
           alt: title,
         },
       ],
-      locale: 'en_US',
+      locale: 'en_SE',
       type: 'website',
     },
     twitter: {
