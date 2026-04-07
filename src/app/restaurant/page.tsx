@@ -81,7 +81,7 @@ export default async function RestaurantPage() {
   const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
   const oddWeekMenu = daysOfWeek.map(day => {
-    const dayMenu = menu.find((item: WeeklyMenuItem) => item.week === 1 && item.day === day)
+    const dayMenu = menu.find((item: WeeklyMenuItem) => item.week === 1 && item.day.trim() === day)
     return {
       day,
       breakfast: dayMenu?.breakfast || 'Continental breakfast',
@@ -90,7 +90,7 @@ export default async function RestaurantPage() {
   })
 
   const evenWeekMenu = daysOfWeek.map(day => {
-    const dayMenu = menu.find((item: WeeklyMenuItem) => item.week === 2 && item.day === day)
+    const dayMenu = menu.find((item: WeeklyMenuItem) => item.week === 2 && item.day.trim() === day)
     return {
       day,
       breakfast: dayMenu?.breakfast || 'Continental breakfast',
