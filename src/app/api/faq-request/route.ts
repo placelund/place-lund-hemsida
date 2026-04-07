@@ -1,7 +1,30 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { submitFAQRequest } from '@/lib/googleSheets'
 
 export const dynamic = 'force-dynamic'
+
+// Rate limiting map
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now()
+  const limit = rateLimitMap.get(ip)
+
+  if (!limit || now > limit.resetTime) {
+    rateLimitMap.set(ip, {
+      count: 1,
+      resetTime: now + 60 * 60 * 1000, // 1 hour
+    })
+    return true
+  }
+
+  if (limit.count >= 5) {
+    return false
+  }
+
+  limit.count++
+  return true
+}
 
 async function verifyRecaptcha(token: string): Promise<boolean> {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY
@@ -21,15 +44,24 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
     })
 
     const data = await response.json()
-    return data.success === true
+    return data.success === true && data.score >= 0.5
   } catch (error) {
     console.error('Error verifying reCAPTCHA:', error)
     return false
   }
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
+    // Rate limiting
+    const ip = request.headers.get('x-forwarded-for') || 'unknown'
+    if (!checkRateLimit(ip)) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      )
+    }
+
     const { question, name, email, recaptchaToken } = await request.json()
 
     // Verify reCAPTCHA

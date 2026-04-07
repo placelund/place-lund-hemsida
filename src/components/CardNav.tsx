@@ -1,4 +1,7 @@
+'use client'
+
 import React, { useLayoutEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -221,7 +224,7 @@ const CardNav: React.FC<CardNavProps> = ({
 
           <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
             <a href="/" aria-label="Go to homepage">
-              <img src={logo} alt={logoAlt} className="logo h-[28px] cursor-pointer" />
+              <Image src={logo} alt={logoAlt} width={100} height={28} className="logo h-[28px] w-auto cursor-pointer" />
             </a>
           </div>
 

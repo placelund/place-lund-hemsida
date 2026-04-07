@@ -48,6 +48,15 @@ function checkRateLimit(ip: string): boolean {
   return true
 }
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+}
+
 async function verifyRecaptcha(token: string): Promise<boolean> {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY
 
@@ -66,7 +75,7 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
     })
 
     const data = await response.json()
-    return data.success === true
+    return data.success === true && data.score >= 0.5
   } catch (error) {
     console.error('Error verifying reCAPTCHA:', error)
     return false
@@ -164,7 +173,7 @@ export async function POST(request: NextRequest) {
         <p><strong>Email:</strong> ${email}</p>
         <hr />
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
         <hr />
         <p style="color: #666; font-size: 12px;">
           This message was sent via the Place Lund Hotel Quick Contact form (footer).

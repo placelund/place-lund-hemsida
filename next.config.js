@@ -2,7 +2,6 @@
 const nextConfig = {
   env: {
     NEXT_PUBLIC_RECAPTCHA_SITE_KEY: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-    NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
     NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
   },
   // Updated for Next.js 16
@@ -13,7 +12,7 @@ const nextConfig = {
   },
   // Configure image qualities to fix warnings
   images: {
-    qualities: [75, 85, 100],
+    qualities: [75, 85, 90, 100],
     // Allow larger images and add limits
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],

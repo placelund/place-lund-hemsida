@@ -7,14 +7,14 @@ interface BookingLinkProps {
 }
 
 /**
- * BookingLink component that opens the BookVisit booking page.
+ * BookingLink component that opens the Direct Book booking page.
  *
- * Usage: Replace any Link to BookVisit with this component
+ * Usage: Wrap any booking CTA with this component
  */
 export default function BookingLink({
   children,
   className = '',
-  href = 'https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872'
+  href = 'https://direct-book.com/properties/placelund'
 }: BookingLinkProps) {
   return (
     <Link

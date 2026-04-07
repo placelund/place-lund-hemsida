@@ -3,6 +3,14 @@ import { revalidatePath } from 'next/cache'
 
 export async function POST(request: NextRequest) {
   try {
+    const secret = request.headers.get('x-webhook-secret')
+    if (!secret || secret !== process.env.WEBHOOK_SECRET) {
+      return NextResponse.json(
+        { error: 'Unauthorized' },
+        { status: 401 }
+      )
+    }
+
     const { type, sheet, timestamp } = await request.json()
 
     console.log(`Webhook received: ${type} from ${sheet} at ${timestamp}`)

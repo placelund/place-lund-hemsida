@@ -11,7 +11,7 @@ export default function HotelRoomsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center pt-20">
         <Image
           src="/images/rooms/HERO 2.JPG"
           alt="Comfortable hotel rooms at Place Lund Hotel"
@@ -21,12 +21,14 @@ export default function HotelRoomsPage() {
           className="object-cover"
           priority
         />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            A Place to Stay
+            Hotel Rooms in Lund
           </h1>
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            A place to stay
+          </p>
         </div>
       </section>
 
@@ -77,7 +79,7 @@ export default function HotelRoomsPage() {
                     Details
                   </Link>
                   <BookingLink
-                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=220b8c4e-6005-4930-b612-1eacb0298c4d"
+                    href="https://direct-book.com/properties/placelund"
                     className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
                   >
                     Book Street View
@@ -97,7 +99,7 @@ export default function HotelRoomsPage() {
                     Details
                   </Link>
                   <BookingLink
-                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=4ddefa37-cfc3-4e9c-ac70-b47df180759d"
+                    href="https://direct-book.com/properties/placelund"
                     className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
                   >
                     Book Garden View
@@ -136,7 +138,7 @@ export default function HotelRoomsPage() {
                     Details
                   </Link>
                   <BookingLink
-                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=01529162-9d2b-4446-ad81-d88724b9086d"
+                    href="https://direct-book.com/properties/placelund"
                     className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
                   >
                     Book Street View
@@ -156,7 +158,7 @@ export default function HotelRoomsPage() {
                     Details
                   </Link>
                   <BookingLink
-                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=f7174fc8-7dbe-49a1-9772-e743b3a3365f"
+                    href="https://direct-book.com/properties/placelund"
                     className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
                   >
                     Book Garden View
@@ -217,7 +219,7 @@ export default function HotelRoomsPage() {
                     Details
                   </Link>
                   <BookingLink
-                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=4b7a450f-a544-4afb-adc1-d474537ffceb"
+                    href="https://direct-book.com/properties/placelund"
                     className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
                   >
                     Book Economy
@@ -237,7 +239,7 @@ export default function HotelRoomsPage() {
                     Details
                   </Link>
                   <BookingLink
-                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=d6bed312-22ac-4c0a-9510-dc86e13829f8"
+                    href="https://direct-book.com/properties/placelund"
                     className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
                   >
                     Book with Balcony
@@ -257,7 +259,7 @@ export default function HotelRoomsPage() {
                     Details
                   </Link>
                   <BookingLink
-                    href="https://online.bookvisit.com/accommodation/room-details?channelid=7f2bb109-b49b-49f0-8d2c-113614f7f872&roomid=e7f264b4-5d7d-4174-9b8c-d997a999a315"
+                    href="https://direct-book.com/properties/placelund"
                     className="bg-[#004225] text-white font-semibold py-2 px-4 rounded text-sm hover:bg-[#42001D] transition-colors"
                   >
                     Book Deluxe

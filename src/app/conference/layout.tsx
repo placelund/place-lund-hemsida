@@ -1,5 +1,3 @@
-'use client'
-
 import CardNav from '@/components/CardNav'
 import { NAVIGATION_ITEMS, LOGO_PATH, LOGO_ALT, MAIN_CTA, COLORS } from '@/constants/navigation'
 

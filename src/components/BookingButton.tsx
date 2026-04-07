@@ -9,7 +9,7 @@ interface BookingButtonProps {
 export default function BookingButton({
   children,
   className = '',
-  bookVisitUrl = 'https://online.bookvisit.com/accommodation?channelId=7f2bb109-b49b-49f0-8d2c-113614f7f872'
+  bookVisitUrl = 'https://direct-book.com/properties/placelund'
 }: BookingButtonProps) {
   const handleClick = () => {
     window.open(bookVisitUrl, '_blank', 'noopener,noreferrer')

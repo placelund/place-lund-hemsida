@@ -3,7 +3,6 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
     darkMode: ['class'],
     content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -73,29 +72,11 @@ const config: Config = {
   		},
   		animation: {
   			marquee: 'marquee 15s linear infinite'
-  		},
-  		textShadow: {
-  			'outline': '1px 1px 0 white, -1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white',
-  			'outline-black': '1px 1px 0 black, -1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black',
-  			'outline-black-thin': '0.5px 0.5px 0 black, -0.5px 0.5px 0 black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black'
   		}
   	}
   },
   plugins: [
   	require("tailwindcss-animate"),
-  	function ({ addUtilities }: any) {
-  		addUtilities({
-  			'.text-shadow-outline': {
-  				'text-shadow': '1px 1px 0 white, -1px 1px 0 white, -1px -1px 0 white, 1px -1px 0 white'
-  			},
-  			'.text-shadow-outline-black': {
-  				'text-shadow': '1px 1px 0 black, -1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black'
-  			},
-  			'.text-shadow-outline-black-thin': {
-  				'text-shadow': '0.5px 0.5px 0 black, -0.5px 0.5px 0 black, -0.5px -0.5px 0 black, 0.5px -0.5px 0 black'
-  			}
-  		})
-  	}
   ],
 }
 

@@ -6,8 +6,8 @@ import FAQSection from '@/components/sections/FAQSection'
 import { generateMetadata } from '@/lib/seo/metadata'
 import { PAGE_METADATA } from '@/lib/seo/page-metadata'
 
-// Force dynamic rendering to prevent SSG fetch issues
-export const dynamic = 'force-dynamic'
+// Revalidate every 5 minutes for dynamic content (menu, FAQ)
+export const revalidate = 300
 
 // SEO Metadata
 export const metadata = generateMetadata(PAGE_METADATA.home)

@@ -11,7 +11,7 @@ export default function GDPRPage() {
       {/* Header Section */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
             Privacy Policy
           </h1>
           <p className="text-lg md:text-xl text-gray-800">
@@ -181,7 +181,7 @@ export default function GDPRPage() {
             <p className="text-gray-700 mb-4">We may share your data with the following third-party services:</p>
 
             <ul className="space-y-2 text-gray-700">
-              <li><strong>BookVisit:</strong> Our booking system provider</li>
+              <li><strong>Direct Book:</strong> Our booking system provider</li>
               <li><strong>Google Maps:</strong> For location services on our website</li>
               <li><strong>Email service provider:</strong> For processing contact form submissions</li>
             </ul>
