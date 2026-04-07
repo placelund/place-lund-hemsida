@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { getRoomImages } from '@/utils/getImages'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export const metadata = {
   title: 'Margareta Conference Room - Place Lund Hotel | Large Meeting Space',
@@ -12,8 +13,9 @@ export default function MargaretaConferencePage() {
 
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[{ name: 'Conference', href: '/conference' }, { name: 'Margareta', href: '/conference/margareta' }]} />
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center pt-20">
         <Image
           src={heroImage}
           alt="Margareta conference room at Place Lund Hotel"
@@ -23,11 +25,12 @@ export default function MargaretaConferencePage() {
           className="object-cover"
           priority
         />
+        <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to Inspire
           </h1>
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8">
             Our largest and most versatile conference room, perfect for conferences, seminars, and large meetings.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

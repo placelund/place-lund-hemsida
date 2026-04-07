@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getRoomImages } from '@/utils/getImages'
 import BookingLink from '@/components/BookingLink'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export const metadata = {
   title: 'Single Room in Lund - Place Lund Hotel | Street View Room',
@@ -13,8 +14,9 @@ export default function SingleRoomPage() {
 
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[{ name: 'Hotel', href: '/hotel' }, { name: 'Single Room', href: '/hotel/single-room' }]} />
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center pt-20">
         <Image
           src={heroImage}
           alt="Single room with street view at Place Lund Hotel"
@@ -24,10 +26,9 @@ export default function SingleRoomPage() {
           className="object-cover"
           priority
         />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-outline">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Single Room Street View
           </h1>
           <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8">

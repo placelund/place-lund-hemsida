@@ -71,10 +71,6 @@ const links = [
                 href: '/group-stay',
             },
             {
-                title: 'Gallery',
-                href: '/gallery',
-            },
-            {
                 title: 'FAQ',
                 href: '/faq',
             },

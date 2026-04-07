@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { generateMetadata } from '@/lib/seo/metadata'
 import { PAGE_METADATA } from '@/lib/seo/page-metadata'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 // SEO Metadata
 export const metadata = generateMetadata(PAGE_METADATA.apartmentsStudio)
@@ -15,8 +16,9 @@ export default function StudioApartmentPage() {
 
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[{ name: 'Apartments', href: '/apartments' }, { name: 'Studio', href: '/apartments/studio' }]} />
       {/* Hero Section - "A Place to Stay" */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center pt-20">
         <Image
           src="/images/apartments/86/apartment-lund-sweden-place-hotel-10.jpeg"
           alt="Studio apartment at Place Lund Hotel"
@@ -26,10 +28,9 @@ export default function StudioApartmentPage() {
           className="object-cover"
           priority
         />
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-outline">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to Spread Out
           </h1>
           <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8">

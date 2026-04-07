@@ -1,8 +1,9 @@
 import Link from 'next/link'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export const metadata = {
-  title: 'Hotel FAQ - Place Lund Hotel | Frequently Asked Questions',
-  description: 'Common questions about hotel rooms, studios, check-in, amenities, and services at Place Lund Hotel in Lund, Sweden.',
+  title: 'Hotel FAQ | Place Lund Hotel – Rooms & Services Lund',
+  description: 'Answers to common questions about hotel rooms, studios, check-in times, breakfast, parking, pets, and location at Place Lund Hotel in Lund, Sweden. Near Lund University and Lund Central Station.',
 }
 
 interface FAQ {
@@ -105,16 +106,36 @@ async function getFAQs() {
 export default async function HotelFAQPage() {
   const faqs = await getFAQs()
 
+  // FAQPage JSON-LD schema — boosts appearance in Google AI Overviews and rich results
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq: FAQ) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }
+
   return (
     <main className="min-h-screen">
+      <BreadcrumbSchema items={[{ name: 'Hotel', href: '/hotel' }, { name: 'FAQ', href: '/hotel/faq' }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       {/* Header Section */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4 text-shadow-outline">
-            A Place to Ask
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-4">
+            Hotel FAQ – Place Lund Hotel
           </h1>
           <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto">
-            Find answers to frequently asked questions about our hotel rooms, studios, and services.
+            Frequently asked questions about our hotel rooms, studios, check-in, meals, and services in Lund, Sweden.
           </p>
         </div>
       </section>
@@ -122,19 +143,15 @@ export default async function HotelFAQPage() {
       {/* FAQ Section */}
       <section className="py-16 px-4 bg-[#FFFAF2]">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#004225] mb-12 text-center">
-            Hotel Frequently Asked Questions
-          </h2>
-
           <div className="space-y-6">
             {faqs.map((faq: FAQ, index: number) => (
               <div
                 key={index}
                 className="bg-[#f5f5f5] p-6 rounded-lg border-2 border-[#004225]/20 hover:border-[#004225] transition-colors"
               >
-                <h3 className="text-xl font-bold text-[#004225] mb-3">
+                <h2 className="text-xl font-bold text-[#004225] mb-3">
                   {faq.question}
-                </h3>
+                </h2>
                 <p className="text-gray-700 leading-relaxed">
                   {faq.answer}
                 </p>

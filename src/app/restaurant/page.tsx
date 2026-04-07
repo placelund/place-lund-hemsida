@@ -100,10 +100,49 @@ export default async function RestaurantPage() {
 
   const isOddWeek = currentWeek === 1
 
+  const restaurantSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Restaurant',
+    name: 'Place Lund Hotel Restaurant',
+    image: 'https://placelund.se/images/restaurant/restaurant-hero.jpeg',
+    url: 'https://placelund.se/restaurant',
+    telephone: '+4646333600',
+    email: 'info@placelund.se',
+    servesCuisine: 'Nordic',
+    menu: 'https://placelund.se/restaurant/menu',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Margaretavägen 7',
+      addressLocality: 'Lund',
+      postalCode: '222 40',
+      addressRegion: 'Skåne',
+      addressCountry: 'SE',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 55.719594,
+      longitude: 13.194962,
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '07:00',
+        closes: '20:00',
+      },
+    ],
+    priceRange: '$$',
+    parentOrganization: { '@id': 'https://placelund.se/#hotel' },
+  }
+
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
+      />
       {/* Hero Section - "A Place to Eat" */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center pt-20">
         <Image
           src="/images/restaurant/restaurant-hero.jpeg"
           alt="Restaurant and dining at Place Lund Hotel"
@@ -113,8 +152,7 @@ export default async function RestaurantPage() {
           className="object-cover"
           priority
         />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             A Place to Eat

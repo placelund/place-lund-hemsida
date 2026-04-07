@@ -7,13 +7,13 @@
 export const PAGE_METADATA = {
   home: {
     title: 'Place Lund Hotel | Modern Accommodation in Northern Lund',
-    description: 'Experience comfort at Place Lund Hotel in northern Lund, Sweden. Offering modern hotel rooms, spacious apartments, studios, and professional conference facilities near Lund University and LTH.',
+    description: 'Place Lund Hotel i norra Lund — hotellrum, lägenheter, studios och konferensrum. Frukost och middag ingår i hotellrumspriset. Near Lund University, LTH, and Lund Central Station.',
     path: '/',
   },
 
   hotel: {
     title: 'Hotel Rooms in Lund | Comfortable Stay Near University',
-    description: 'Book your hotel room at Place Lund Hotel. Choose from single, twin, double deluxe, and economy rooms. Modern amenities, complimentary breakfast, and convenient location near Lund University and city center.',
+    description: 'Hotellrum i Lund med frukost och middag ingår. Choose from single, twin, double deluxe, and economy rooms at Place Lund Hotel. Free WiFi, free parking, near Lund University and city center.',
     path: '/hotel',
   },
 
@@ -31,7 +31,7 @@ export const PAGE_METADATA = {
 
   conference: {
     title: 'Conference Rooms Lund | Meeting Facilities & Events',
-    description: 'Professional conference facilities in northern Lund. Three versatile meeting rooms (Sofia, Margareta, Sankt Hans) accommodating 10-90 people. Modern AV equipment, catering options, and convenient location near LTH.',
+    description: 'Konferensrum i Lund för 10–90 personer. Sofia, Margareta och Sankt Hans — moderna konferenslokaler med AV-utrustning, catering och gratis parkering. Near LTH and Lund University.',
     path: '/conference',
   },
 

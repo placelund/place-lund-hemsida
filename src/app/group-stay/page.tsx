@@ -13,7 +13,7 @@ export default function GroupStayPage() {
       {/* Header Section */}
       <section className="py-16 px-4 bg-[#FFFAF2] pt-32">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-6 text-shadow-outline">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#004225] mb-6">
             A Place to Gather
           </h1>
           <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-8 leading-relaxed">

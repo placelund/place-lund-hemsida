@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 const heroImages = [
-  '/images/hero/place-lund-hotel-hero.jpeg',
-  '/images/hero/hotel-studio-hero.jpeg',
-  '/images/hero/conference-hero.jpg'
+  '/images/hero/hero-image-slideshow/66x.jpg',
+  '/images/hero/hero-image-slideshow/IMG_7185.jpeg',
+  '/images/hero/hero-image-slideshow/P1020214.JPG',
 ]
 
 export default function HeroFade() {

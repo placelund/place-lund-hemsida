@@ -1,0 +1,73 @@
+# Place Lund Hotel
+
+> Place Lund Hotel is a 3-star hotel at Margaretavägen 7, 222 40 Lund, Sweden. The hotel offers hotel rooms (with breakfast and dinner included), hotel studios (self-catering with kitchenettes), furnished apartments for extended stays, professional conference rooms, and an on-site restaurant and bar. Located in northern Lund near Lund University, LTH (Faculty of Engineering), and Sankt Hans Backar Park.
+
+## Contact
+
+- Address: Margaretavägen 7, 222 40 Lund, Sweden
+- Phone: +46 46 33 36 00
+- Email: info@placelund.se
+- Check-in: 15:00 | Check-out: 11:00
+- Parking: Free on-site parking + EV charging
+- Pets: Allowed in select rooms (250 SEK/stay fee)
+
+## Core Pages
+
+- [Hotel Rooms](/hotel): Single, twin, double deluxe, and economy rooms. All include daily breakfast buffet and dinner. Free WiFi, TV, refrigerator, work desk, safety box, and allergy-friendly bedding in all rooms. Bar open 11:00–20:00.
+- [Hotel Studios](/hotel-studio): Self-catering studios with kitchenettes for extended stays. Meals not included.
+- [Apartments](/apartments): Fully furnished apartments — one-bedroom (43m²) and open-plan studio (86m²). Ideal for long stays, families, and professionals.
+- [Conference](/conference): Three meeting rooms for corporate events and meetings. Sofia room (20–30 people), Margareta hall (30–90 people), Sankt Hans room (10–15 people). All include AV equipment, WiFi, whiteboard, natural daylight, and catering options. Free parking for attendees.
+- [Restaurant](/restaurant): Nordic cuisine with weekly rotating menu. Breakfast buffet, lunch, and dinner. Full bar with craft cocktails, local beers, and wines. Open to hotel guests and public visitors.
+- [FAQ – Hotel](/hotel/faq): Answers to common questions about rooms, studios, check-in, meals, parking, pets, and location.
+- [Group Stay](/group-stay): Group accommodations for teams, conferences, sporting events, and academic groups.
+- [Contact](/contact): Location map, phone, email, and contact form.
+- [About](/about): History and overview of Place Lund Hotel.
+
+## Conference Room Details
+
+- **Sofia**: Medium room, 20–30 people. Half-day from 3,040 SEK, full-day from 4,320 SEK (per group, 10 pax).
+- **Margareta**: Large hall, up to 90 people. Half-day 14,400 SEK, full-day 21,600 SEK.
+- **Sankt Hans**: Small room, 10–18 people. Half-day 3,800 SEK, full-day 5,120 SEK.
+- Food & beverage add-ons available: breakfast (63 SEK/pp), hot lunch (210 SEK/pp), coffee & pastry (62 SEK/pp).
+
+## Location Context
+
+Place Lund Hotel is situated in northern Lund, approximately 10–15 minutes' walk from Lund Central Station (trains to Malmö, Copenhagen, Gothenburg). The hotel is 5–10 minutes from Lund University main campus and 5 minutes from LTH (Faculty of Engineering). Sankt Hans Backar Park is directly adjacent. Easy access from E22 motorway.
+
+## Svenska sökord (Swedish Search Keywords)
+
+Hotell Lund med frukost och middag ingår. Konferensrum i Lund för 10–90 personer. Boende i Lund nära Lunds Universitet och LTH. Möblerade lägenheter Lund korttidsboende. Konferenslokaler Lund med mat och AV-utrustning ingår. Hotellrum Lund frukost ingår. Logi Lund nära Lunds centralstation. Konferenspaket Lund lunch ingår. Hundvänligt hotell Lund.
+
+## Common Questions
+
+Q: Does Place Lund Hotel include breakfast?
+A: Yes, all standard hotel rooms include daily breakfast buffet and dinner. Hotel studios and apartments do NOT include meals — they have kitchenettes for self-catering.
+
+Q: What is the difference between a hotel room and a hotel studio?
+A: Hotel rooms include daily breakfast and dinner service. Hotel studios have kitchenettes for self-catering and do not include meals. Studios offer more space with combined living and sleeping areas.
+
+Q: Is Place Lund Hotel close to Lund University?
+A: Yes, Place Lund Hotel is located in northern Lund, approximately 5–10 minutes from Lund University main campus and 5 minutes from LTH (Faculty of Engineering).
+
+Q: What are the check-in and check-out times?
+A: Check-in is from 15:00 (3 PM) and check-out is at 11:00 (11 AM). Early check-in or late check-out may be available upon request.
+
+Q: Are pets allowed at Place Lund Hotel?
+A: Yes, dogs are allowed in select rooms. There is a fee of 250 SEK per pet for the full stay. No animals are allowed in the dining hall.
+
+Q: Does Place Lund Hotel have conference rooms?
+A: Yes, three conference rooms are available: Margareta (30–90 people), Sofia (20–30 people), and Sankt Hans (10–18 people). All include AV equipment, WiFi, and catering options.
+
+Q: Is there parking at Place Lund Hotel?
+A: Yes, free on-site parking is available for hotel and conference guests, including EV charging stations.
+
+Q: How far is Place Lund Hotel from Lund Central Station?
+A: Approximately 10–15 minutes' walk or 5 minutes by car (1.5 km). Trains connect to Malmö (15 min), Copenhagen Airport (40 min), and Gothenburg.
+
+## Optional Pages
+
+- [Gallery](/gallery): Overview photo gallery
+- [Hotel Gallery](/hotel/gallery): Room photos
+- [Apartment Gallery](/apartments/gallery): Apartment photos
+- [Conference Gallery](/conference/gallery): Conference room photos
+- [GDPR](/gdpr): Privacy policy

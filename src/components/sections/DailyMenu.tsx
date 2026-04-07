@@ -97,7 +97,7 @@ export default function DailyMenu() {
 
       <div className="grid grid-cols-1 md:grid-cols-2">
         {/* Left side - Menu content */}
-        <div className="bg-[#FFFAF2] py-8 px-8 md:px-16">
+        <div className="bg-[#FFFAF2] py-16 px-8 md:px-16">
           <div className="w-full">
             {/* Today and Tomorrow side by side */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
@@ -194,7 +194,7 @@ export default function DailyMenu() {
         </div>
 
         {/* Right side - Restaurant image */}
-        <div className="relative h-[400px] md:h-[500px]">
+        <div className="relative h-[500px] md:h-[600px]">
           <Image
             src="/images/restaurant/restaurant-hero.jpeg"
             alt="Restaurant"

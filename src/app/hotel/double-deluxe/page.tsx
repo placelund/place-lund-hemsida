@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getRoomImages } from '@/utils/getImages'
 import BookingLink from '@/components/BookingLink'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export const metadata = {
   title: 'Double Deluxe Room Lund - Place Lund Hotel | Two Room Suite with Living Room',
@@ -13,12 +14,12 @@ export default function DoubleDeluxePage() {
 
   return (
     <main className="min-h-screen">
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center">
+      <BreadcrumbSchema items={[{ name: 'Hotel', href: '/hotel' }, { name: 'Double Deluxe', href: '/hotel/double-deluxe' }]} />
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center pt-20">
         <Image src={heroImage} alt="Double deluxe room with living room" fill quality={90} sizes="100vw" className="object-cover" priority />
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-center px-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 text-shadow-outline">Double Deluxe Room</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Double Deluxe Room</h1>
           <p className="text-lg md:text-xl text-white max-w-2xl mx-auto mb-8">
             Spacious two-room suite with separate bedroom and living room, perfect for extended stays and extra comfort.
           </p>
