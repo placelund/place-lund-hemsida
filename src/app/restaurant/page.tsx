@@ -85,7 +85,7 @@ export default async function RestaurantPage() {
     return {
       day,
       breakfast: dayMenu?.breakfast || 'Continental breakfast',
-      dinner: dayMenu?.dinner || 'Chef\'s special',
+      dinner: dayMenu?.lunch || 'Chef\'s special',
     }
   })
 
@@ -94,7 +94,7 @@ export default async function RestaurantPage() {
     return {
       day,
       breakfast: dayMenu?.breakfast || 'Continental breakfast',
-      dinner: dayMenu?.dinner || 'Chef\'s special',
+      dinner: dayMenu?.lunch || 'Chef\'s special',
     }
   })
 
