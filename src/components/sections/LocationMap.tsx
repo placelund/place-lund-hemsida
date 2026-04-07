@@ -1,123 +1,12 @@
 'use client'
 
-import { APIProvider, Map, useMap } from '@vis.gl/react-google-maps'
-import { useEffect } from 'react'
+import dynamic from 'next/dynamic'
 
 // Place Lund Hotel actual location: Margaretavägen 7, 222 40 Lund
 const HOTEL_LOCATION = {
   lat: 55.719594474422344,
   lng: 13.194961555876336,
 }
-
-// Comprehensive map styles to completely hide ALL default markers and POI - only show our custom ones
-const MAP_STYLES = [
-  // Hide ALL POI categories and subcategories
-  {
-    featureType: 'poi',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'poi.attraction',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'poi.business',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'poi.government',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'poi.medical',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'poi.park',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'poi.place_of_worship',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'poi.school',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'poi.sports_complex',
-    stylers: [{ visibility: 'off' }],
-  },
-  // Hide ALL transit
-  {
-    featureType: 'transit',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'transit.line',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'transit.station',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'transit.station.airport',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'transit.station.bus',
-    stylers: [{ visibility: 'off' }],
-  },
-  {
-    featureType: 'transit.station.rail',
-    stylers: [{ visibility: 'off' }],
-  },
-  // Hide ALL establishments and businesses
-  {
-    featureType: 'establishment',
-    stylers: [{ visibility: 'off' }],
-  },
-  // Keep administrative labels (city/country names) - text only, no icons
-  {
-    featureType: 'administrative',
-    elementType: 'labels.text',
-    stylers: [{ visibility: 'on' }],
-  },
-  {
-    featureType: 'administrative',
-    elementType: 'labels.icon',
-    stylers: [{ visibility: 'off' }],
-  },
-  // Keep road labels (street names) - text only, no icons
-  {
-    featureType: 'road',
-    elementType: 'labels.text',
-    stylers: [{ visibility: 'on' }],
-  },
-  {
-    featureType: 'road',
-    elementType: 'labels.icon',
-    stylers: [{ visibility: 'off' }],
-  },
-  // Keep water labels - text only, no icons
-  {
-    featureType: 'water',
-    elementType: 'labels.text',
-    stylers: [{ visibility: 'on' }],
-  },
-  {
-    featureType: 'water',
-    elementType: 'labels.icon',
-    stylers: [{ visibility: 'off' }],
-  },
-  // Hide landscape features that might have POI
-  {
-    featureType: 'landscape',
-    elementType: 'labels.icon',
-    stylers: [{ visibility: 'off' }],
-  },
-]
 
 // Nearby points of interest with exact coordinates
 const LOCATIONS = {
@@ -148,173 +37,17 @@ const LOCATIONS = {
   },
 }
 
-// Component to apply map styles and add markers using useMap hook
-function MapWithMarkers() {
-  const map = useMap()
-
-  useEffect(() => {
-    if (!map) return
-
-    // Note: Styles are now controlled via Cloud Console Map ID - no JavaScript styling needed
-
-    // Add custom markers and text overlays using Advanced Markers API
-    const markers: google.maps.marker.AdvancedMarkerElement[] = []
-    const overlays: google.maps.OverlayView[] = []
-
-    Object.entries(LOCATIONS).forEach(([key, location]) => {
-      // Create a custom marker icon element
-      const markerIcon = document.createElement('div')
-      markerIcon.style.width = '24px'
-      markerIcon.style.height = '24px'
-      markerIcon.style.borderRadius = '50%'
-      markerIcon.style.backgroundColor = location.color
-      markerIcon.style.border = '2px solid #000000'
-      markerIcon.style.cursor = 'pointer'
-
-      // Create advanced marker
-      const marker = new google.maps.marker.AdvancedMarkerElement({
-        position: location.position,
-        map: map,
-        title: location.title,
-        content: markerIcon,
-      })
-
-      // Create custom text overlay positioned to the left of marker
-      class TextOverlay extends google.maps.OverlayView {
-        position: google.maps.LatLng
-        text: string
-        div: HTMLDivElement | null = null
-
-        constructor(position: google.maps.LatLng, text: string) {
-          super()
-          this.position = position
-          this.text = text
-        }
-
-        onAdd() {
-          this.div = document.createElement('div')
-          this.div.style.position = 'absolute'
-          this.div.style.backgroundColor = 'white'
-          this.div.style.padding = '2px 6px'
-          this.div.style.borderRadius = '3px'
-          this.div.style.border = '1px solid #000'
-          this.div.style.fontSize = '10px'
-          this.div.style.fontWeight = '600'
-          this.div.style.color = '#000000'
-          this.div.style.whiteSpace = 'nowrap'
-          this.div.style.cursor = 'pointer'
-          this.div.textContent = this.text
-
-          const panes = this.getPanes()
-          panes?.overlayLayer.appendChild(this.div)
-        }
-
-        draw() {
-          if (!this.div) return
-
-          const overlayProjection = this.getProjection()
-          const position = overlayProjection.fromLatLngToDivPixel(this.position)
-
-          if (position) {
-            // Position text to the right of the marker
-            this.div.style.left = position.x + 15 + 'px'
-            this.div.style.top = position.y - this.div.offsetHeight / 2 + 'px'
-          }
-        }
-
-        onRemove() {
-          if (this.div) {
-            this.div.parentNode?.removeChild(this.div)
-            this.div = null
-          }
-        }
-      }
-
-      const textOverlay = new TextOverlay(
-        new google.maps.LatLng(location.position.lat, location.position.lng),
-        location.title
-      )
-      textOverlay.setMap(map)
-
-      // Create Google Maps URL
-      const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${location.position.lat},${location.position.lng}`
-
-      // Add click listener to both marker and text overlay
-      marker.addListener('gmp-click', () => {
-        window.open(googleMapsUrl, '_blank', 'noopener,noreferrer')
-      })
-
-      if (textOverlay.div) {
-        textOverlay.div.addEventListener('click', () => {
-          window.open(googleMapsUrl, '_blank', 'noopener,noreferrer')
-        })
-      }
-
-      markers.push(marker)
-      overlays.push(textOverlay)
-    })
-
-    // Cleanup markers and overlays on unmount
-    return () => {
-      markers.forEach((marker) => marker.map = null)
-      overlays.forEach((overlay) => overlay.setMap(null))
-    }
-  }, [map])
-
-  return null
-}
+// Dynamically import the map to avoid SSR issues (Leaflet requires window)
+const LeafletMap = dynamic(() => import('./LeafletMap'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full bg-gray-100 flex items-center justify-center rounded-2xl">
+      <p className="text-gray-500">Loading map...</p>
+    </div>
+  ),
+})
 
 export default function LocationMap() {
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ''
-
-  if (!apiKey || apiKey === 'YOUR_NEW_API_KEY_HERE' || apiKey === 'YOUR_API_KEY_HERE') {
-    return (
-      <section className="bg-[#FFFAF2] -mt-0">
-        {/* Location Banner */}
-        <div className="bg-[#004225] py-3 px-4 flex items-center justify-center">
-          <div className="flex items-center justify-center w-full">
-            <svg
-              className="select-none w-full overflow-visible block aspect-[100/6] text-[6rem] font-bold uppercase leading-none"
-              viewBox="0 0 1440 60"
-            >
-              <text
-                x="50%"
-                y="50"
-                textAnchor="middle"
-                className="fill-[#FFFAF2] text-[2.5rem] md:text-[3.5rem] font-bold uppercase"
-              >
-                Our Location
-              </text>
-            </svg>
-          </div>
-        </div>
-
-        <div className="container mx-auto py-20 px-4">
-          <div className="bg-[#FFFAF2] rounded-2xl p-8 text-center">
-            <p className="text-gray-700">
-              Google Maps API key not configured. Add your API key to .env.local to display the map.
-            </p>
-            <div className="mt-6 text-left max-w-md mx-auto">
-              <h3 className="font-bold text-[#004225] mb-2">Place Lund Hotel</h3>
-              <p className="text-gray-700">Margaretavägen 7</p>
-              <p className="text-gray-700">222 40 Lund, Sweden</p>
-              <p className="mt-4">
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Margaretavägen+7,+222+40+Lund,+Sweden"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#004225] hover:text-[#42001D] underline"
-                >
-                  View on Google Maps →
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-    )
-  }
-
   return (
     <section className="bg-[#FFFAF2] -mt-0">
       {/* Location Banner */}
@@ -338,26 +71,7 @@ export default function LocationMap() {
 
       <div className="container mx-auto py-20 px-4">
         <div className="rounded-2xl overflow-hidden shadow-xl" style={{ height: '500px' }}>
-          <APIProvider apiKey={apiKey} libraries={['marker']}>
-            <Map
-              mapId="94916d718e7bc90dcee235de" // Custom map style with POI hidden
-              defaultCenter={HOTEL_LOCATION}
-              defaultZoom={15}
-              style={{ width: '100%', height: '100%' }}
-              gestureHandling="greedy"
-              disableDefaultUI={false}
-              clickableIcons={false}
-              zoomControl={true}
-              mapTypeControl={false}
-              scaleControl={false}
-              streetViewControl={false}
-              rotateControl={false}
-              fullscreenControl={false}
-            >
-              {/* Apply custom map styles and add markers */}
-              <MapWithMarkers />
-            </Map>
-          </APIProvider>
+          <LeafletMap hotelLocation={HOTEL_LOCATION} locations={LOCATIONS} />
         </div>
 
         {/* Location Info */}
