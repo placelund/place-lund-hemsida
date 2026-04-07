@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import { getCustomFAQsFromSheet } from '@/lib/googleSheets'
+
+export const revalidate = 300
 
 export const metadata = {
   title: 'Hotel FAQ | Place Lund Hotel – Rooms & Services Lund',
@@ -77,26 +80,18 @@ const fallbackFAQs: FAQ[] = [
 
 async function getFAQs() {
   try {
-    // Only make API calls during runtime, not during build
-    const isProduction = process.env.NODE_ENV === 'production' && !process.env.VERCEL_URL
-    if (isProduction) {
-      return fallbackFAQs
-    }
+    const spreadsheetId = process.env.GOOGLE_SPREADSHEET_FAQ_ID || process.env.GOOGLE_SPREADSHEET_ID
+    if (!spreadsheetId) return fallbackFAQs
 
-    // Fetch from API route
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : (process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000')
-    const response = await fetch(`${baseUrl}/api/faq`, {
-      next: { revalidate: 300 }, // Revalidate every 5 minutes
-    })
+    const [generalFAQs, restaurantFAQs, conferenceFAQs, apartmentFAQs] = await Promise.all([
+      getCustomFAQsFromSheet(spreadsheetId, "FAQGeneral!B3:C500"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQRestaurant!B3:C500"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQConference!B3:C500"),
+      getCustomFAQsFromSheet(spreadsheetId, "FAQApartment!B3:C500"),
+    ])
 
-    if (!response.ok) {
-      throw new Error('Failed to fetch FAQs')
-    }
-
-    const data = await response.json()
-    return data.faqs || fallbackFAQs
+    const allFAQs = [...generalFAQs, ...restaurantFAQs, ...conferenceFAQs, ...apartmentFAQs]
+    return allFAQs.length > 0 ? allFAQs : fallbackFAQs
   } catch (error) {
     console.error('Error fetching FAQs:', error)
     return fallbackFAQs
