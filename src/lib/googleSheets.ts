@@ -213,31 +213,31 @@ export async function getCustomWeeklyMenuFromSheet(
 
   // Process odd week (week 1)
   oddWeekRows.forEach((row) => {
-    const day = row[0] || ''
-    const dish = row[1] || ''
+    const day = (row[0] || '').trim()
+    const dish = (row[1] || '').trim()
 
     if (day && dish) {
       weeklyMenu.push({
         week: 1,
         day,
-        breakfast: '', // Not provided in this format
-        lunch: dish,   // Using the dish as lunch (will show "n/a" if that's what's in the sheet)
-        dinner: '',    // Not provided in this format
+        breakfast: '',
+        lunch: dish,
+        dinner: '',
       })
     }
   })
 
   // Process even week (week 2)
   evenWeekRows.forEach((row) => {
-    const day = row[0] || ''
-    const dish = row[1] || ''
+    const day = (row[0] || '').trim()
+    const dish = (row[1] || '').trim()
 
     if (day && dish) {
       weeklyMenu.push({
         week: 2,
         day,
         breakfast: '',
-        lunch: dish, // Will show "n/a" if that's what's in the sheet
+        lunch: dish,
         dinner: '',
       })
     }

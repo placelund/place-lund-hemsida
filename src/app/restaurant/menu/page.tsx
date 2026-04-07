@@ -1,54 +1,32 @@
 import Link from 'next/link'
 import BookingLink from '@/components/BookingLink'
+import { getCustomWeeklyMenuFromSheet, WeeklyMenuItem } from '@/lib/googleSheets'
+
+export const revalidate = 86400
 
 export const metadata = {
   title: 'Weekly Menu - Place Lund Hotel Restaurant | 2-Week Rotating Menu',
   description: 'View our weekly rotating menu at Place Lund Hotel restaurant in Lund, Sweden. Fresh breakfast and dinner options that change every two weeks.',
 }
 
-interface WeeklyMenuItem {
-  week: number
-  day: string
-  breakfast: string
-  lunch: string
-  dinner: string
-}
-
 async function getWeeklyMenu() {
   try {
-    // During build time, return fallback data to prevent localhost fetch
-    if (process.env.NODE_ENV === 'production' && !process.env.VERCEL_URL) {
-      return {
-        menu: [
-          { week: 1, day: "Monday", breakfast: "Continental breakfast", lunch: "Soup of the day", dinner: "Chef's special" },
-          { week: 1, day: "Tuesday", breakfast: "Continental breakfast", lunch: "Sandwich selection", dinner: "Grilled fish" },
-        ],
-        currentWeek: 1,
-        source: 'build-fallback',
-      }
+    const spreadsheetId = process.env.GOOGLE_SPREADSHEET_WEEKLY_MENU_ID || process.env.GOOGLE_SPREADSHEET_ID
+    if (!spreadsheetId) {
+      return { menu: [], currentWeek: getCurrentWeek() }
     }
-
-    // Runtime: Use API call
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : (process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000')
-    const response = await fetch(`${baseUrl}/api/weekly-menu`, {
-      next: { revalidate: 60 },
-    })
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch weekly menu')
-    }
-
-    return await response.json()
+    const menu = await getCustomWeeklyMenuFromSheet(spreadsheetId)
+    return { menu, currentWeek: getCurrentWeek() }
   } catch (error) {
     console.error('Error fetching weekly menu:', error)
-    return {
-      menu: [],
-      currentWeek: 1,
-      source: 'error',
-    }
+    return { menu: [], currentWeek: getCurrentWeek() }
   }
+}
+
+function getCurrentWeek(): number {
+  const now = new Date()
+  const isoWeekNumber = getWeekNumber(now)
+  return (isoWeekNumber % 2 === 1) ? 1 : 2
 }
 
 function getCurrentDayAndDate() {
@@ -72,7 +50,7 @@ function getWeekNumber(date: Date) {
 }
 
 export default async function WeeklyMenuPage() {
-  const { menu, currentWeek, source } = await getWeeklyMenu()
+  const { menu, currentWeek } = await getWeeklyMenu()
   const { dayName, date, weekNumber } = getCurrentDayAndDate()
 
   // Filter menu by week and organize by day
@@ -83,7 +61,7 @@ export default async function WeeklyMenuPage() {
     return {
       day,
       breakfast: dayMenu?.breakfast || 'Continental breakfast',
-      dinner: dayMenu?.dinner || 'Chef\'s special',
+      dinner: dayMenu?.lunch || 'Chef\'s special',
     }
   })
 
@@ -92,7 +70,7 @@ export default async function WeeklyMenuPage() {
     return {
       day,
       breakfast: dayMenu?.breakfast || 'Continental breakfast',
-      dinner: dayMenu?.dinner || 'Chef\'s special',
+      dinner: dayMenu?.lunch || 'Chef\'s special',
     }
   })
 
